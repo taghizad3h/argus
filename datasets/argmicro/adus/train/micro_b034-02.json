@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Tuition fees should not generally be charged by universities. Universities are for all citizens, independent of their finances. Education and training are fundamental rights which the state, the society must provide. If a university lacks the funds, sponsors must be found. Unfortunately this can lead to disagreeable dependencies in some cases.\nWhat argument components exists in sentence \" Education and training are fundamental rights which the state, the society must provide\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>Education and training are fundamental rights which the state, the society must provide</pro>"
+    }
+]

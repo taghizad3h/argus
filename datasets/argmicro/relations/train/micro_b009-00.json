@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "It is unfair and unjustifiable that new tenants have to pay a much higher rent than previous residents. Clearly the landlord has to pay for some repairs before a new lease. But surely these costs could be covered by a minimal increase in rent over the course of the entire lease. All the more so as for an adequate profit the rental rate as compared to the base rent need not be raised for every new lease.\nWhat is the relation between \"Clearly the landlord has to pay for some repairs before a new lease.\" and \"It is unfair and unjustifiable that new tenants have to pay a much higher rent than previous residents.\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "1. reb"
+    }
+]

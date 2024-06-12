@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Many people see proven relief of their symptoms and complaints by complementary medicine. However there is no substantiated data that this healing isn't simply due to the placebo effect. Besides many practices in this field are not regulated professions, which means that quacks and phonies can practice these occupations unknown to the patients. That's why the statutory health insurance companies should not cover such treatments. It would be conceivable to invest more into the training and control of this occupation sector on the part of the state.\nWhat argument components exists in sentence \" That's why the statutory health insurance companies should not cover such treatments\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>That's why the statutory health insurance companies should not cover such treatments</pro>"
+    }
+]

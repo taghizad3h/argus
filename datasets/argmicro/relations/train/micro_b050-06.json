@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Germany's aging society is undergoing demographic change, and the age of those who are physically and mentally fit is increasing steadily. Thus social security and pension costs are increasing. Yet no one should be required to work for more than 40 years. Raising the relative retirement age on the basis of the physical fitness of the average citizen is fair.\nWhat is the relation between \"Yet no one should be required to work for more than 40 years.\" and \"Germany's aging society is undergoing demographic change,\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

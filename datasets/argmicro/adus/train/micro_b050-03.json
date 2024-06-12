@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Germany's aging society is undergoing demographic change, and the age of those who are physically and mentally fit is increasing steadily. Thus social security and pension costs are increasing. Yet no one should be required to work for more than 40 years. Raising the relative retirement age on the basis of the physical fitness of the average citizen is fair.\nWhat argument components exists in sentence \" Raising the relative retirement age on the basis of the physical fitness of the average citizen is fair\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>Raising the relative retirement age on the basis of the physical fitness of the average citizen is fair</pro>"
+    }
+]

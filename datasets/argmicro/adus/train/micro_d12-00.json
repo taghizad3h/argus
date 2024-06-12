@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "I can only recommend the new smartphone XYZ-123 to everyone. Of course the camera could be better, as it only has mediocre resolution and images in dark surroundings are often snowy. But for snap shots that's still enough.\nWhat argument components exists in sentence \"I can only recommend the new smartphone XYZ-123 to everyone\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "<pro>I can only recommend the new smartphone XYZ-123 to everyone</pro>"
+    }
+]

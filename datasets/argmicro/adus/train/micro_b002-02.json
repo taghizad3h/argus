@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "One can hardly move in Friedrichshain or Neuk\u00f6lln these days without permanently scanning the ground for dog dirt. And when bad luck does strike and you step into one of the many 'land mines' you have to painstakingly scrape the remains off your soles. Higher fines are therefore the right measure against negligent, lazy or simply thoughtless dog owners. Of course, first they'd actually need to be caught in the act by public order officers, but once they have to dig into their pockets, their laziness will sure vanish!\nWhat argument components exists in sentence \" Higher fines are therefore the right measure against negligent, lazy or simply thoughtless dog owners\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>Higher fines are therefore the right measure against negligent, lazy or simply thoughtless dog owners</pro>"
+    }
+]

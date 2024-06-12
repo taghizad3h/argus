@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Due to the increase in opening hours on Sundays and holidays there is a rise in employment. However it's mainly temps (that is, students, pupils etc.) who are employed, so this has hardly any effect on the level of full-time employment and the number of unemployed. On top of that, private and family life suffers massively because of this reduction and shifting in designated off-times. And it\u2019s only the large companies that can afford the additional personnel expenditure. For these reasons supermarkets and shopping centres should not be allowed to be open for business on arbitrary Sundays and holidays.\nWhat is the relation between \"On top of that, private and family life suffers massively because of this reduction and shifting in designated off-times.\" and \"For these reasons supermarkets and shopping centres should not be allowed to be open for business on arbitrary Sundays and holidays.\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "5. sup"
+    }
+]

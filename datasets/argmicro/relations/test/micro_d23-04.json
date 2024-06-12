@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Tomorrow I will skydive for the first time in my life. Yes, there is a certain risk to life. But I want to experience this incredible moment of freedom that skydivers report time and again. Besides, Jochen was given a parachute jump the other day as a gift, and it mustn't be that this wannabe-adventurer has one up on me.\nWhat is the relation between \"Besides, Jochen was given a parachute jump the other day as a gift,\" and \"and it mustn't be that this wannabe-adventurer has one up on me.\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "3. joint"
+    }
+]

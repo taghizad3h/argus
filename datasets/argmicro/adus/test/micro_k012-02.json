@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "German universities should on no account charge tuition fees. This would simply mean that only those people with wealthy parents or a previous education and a part-time job while studying would be able to apply for a degree programme in the first place. Even without tuition fees half of the student population has to work while studying and hence has less time for studying or recreation. One could argue that an increase in tuition fees would allow institutions to be better equipped. But what is the good of a wonderfully outfitted university if it doesn't actually allow the majority of clever people to broaden their horizons with all that great equipment?\nWhat argument components exists in sentence \" Even without tuition fees half of the student population has to work while studying and hence has less time for studying or recreation\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>Even without tuition fees half of the student population has to work while studying and hence has less time for studying or recreation</pro>"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Celebrities & Their Influences\n\nSome people argue that adolescents are being influenced badly by untalented people who become famous thanks to their luxurious lifestyle and wealth. To some extent, I do not agree with this statement.\nFirst of all, it is true that people use their money to become an inspiration are definitely not a good mirror for young people. We definitely do not want our children to spend money on luxurious custom or lifestyle just to be similar to someone, especially when these people are not symbols of any talent but showing off. However, the young generation these days is very conscious toward positive lifestyles. They are mostly being educated at very early ages by family or schools as to distinguish what is benefit for them. Therefore, it is not easy to influence young people these days when they are well equipped of life skills. \nMoreover, it seems to me that not many people can exist in the celebrities' world without any talents or achievements. We are giving chances to many teenagers to show their intelligence in different talent shows, for example; The Voice, X Factor or Next Top Models etc. As a result, to become a star and an inspiration for people, a person need to have real talent to compete with other candidates. Thus, only money and glamour look are not enough for a person to be recognized anymore, it is importance that they have to have achievements in order to be a muse to youngsters. \nIn conclusion, people without talents cannot be famous in this changing world and to be accredited they need to contribute positively to young generation. That is the reason why celebrities nowadays give more good influence on young people than they were previously.\nWhat argument components exists in sentence \"\nFirst of all, it is true that people use their money to become an inspiration are definitely not a good mirror for young people\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "\nFirst of all, it is true that <Claim>people use their money to become an inspiration are definitely not a good mirror for young people</Claim>"
+    }
+]

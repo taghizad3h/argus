@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to find the relation (support, attack or no_relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "It is better for children to grow up in the countryside than in a big city?\n\nNowadays living is possible on every place of the world, but still there are some differences among them. From my point of view big cities can be a good place for bringing up children.\nTo begin with, it is undeniable that education is better in big cities in comparison with countrysides. For instance, in my country the best schools, universities and institutes are located in cities, and todays education is one of the most important parts of our children's life. Therefore, it is a good idea for children to past their first earlier life in the cities.\nWhat is more, it is acknowledged that a large number of creational facilities are built in cities. Children who live in cities have a lot of entertainment. For example playgrounds, parks, science museums, cinemas etc. However, in countrysides we hardly ever see creational facilities. Children who live in countrysides most of the time pass their free time in farms.\nFinally, in big cities children access to media easily, so they can learn a lot of things by watching television and surfing through the net. Via internet they can have connection with the other children all around the world, therefor they can exchange their knowledge, they can learn different cultures.\nTo sum up, although countrysides have some advantages such as fresh air, peace, and etc. Today's children needs somethings to entertain them, and occupy their leisure time in the best way.\nWhat is the relation between \"it is a good idea for children to past their first earlier life in the cities\" and \"Via internet they can have connection with the other children all around the world\" from the above essay? Choose from following options 1. attacks\n2. supports\n3. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "3. no relation"
+    }
+]

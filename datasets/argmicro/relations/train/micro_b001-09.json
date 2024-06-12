@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Yes, it's annoying and cumbersome to separate your rubbish properly all the time. Three different bin bags stink away in the kitchen and have to be sorted into different wheelie bins. But still Germany produces way too much rubbish and too many resources are lost when what actually should be separated and recycled is burnt. We Berliners should take the chance and become pioneers in waste separation!\nWhat is the relation between \"But still Germany produces way too much rubbish\" and \"Three different bin bags stink away in the kitchen and have to be sorted into different wheelie bins.\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

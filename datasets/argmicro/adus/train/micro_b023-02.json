@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "No human being or human committee should again be given the permission to rule over 'life or death'. Courts are also subject to human error. That's why Germany should not introduce capital punishment! Every human, even those who have committed a despicable crime, can bring themselves to regret and change their opinion. A door must remain open for making amends.\nWhat argument components exists in sentence \" That's why Germany should not introduce capital punishment! Every human, even those who have committed a despicable crime, can bring themselves to regret and change their opinion\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>That's why Germany should not introduce capital punishment!</pro> <pro>Every human, even those who have committed a despicable crime, can bring themselves to regret and change their opinion</pro>"
+    }
+]

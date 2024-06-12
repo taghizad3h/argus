@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to find the relation (support, attack or no_relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "International tourism is now more common than ever before\n\nThe last 50 years have seen a significant increase in the number of tourist traveling worldwide. While some might think the tourism bring large profit for the destination countries, I would contend that this industry has affected the cultural attributes and damaged the natural environment of the tourist destinations.\nFirstly, it is an undeniable fact that tourists from different cultures will probably cause changes to the cultural identity of the tourist destinations. Take Thailand for example, in the Vietnam War, many American soldiers came to Thailand for a break and involved in sexual and drug activities, these huge demands caused many local businesses opened and expanded, even illegally involved in under-age prostitutes to maximize their profits. This was due to the lack of adequate controls by authorities and lead to a bad image of Thailand tourism. Therefore this proves that international tourism can create negative impacts on the destination countries.\nSecondly, there are clear evidences that tourism increasingly create harms to the natural habitats of the destination appeals. As the Australia\u2019s Great Barrier Reef has shown, the billion visitors per annum has generated immense destruction to this nature wonder, namely breaking the corals caused by walking or throwing boat\u2019s anchors, dropping fuel and other sorts of pollutions. For this reason, many marine lives have been endangered, in the extremes part of the reef become uninhabitable for these marine species. Thus, it is apparent that tourism has threatened the nature environments.\nTo conclude, I strongly believe that the tourism has created threatening pressure on both the sociocultural and natural environments. If authorities do not take steps to appropriately conserve these precious values, they will be destroyed in the near future.\nWhat is the relation between \"the tourism bring large profit for the destination countries\" and \"Take Thailand for example, in the Vietnam War, many American soldiers came to Thailand for a break and involved in sexual and drug activities, these huge demands caused many local businesses opened and expanded, even illegally involved in under-age prostitutes to maximize their profits\" from the above essay? Choose from following options 1. attacks\n2. supports\n3. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "3. no relation"
+    }
+]

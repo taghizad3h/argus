@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Teachers lesson vs other sources\n \nThe way in which children today study is radically different from any previous generations, and the increased availability and relatively low price of modern technology has been instrumental in this change. Despite the argument of some people that learners can obtain more useful knowledge from teachers than from other sources, I firmly believe that both alternative sources and traditional teaching methods from educators are equally important in children's acquisition of knowledge.\nIt is undeniable that the widespread of alternative sources of knowledge has played an important role in students' acquisition of knowledge. Computers can be programmed to provide an endless numbers of questions in diverse range of fields, and as the students answer these questions, the facts has been learned and reinforced. A case in point is the reading and listening parts of TOEFL iBT exams, as candidates have to answer many questions in a limited period of time. Moreover, when students have some academic problems, they can post those to some websites and receive correct answers from unknown people in faraway places without any costs. Besides, in the past, conducting a research require long hours of searching in library shelves, now all can be done at a click of a button. Thus, technologies are vital in students' learning.\nOn the other hand, schools and university are places in which students gather to be educated and learn from each others as well as formal educators. At schools, students' development has been orchestrated stage by stage, step by step by experienced teachers, and their acquisition of knowledge is guided and backed up in a systematic way. Therefore, formal education approaches are also indispensable. \nTo put it all in a nutshell, I pen out saying that alternative sources information and traditional education systems are equally important in children's development. So students should learn both from their teachers as well as modern technology to gain the best learning outcome.\nWhat argument components exists in sentence \" Therefore, formal education approaches are also indispensable\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " Therefore, <Claim>formal education approaches are also indispensable</Claim>"
+    }
+]

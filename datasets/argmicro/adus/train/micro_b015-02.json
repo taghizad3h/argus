@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Well, I as an employee find it very practical to be able to shop at least on weekends. Sure, other people have to work in the shops on the weekend, but they can have days off during the week and run errands at their leisure while I'm stuck in the office. Plus, the state wants me to spend my money, and how am I supposed to do that when the shops aren't open when I'm off work?\nWhat argument components exists in sentence \" Plus, the state wants me to spend my money, and how am I supposed to do that when the shops aren't open when I'm off work?\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>Plus, the state wants me to spend my money,</pro> <pro>and how am I supposed to do that when the shops aren't open when I'm off work?</pro>"
+    }
+]

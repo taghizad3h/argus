@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Drugs, alcohol and messy sex lives\n\nCelebrities, for example movie stars, are usually seen on media living a luxury life or having a new girlfriend, etc. It is human nature that people, especially youngsters, are attracted to the celebrities they favour, and that is why the media prefer to cover as much news of the celebrities as possible. But I tend to think that this is a worrying tread which has negative impact on children.\nThe first impression of the celebrities seems that they are rich while not having to work hard. This gives children the idea that it is not necessary to study hard at school for a better career and earning a living. Further more, they will not value other people's hard work and take everything for granted.\nMeanwhile, not all celebrities are role models. It is not uncommon to see on the media that some of them are committing to crimes or misbehaving such as being addicted to drugs or alcohols, having messy sex lives. Worse still, without proper parenting, children may perceive that this is the cool life people are supposed to be living.\nOf course, some celebrities, e.g. writers, passionate entrepreneurs are good examples to children for they share fascinating stories or how to pursue their goal by doing something that has a meaning to them and may change the world.\nIn conclusion, media should shift its focus from covering celebrities to elsewhere. Meanwhile, children's access to the celebrities news on the media should be restricted and they should study only from the celebrities who can act positively.\nWhat argument components exists in sentence \" Worse still, without proper parenting, children may perceive that this is the cool life people are supposed to be living\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " Worse still, <Claim>without proper parenting, children may perceive that this is the cool life people are supposed to be living</Claim>"
+    }
+]

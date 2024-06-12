@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Capital punishment is not a solution, as it cannot be ruled out that the judicial process may make mistakes. Criminals should not be put in luxury prisons, though. After all there are criminals who enjoy 'living' in prison for its decent board, no taxes to be paid, no stress with work. Still, the state needs the death penalty as a deterrent to horrific crimes.\nWhat is the relation between \"Capital punishment is not a solution,\" and \"Still, the state needs the death penalty as a deterrent to horrific crimes.\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "1. reb"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "By purchasing illegally acquired tax data of citizens, the state is not only turning itself into a felon, but it is paying criminals, too. Besides, the purchase of such CDs is unnecessary today, as, due to changed terms of business, many banks urge their customers to turn themselves in. Acquiring CDs with tax data of tax delinquents is therefore out of the question. It is indisputable, however, that by purchasing such data the state increases the pressure on tax evaders to turn themselves in.\nWhat argument components exists in sentence \" Acquiring CDs with tax data of tax delinquents is therefore out of the question\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>Acquiring CDs with tax data of tax delinquents is therefore out of the question</pro>"
+    }
+]

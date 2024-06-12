@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Berlin's basketball team has just come out of a sobering season. Especially the home games have seen the team stay behind expectations. A sad highlight: Losing 60:87 to the weakish Mannheimers in a sold-out stadium. Indeed the team ended up third in the league, but given the cost of the star-players one could've expected more.\nWhat argument components exists in sentence \"Berlin's basketball team has just come out of a sobering season\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "<pro>Berlin's basketball team has just come out of a sobering season</pro>"
+    }
+]

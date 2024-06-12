@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "BER should be re-conceptualized from scratch, even if billions of Euros have already been invested in the existing airport project and this would delay the date of completion indefinitely. Both the drawn-out building operations and the mounting safety issues show clear shortcomings in the entire planning.\nWhat is the relation between \"and this would delay the date of completion indefinitely.\" and \"BER should be re-conceptualized from scratch,\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "1. reb"
+    }
+]

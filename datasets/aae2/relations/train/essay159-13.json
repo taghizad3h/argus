@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to find the relation (support, attack or no_relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Popularity of mobile phones to young people\n\nNowadays, many young people consider mobile phone as the most important thing in their lives as it keeps them constantly organized and it provides much convenience for them to reach out their families and friends. Despite all these positive aspects, I think that the popularity of mobile phones to the young generation is a bad development.\nFirst of all, many young owners of cellular phones are struggling at school because they are distracted most of the time with their phones. Games and applications installed in phones have occupied much of their time, leaving them lesser time for their studies and other school activities. Similarly, internet capable phones help influence the young ones to become more interested in chatting and social sites rather than doing school works. In my college days, I was once addicted to a certain game on my cellular phone. I have spent most of my time trying to reach a higher level to show-off to my friends. That goal has led me to my lost in interest on doing my homework and I ended up failing one subject in that semester.\nSecondly, juveniles who possess mobile phones have great tendencies to become materialistic. They would not only purchase a phone because of its functionality but also for its brand. Relatively, these do not come at a significant and inexpensive cost. Furthermore, most of these juveniles are students so they would need their parents to support them financially for what they want. An illustration of this unfortunate trend can be seen almost everywhere these days, wherein most teens at an early age own phones which are worth twice the salary of their parents. \nThis clearly shows that the negative impacts brought about by mobile phones are harmful to a person\u2019s education and character. Therefore, I highly discourage the young ones to be overly dependent on mobile phones.\nWhat is the relation between \"juveniles who possess mobile phones have great tendencies to become materialistic\" and \"the negative impacts brought about by mobile phones are harmful to a person\u2019s education and character\" from the above essay? Choose from following options  1. attacks\n2. supports\n3. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "2. supports"
+    }
+]

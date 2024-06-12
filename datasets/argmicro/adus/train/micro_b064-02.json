@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "I think Berlin with its two inner-city airports was lucky not having to experience an airplane catastrophe for decades. For safety reasons alone I find continued operation wrong. Also, Berlin urgently needs inner-city areas for business and industry, and for housing. Closing down Tegel will have health benefits for hundreds of thousands in the approach path. These areas will be upgraded economically due to these factors (housing health and employment). After the new BER Airport has been commissioned, Tegel should definitely be closed.\nWhat argument components exists in sentence \" Also, Berlin urgently needs inner-city areas for business and industry, and for housing\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>Also, Berlin urgently needs inner-city areas for business and industry, and for housing</pro>"
+    }
+]

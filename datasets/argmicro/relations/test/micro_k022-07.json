@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "It is quite clear that Sunday should remain a day of rest. For you can go shopping 6 days a week, as shops are open till 10pm on some days. Thus Sundays should remain a day for getting together with family, otherwise there will be a new kind of leisure activity where people spend their time in supermarkets instead of outside or in conversation etc. Furthermore, there's no need to keep shops open on Sundays.\nWhat is the relation between \"Thus Sundays should remain a day for getting together with family,\" and \"Furthermore, there's no need to keep shops open on Sundays.\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

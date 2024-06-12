@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "There are parliamentary elections soon and traditionally the governing party is generous with popular promises in the run-up to federal elections. Nevertheless the head of government, Merkel, had better restrain herself in announcing handouts this year. Voters have become more sceptical. Too many promises have not been kept.\nWhat is the relation between \"Nevertheless the head of government, Merkel, had better restrain herself in announcing handouts this year.\" and \"Voters have become more sceptical.\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

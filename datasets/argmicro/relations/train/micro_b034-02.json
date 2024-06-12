@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Tuition fees should not generally be charged by universities. Universities are for all citizens, independent of their finances. Education and training are fundamental rights which the state, the society must provide. If a university lacks the funds, sponsors must be found. Unfortunately this can lead to disagreeable dependencies in some cases.\nWhat is the relation between \"If a university lacks the funds, sponsors must be found.\" and \"Tuition fees should not generally be charged by universities.\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "5. sup"
+    }
+]

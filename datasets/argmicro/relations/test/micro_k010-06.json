@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Considering what's on television these days, it would be appropriate to only have those people pay who actually (want to) follow the programming. In some cases there are only shows for older generations on at prime times, so why then should everyone pay for this? By now you have advertising on all channels, so there's no advantage for the current paying viewers of the public broadcasters. Nevertheless one has to point out that there'd probably be way fewer stations if it weren\u2019t the whole of Germany that\u2019s obliged to pay. That shouldn't be an issue though, given the sheer number of programmes and stations that essentially show the same things anyway.\nWhat is the relation between \"That shouldn't be an issue though, given the sheer number of programmes and stations that essentially show the same things anyway.\" and \"By now you have advertising on all channels,\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

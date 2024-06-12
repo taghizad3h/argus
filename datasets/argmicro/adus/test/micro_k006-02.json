@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "If Germany were to introduce the death penalty, convicted felons could not be paroled or break out of prison and commit new felonies. However, a death would not be of any more use to those affected and their relatives than if the felon receives a long sentence. Plus we don't live in medieval times anymore. Handing out capital punishment is unethical. We don't need it.\nWhat argument components exists in sentence \" Plus we don't live in medieval times anymore\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>Plus we don't live in medieval times anymore</pro>"
+    }
+]

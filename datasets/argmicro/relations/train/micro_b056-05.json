@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "A violation of international law should be more than enough to consider a reaction! Humanity has made enough mistakes throughout history by waiting too long, and when it has finally reacted, the only remaining option has usually been war. It's to be noted that in our civilized world, in a democratic country, the people can determine their own fate, as long as the motivation of those people isn't triggered by propaganda, corruption and military pressure. Since, however, in Russia besides gas and oil only propaganda and corruption rule, the EU should intervene right away.\nWhat is the relation between \"It's to be noted that in our civilized world, in a democratic country, the people can determine their own fate,\" and \"Since, however, in Russia besides gas and oil only propaganda and corruption rule,\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

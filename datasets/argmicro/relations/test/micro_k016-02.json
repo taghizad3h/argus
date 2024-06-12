@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Despite the severe clashes in Kiev, which at times have threatened to escalate, the EU should not intervene in local politics. Although Ukraine is a European country, and the Ukrainian opposition is primarily interested in installing a robust democracy, possible supporters face a considerably stronger opponent in the intervention of Russia in local politics.\nWhat is the relation between \"and the Ukrainian opposition is primarily interested in installing a robust democracy,\" and \"the EU should not intervene in local politics.\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "1. reb"
+    }
+]

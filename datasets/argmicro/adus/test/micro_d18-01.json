@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Schweinsteiger has now been injured for three days. We urgently need a midfield replacement for the coming match. The doctor was able to sign him off as fit for play with enough painkillers, but that would only make the injury worse in the long run. And a young substitute always invigorates the team.\nWhat argument components exists in sentence \" We urgently need a midfield replacement for the coming match\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>We urgently need a midfield replacement for the coming match</pro>"
+    }
+]

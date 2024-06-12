@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "There should be a higher fine for dog dirt on the pavement. Dog dirt is disgusting and a hygiene problem. Also children, adults and other animals aren't allowed to leave droppings on the pavement. If you dispose of the waste then and there yourself, no fine is necessary.\nWhat argument components exists in sentence \" Also children, adults and other animals aren't allowed to leave droppings on the pavement\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>Also children, adults and other animals aren't allowed to leave droppings on the pavement</pro>"
+    }
+]

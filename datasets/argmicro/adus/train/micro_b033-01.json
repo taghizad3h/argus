@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "I find the peripheral housing development at Tempelhofer Feld right for urban planning reasons, as the area is right in the middle of the city (capital). The size of the field allows for both housing and generous open space.\nWhat argument components exists in sentence \" The size of the field allows for both housing and generous open space\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>The size of the field allows for both housing and generous open space</pro>"
+    }
+]

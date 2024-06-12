@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "People benefit more from coming computers into their lives\n\nComputers have revolutionized our lifestyle during last century. However, some people especially young ones use computers extremely and this excessive usage lead to increase stress among them, but computers have brought many advantages to our lives. From my point of view, computers have an important and inevitable role in economic, business, and other part of societies. In addition, they make the way of living easier by doing our routine duties. \nAdmittedly, by using computers in many industries human's role has been reduced. Nowadays, computer can control and perform some routine activities in industries, which were early done by human. Many industries use computers to command to robots in order to do many regular tasks, which were carried out by human early. For example, many processes of production of cars are carrying out by robots, which are controlled by computers. In addition, car companies use computers to simulate and analyze car accident by computers. Despite many advantages, by coming computers many jobs has been vanished. A large number of industries fire many forces because of doing their works by new technologies and computers. \nComputers have an important role in social and personal life. Computers have opened up a network connection among people. This technology makes easier for people to send and receive personal message. Teenagers and adolescents spend free time in front of computers. Moreover, People can use computers to extract their essential information easily. By contrast, excessive use of computers has brought many difficulties. The results show that teenagers who are addicted to computer games show more violent and stressful behaviors. People who have type by computers may suffer from such disease related to knees. \nBy considering all reasons, advantages of computers outweigh disadvantages. People benefit more from coming computers into their lives. In addition, computers can do most difficult tasks which leads to make life easier.\nWhat argument components exists in sentence \" For example, many processes of production of cars are carrying out by robots, which are controlled by computers\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " For example, <Premise>many processes of production of cars are carrying out by robots, which are controlled by computers</Premise>"
+    }
+]

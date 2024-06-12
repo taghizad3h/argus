@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "\"Pen and Paper\" Examination\n\nExaminations are one of the most common methods of measuring learning in education systems throughout the world. At virtually every stage of the learning process, exams are used to verify that the learner is ready to move on to the next stage. However, many believe that the role of examinations should be reconsidered.\nThere are clearly advantages to exams. They help to ensure fairness by imposing the same conditions on all exam candidates. They are also relatively versatile; different types of exam questions, for example, multiple-choice questions and essay tasks, can test different sorts of reasoning ability. However, exams also have some drawbacks. Test-wise candidates can often perform well on exams without having good underlying knowledge or skills. In contrast, some test-takers perform cannot achieve a satisfying result because of anxiety. In this case, teachers and learners focus only on theses aspects of the curriculum that are likely to be tested, thus narrowing the educational experience for all.\nA number of measures should be taken to address these concerns. Wherever possible, exams should match the content and activities of the learning environment. Exam task should be varied to give fair opportunities to candidates with different types of skills. Other types of assessment should also be considered, assignment writing, for example, to assess independent learning and research skills, or group projects, to measure teamwork ability.\nIn conclusion, it is convincing that exams have a role to play in ensuring proper and objective assessment of achievement. However, exams need to be carefully designed and supplemented with other forms of evaluation if they are to be a truly useful component of the education system.\n\nWhat argument components exists in sentence \" In contrast, some test-takers perform cannot achieve a satisfying result because of anxiety\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " In contrast, <Premise>some test-takers perform cannot achieve a satisfying result because of anxiety</Premise>"
+    }
+]

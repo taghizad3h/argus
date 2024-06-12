@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "One or two close friends vs. a large number of casual acquaintances\n\nThere is no need for me to put any emphasis on the advantage of having a large number of casual acquaintance. However, I still agree that it's better to have one or two close friends than to have a large number of casual acquaintances.\nWe can not deny that being a friend with someone is different from only being acquaintant. First, it's not easy to make friend with anyone. I believe friends are people who have great compatibility with each other. After two years in college I have found sometimes there is more differences between people than similarities, for we are growing in the different families and was educated in various ways. Sometimes acquaintances are just acquaintances. We spend time together but we could never be friend. So, it's much easier to have some casual acquaintances than have some close friends.\nSecond, close friends can easily understand each others feelings. Because of the similarity I talked before, acquaintances probably not able to understand you better than your friends. Moreover, they wouldn't even spare time to consider your feelings. Everyone play the role of acquaintance and friend at the same time. Being friendly is a good way to treat a acquaintance but way not enough for a friend. When my friend is sick, I would not only ask if he is okay like an acquaintance but do my best to make him get well as soon as possible. If my friend is going to the wrong direction in his life trail, I will try my best to pull him back, but not stand and stare like it's not of my business. And I believe my friend will do the same to me. In conclusion, a friend is a person you care about. \nTo me, friends are the most important people in my life second to my family. I am the kind of person who has only one or two close friends, and I am fully content that I have such nice friends. If someone exchange my friends with thousands of acquaintances, I will definitely say NO.\nWhat argument components exists in sentence \" I believe friends are people who have great compatibility with each other\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " I believe <Premise>friends are people who have great compatibility with each other</Premise>"
+    }
+]

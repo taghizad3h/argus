@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Although IBM's numbers haven't been staggering recently, and the mood in the stock market could be better on the whole, you should buy IBM shares if you want to invest. Because for one thing, their products will still sell in bad times, and in addition, such a share is not as sensitive as those of other IT companies.\nWhat argument components exists in sentence \"Although IBM's numbers haven't been staggering recently, and the mood in the stock market could be better on the whole, you should buy IBM shares if you want to invest\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "<opp>Although IBM's numbers haven't been staggering recently,</opp> <opp>and the mood in the stock market could be better on the whole,</opp> <pro>you should buy IBM shares if you want to invest</pro>"
+    }
+]

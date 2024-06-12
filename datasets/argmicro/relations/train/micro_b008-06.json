@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Of course it would be nice and simple if after a fun night out with a party acquaintance you could simply take the 'morning-after pill' and feel at ease. But it's not that simple. Perhaps a new life was already created that night. I would kill it without further thought. That's why a visit to the doctor and professional advice should remain mandatory.\nWhat is the relation between \"I would kill it without further thought.\" and \"Of course it would be nice and simple if after a fun night out with a party acquaintance you could simply take the 'morning-after pill' and feel at ease.\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

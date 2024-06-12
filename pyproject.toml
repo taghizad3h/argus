@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "argument-minig"
+version = "0.1.0"
+description = ""
+authors = ["Ali Asghar Taghizadeh <tagizaade@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pytorch-ie = "^0.30.3"
+torch = "^2.2.2"
+datasets = "2.15.0"
+pie-datasets = "^0.10.0"
+pie-modules = "^0.11.1"
+ipykernel = "^6.29.4"
+certifi = "^2024.2.2"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

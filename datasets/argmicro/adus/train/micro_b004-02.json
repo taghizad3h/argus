@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Of course there are a number of programmes in public broadcasting that are not worth the licencing fee, and others, such as \u201cMusikantenstadl\u201d and soap operas, are only interesting to certain audiences. Nevertheless, everybody should contribute to the funding of the public broadcasters in equal measure, for we need general and independent media. After all we want to get our view of the world neither through the lens of the government nor through that of rich media entrepreneurs.\nWhat argument components exists in sentence \" After all we want to get our view of the world neither through the lens of the government nor through that of rich media entrepreneurs\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>After all we want to get our view of the world neither through the lens of the government nor through that of rich media entrepreneurs</pro>"
+    }
+]

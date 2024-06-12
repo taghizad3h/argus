@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Parents or other adult relatives should make important decisions for their olde\n\nIt might seem that teenaged children particularly in age of 15 - 18 are fully grown, so they do not need any help for making important decisions. However, in my opinion, teenagers need more attention and help in comparison with the higher ages. I will discuss my view in two main areas.\nIn the first place, there is no doubt that parents and other adult relatives are more experienced towards children, therefore they are the best advisor for their children. They have experienced a large numbers of stuffs during their life, so if children listen to their advices they can prevent happening worst things. Also, they can save value things in their life such as time and money, and enjoy they life with the best way.\nMoreover, I have always believed that parents and adults relatives are the best friends and consular for the teenagers, because unfortunately nowadays there are some individuals who cheat the others for gaining more power and money. They cheat young ages because they believe they are immature and they can trap them easily.\nTo sum up, it makes no difference, people from young ages to old ages are free to make a decision, nonetheless sometimes to prevent some problems coming up for young individuals , it is a good idea to ask parents and adult relatives to give a piece of advice.\nWhat argument components exists in sentence \"Parents or other adult relatives should make important decisions for their olde\n\nIt might seem that teenaged children particularly in age of 15 - 18 are fully grown, so they do not need any help for making important decisions\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "The given sentence is not argumentative."
+    }
+]

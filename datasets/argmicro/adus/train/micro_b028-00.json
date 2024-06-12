@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "The universities in Germany should not under any circumstances charge tuition fees. This would impede or prevent access to those who are financially weaker. The anticipated objectives of tuition fees can be achieved by other means. There are other instruments to motivate tighter discipline while studying. And funding-wise it ought to be considered how costs incurred by students from other (federal) states can be reimbursed.\nWhat argument components exists in sentence \"The universities in Germany should not under any circumstances charge tuition fees\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "<pro>The universities in Germany should not under any circumstances charge tuition fees</pro>"
+    }
+]

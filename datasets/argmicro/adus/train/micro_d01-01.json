@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Freddy and I must be siblings. We both have the exact same two moles on our left arm and you only get that with siblings. My parents say this could also be pure coincidence. But that much of a coincidence is simply impossible.\nWhat argument components exists in sentence \" We both have the exact same two moles on our left arm and you only get that with siblings\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>We both have the exact same two moles on our left arm</pro> <pro>and you only get that with siblings</pro>"
+    }
+]

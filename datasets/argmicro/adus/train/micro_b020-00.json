@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Olympic events are rooted in old traditions. On the other hand, the events have a culturally determined character. Our society is strongly digitized and influenced by computers. Yet sports are usually associated with physical training. Since however skat, chess etc. are not accepted as Olympic events, computer games should also not be recognized as Olympic events.\nWhat argument components exists in sentence \"Olympic events are rooted in old traditions\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "<pro>Olympic events are rooted in old traditions</pro>"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Retirement at 63, that's something everyone who has toiled away (nonstop) up to this point surely deserves. Only the question remains whether this early 'leisure' will be nicer if you have no idea what do to all day and you statistically still have almost 20 (!!!) years to go? Also, one isn't taking responsibility for society if one gives up one's experienced, healthy and highly qualified capabilities earlier than necessary for private/personal reasons. Especially now, as there is a lack of skilled labour, it's irresponsible for the economy and prosperity to retire at 63.\nWhat argument components exists in sentence \" Only the question remains whether this early 'leisure' will be nicer if you have no idea what do to all day and you statistically still have almost 20 (!!!) years to go? Also, one isn't taking responsibility for society if one gives up one's experienced, healthy and highly qualified capabilities earlier than necessary for private/personal reasons\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>Only the question remains whether this early 'leisure' will be nicer if you have no idea what do to all day and you statistically still have almost 20 (!!!) years to go?</pro> <pro>Also, one isn't taking responsibility for society if one gives up one's experienced, healthy and highly qualified capabilities earlier than necessary for private/personal reasons</pro>"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Usually you only have eight weeks to complete a bachelor thesis in linguistics degrees. Adjusting the portion of the total grade upwards anyway would not be commensurate to other study assignments and examinations. Current regulations for the calculation of the total grade should therefore be maintained. Indeed the preparation of such a scientific work is a fundamental competency that must be acquired in philological degrees. Throughout the six or seven semesters, however, topics are covered that likewise ought to carry weight.\nWhat is the relation between \"Adjusting the portion of the total grade upwards anyway would not be commensurate to other study assignments and examinations.\" and \"Indeed the preparation of such a scientific work is a fundamental competency that must be acquired in philological degrees.\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

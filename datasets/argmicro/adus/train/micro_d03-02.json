@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "It was clearly a mistake to include Tom in our football team. He's just not a team player, and often goes it alone. Plus he comes to training way too rarely, although he plays very well without training. But the worst thing is his habit of always complaining to the referee.\nWhat argument components exists in sentence \" Plus he comes to training way too rarely, although he plays very well without training\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>Plus he comes to training way too rarely,</pro> <opp>although he plays very well without training</opp>"
+    }
+]

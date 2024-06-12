@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Easy preparation of food leads to a better life\n\nThe Technology has developed a lot. With that development, food can be prepared more easily and it can taste a lot better than it used to. With that change, people\u2019s lives are a lot better for several reasons. Some good reasons are about having more time and being able to prepare better food without being a good cook.\nFirstly, people normally have lots of things to do. Because of that, they don\u2019t have much time to spend in the kitchen. But being able to prepare a tasty food just putting it into the microwave or into the oven is awesome. For example, if an engineer needs to make a project, but he needs to deliver it tomorrow, he could save hours preparing a food with the microwave instead of cooking everything from scratch.\nSecondly, when someone wants to prepare a good food alone for some reason, some time ago he/she would need to be a very good cook to prepare that food, but nowadays is very easy to prepare a healthy and tasty food. For example, if a guy wants to prepare a dinner to his girlfriend, he could just buy some food that comes with instructions. Normally you just need to put it into the oven and wait some time.\nAll in all, that ease to prepare food has improved people\u2019s lives. And that happened mainly because of the development of the technology. But people should be careful with what they eat, because some industrial foods are very bad for their health, so they should buy only food from well known brands.\nWhat argument components exists in sentence \" With that change, people\u2019s lives are a lot better for several reasons\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "The given sentence is not argumentative."
+    }
+]

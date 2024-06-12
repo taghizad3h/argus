@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Tuition fees should not be charged in Germany. Studying and taking higher degrees must remain a basic right for everyone. Fees result in longer durations of studies. That's costly!\nWhat argument components exists in sentence \" Fees result in longer durations of studies\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>Fees result in longer durations of studies</pro>"
+    }
+]

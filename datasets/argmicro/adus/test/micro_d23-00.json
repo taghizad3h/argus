@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Tomorrow I will skydive for the first time in my life. Yes, there is a certain risk to life. But I want to experience this incredible moment of freedom that skydivers report time and again. Besides, Jochen was given a parachute jump the other day as a gift, and it mustn't be that this wannabe-adventurer has one up on me.\nWhat argument components exists in sentence \"Tomorrow I will skydive for the first time in my life\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "<pro>Tomorrow I will skydive for the first time in my life</pro>"
+    }
+]

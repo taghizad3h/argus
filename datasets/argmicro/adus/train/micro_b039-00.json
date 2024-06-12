@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "The EU should exert influence on the political events in Ukraine. The developments in that conflict should not be left to former Cold War opponents alone, for that course can only lead to escalation in some form. Furthermore, Ukraine is culturally and geographically much closer than other countries that the EU (used to) get involved with. Indeed one could argue that a country has to deal with internal political changes itself, but political power also brings about political responsibility, in this case the responsibility to protect the Ukrainian people from the rather strong interests of the two Great Powers.\nWhat argument components exists in sentence \"The EU should exert influence on the political events in Ukraine\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "<pro>The EU should exert influence on the political events in Ukraine</pro>"
+    }
+]

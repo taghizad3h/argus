@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to find the relation (support, attack or no_relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Studying alone or in a group\n\nWhen I found the chance of studying in a group with my classmates, I wished I can go back in time and took all my exams again. I personally prefer studying in a group due to these noticeable features, getting help from other students, improving my attitude for learning, managing my time in an effective way.\nWhen pupils make a group for studying, all member of group have the same chance to help each other. They can work together for understanding the complicated aspect of a course. For example, when a group faces with complex math problem, they can share their opinions to solve it. In addition, such a remarkable effect has incorporation that all students can improve their weak points in a group. \nIncreasing the motivation and competence spirit are another benefit of group-studying. In a group of student, the best of those always encourages others to study harder. Besides, pupils often have a tangible competence in order that they can get the highest grade in a group. Clearly, better learning is one of noticeable result of these competences and encouragements. \nWhen the students study with their friends, they should have schedule to use their time in an effective manner. Group-studying causes some kind of internal obligation to manage the time, inasmuch as we always care about other people and we do not want to waste their time. Therefore, time management is another brilliant benefit of group-studying. \nIn conclusion, I strongly prefer studying in a group of my friends because of some important opportunities gaining with this activity. I can receive some helps from other student as well as improving my learning skills, also managing of time is another achievements of group-studying. Now, it is time to start without any regret from my previous exams.\nWhat is the relation between \"Increasing the motivation and competence spirit are another benefit of group-studying\" and \"I personally prefer studying in a group due to these noticeable features, getting help from other students, improving my attitude for learning, managing my time in an effective way\" from the above essay? Choose from following options  1. attacks\n2. supports\n3. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "2. supports"
+    }
+]

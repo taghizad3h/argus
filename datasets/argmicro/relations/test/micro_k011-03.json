@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Rent increases upon re-letting aren't bad as such, if it's only a small amount, they\u2019re very bad however, if the rent suddenly climbs by \u20ac100 or \u20ac200. With those kinds of amounts you think twice about whether you really want to stay in the flat. If there must be rent increases, there should also be a cap to avoid nasty surprises. This helps the landlords, as they can adjust their expenses through the increase, and also the tenants, as they can plan for a maximum rent increase. That the landlords are then slightly restricted in the administration of their property is not a problem, as they have more pull in the end anyway.\nWhat is the relation between \"This helps the landlords,\" and \"If there must be rent increases, there should also be a cap to avoid nasty surprises.\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "5. sup"
+    }
+]

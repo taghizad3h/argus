@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Some may find the idea of a school uniform anachronistic, or regard it as too much of an intervention into the leeway of students and parents to make decisions. Indeed, however, it's already the case today that students of apparently 'uniform-free' schools are essentially wearing a uniform consisting of certain brand-name garments. A simply designed practical outfit would even out the overall visual image of a school, and direct attention towards the character and achievements of the students - and not their buying power.\nWhat argument components exists in sentence \" A simply designed practical outfit would even out the overall visual image of a school, and direct attention towards the character and achievements of the students - and not their buying power\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>A simply designed practical outfit would even out the overall visual image of a school, and direct attention towards the character and achievements of the students - and not their buying power</pro>"
+    }
+]

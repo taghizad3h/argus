@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "It was clearly a mistake to include Tom in our football team. He's just not a team player, and often goes it alone. Plus he comes to training way too rarely, although he plays very well without training. But the worst thing is his habit of always complaining to the referee.\nWhat is the relation between \"Plus he comes to training way too rarely,\" and \"It was clearly a mistake to include Tom in our football team.\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "5. sup"
+    }
+]

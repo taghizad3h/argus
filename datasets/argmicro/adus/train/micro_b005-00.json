@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Intelligence services must urgently be regulated more tightly by parliament; this should be clear to everyone after the disclosures of Edward Snowden. Granted, those concern primarily the British and American intelligence services, but the German services evidently do collaborate with them closely. Their tools, data and expertise have been used to keep us under surveillance for a long time.\nWhat argument components exists in sentence \"Intelligence services must urgently be regulated more tightly by parliament; this should be clear to everyone after the disclosures of Edward Snowden\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "<pro>Intelligence services must urgently be regulated more tightly by parliament;</pro> <pro>this should be clear to everyone after the disclosures of Edward Snowden</pro>"
+    }
+]

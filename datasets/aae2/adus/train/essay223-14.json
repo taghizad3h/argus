@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Tv has NO negative effects on children\n\nNowadays, we have undergone many technology innovations such as Tv. Many people say that television has negative effects on children, since it can be violent or inappropriate for children. However, I strongly believe that television has more positive effects than negative effects. There are two reasons to support my idea.\nFirst of all, television has useful and educational programs. Not only the up-to-date news, but also there are many programs which has educational purposes. If children can use those programs wisely, they can learn many information from it. For example, in Korea, there's program called EBS. It is targeted for children to teenager. We can study subjects through EBS lecture. Also, there are many documentary films such as the life of a great man in Korea. Using those education programs let people get a lot of inspirations instead of having negative effects. \nIn addition, Tv is helpful to relieve our stresses. There are many Tv programs such as sports programs. Many children have a lot of stresses recently, since they have so much pressure about study. When they are watching sports programs, it's easy to relieve those stresses. As an example, I got too much stress from the school. So, I was quite aggressive, however. After I watch the soccer match between Korea and Japan, the stress was gone. Instead, this soccer match helped me to continue my academic career in the school, since it helped me to relieve my stress.\nIn conclusion, of course, the television can have violent programs, however, if children can use Tv programs wisely, there are more positive effects than negative effects. Now that, it has useful and educational programs and quite helpful to relieve stresses for children. For these reasons, I strongly disagree with the statement that television has negative effects on children.\nWhat argument components exists in sentence \" Many children have a lot of stresses recently, since they have so much pressure about study\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <Premise>Many children have a lot of stresses recently</Premise>, since <Premise>they have so much pressure about study</Premise>"
+    }
+]

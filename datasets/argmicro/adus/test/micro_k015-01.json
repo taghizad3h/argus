@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "BER should be re-conceptualized from scratch, even if billions of Euros have already been invested in the existing airport project and this would delay the date of completion indefinitely. Both the drawn-out building operations and the mounting safety issues show clear shortcomings in the entire planning.\nWhat argument components exists in sentence \" Both the drawn-out building operations and the mounting safety issues show clear shortcomings in the entire planning\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>Both the drawn-out building operations and the mounting safety issues show clear shortcomings in the entire planning</pro>"
+    }
+]

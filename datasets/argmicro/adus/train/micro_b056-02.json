@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "A violation of international law should be more than enough to consider a reaction! Humanity has made enough mistakes throughout history by waiting too long, and when it has finally reacted, the only remaining option has usually been war. It's to be noted that in our civilized world, in a democratic country, the people can determine their own fate, as long as the motivation of those people isn't triggered by propaganda, corruption and military pressure. Since, however, in Russia besides gas and oil only propaganda and corruption rule, the EU should intervene right away.\nWhat argument components exists in sentence \" Since, however, in Russia besides gas and oil only propaganda and corruption rule, the EU should intervene right away\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>Since, however, in Russia besides gas and oil only propaganda and corruption rule,</pro> <pro>the EU should intervene right away</pro>"
+    }
+]

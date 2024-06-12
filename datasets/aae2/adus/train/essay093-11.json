@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Should wealthy nations support poor ones?\n\nWhether wealthy nations should take responsibilities to help poorer ones, by means of providing infrastructures, or remain bystander of the global poverty, is an issue of controversy. Personally I think, as the privileged minority, wealthy nations have every reason to share their fortune with the poor.\nIn terms of ethics, it is inhumane to watch one's fellowman struggle against famine and poverty without doing anything to help, especially when the onlooker takes no effort to do so. Compassion, a virtue preached in almost all religions from Buddhism to Mohammedanism, is what distinguishes us human beings from animals.\nEconomically speaking, such aid could also create a win-win situation. Underdeveloped nations no doubt receive direct benefits through such deeds. For developed nations, new medical problems may very well arise from the work in underdeveloped nations; thus related research is conducted accordingly to conquer the problem, promoting the development of the pharmaceutical industry. The potential market in those poor countries, most of which has a huge population, is also a thing worth mentioning. By building a good relationship with them, wealthy nations can not only broaden their global market, but also facilitate future international commerce. The underdeveloped nations, in return, may export local agricultural products, mineral products with discount to the former, boosting each other's economy.\nIn summary, wealthy nations' offering in need is not only a moral deed, but also a worthwhile one which will one day pay off in other ways. Only those who sympathize with their fellowman can prosper in the long run.\n\nWhat argument components exists in sentence \" Only those who sympathize with their fellowman can prosper in the long run\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <Claim>Only those who sympathize with their fellowman can prosper in the long run</Claim>"
+    }
+]

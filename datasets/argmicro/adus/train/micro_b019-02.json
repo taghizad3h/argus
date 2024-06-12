@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "It is desirable that no one channels his or her wealth past the tax authorities. Those who do or try to should be held accountable if at all possible. Having said that, state funds are often wasted on nonsensical investments, so that this ideal appears unworthy of support in many ways. Besides, the trading of information is obviously driven by greed of gain. Tax data that are not made available for free should therefore not be acquired by the state.\nWhat argument components exists in sentence \" Having said that, state funds are often wasted on nonsensical investments, so that this ideal appears unworthy of support in many ways\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>Having said that, state funds are often wasted on nonsensical investments,</pro> <pro>so that this ideal appears unworthy of support in many ways</pro>"
+    }
+]

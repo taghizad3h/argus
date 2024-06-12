@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Pieces of dog poo on the pavements are a real danger. Time and again children or the elderly slip on them. A fine for leaving dog waste behind admittedly seems rather authoritarian, but similar rules are often in place for bicycles on park paths, after all. Increasing penalties is therefore the right way. A dog dirt-free city will be more attractive not only for its residents but also for tourists!\nWhat argument components exists in sentence \" Time and again children or the elderly slip on them\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>Time and again children or the elderly slip on them</pro>"
+    }
+]

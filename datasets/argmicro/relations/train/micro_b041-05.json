@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Secret services must be more tightly regulated in order to prevent excessive surveillance. After all, secret services tend to develop a life of their own (a state within a state), which would be irresponsible for democratic states. Besides, intelligence services intervene massively in the privacy of citizens and must therefore be monitored more closely to prevent abuse. Parliamentary control however hampers the work of intelligence services for it jeopardizes the secrecy and security of confidential data and informants.\nWhat is the relation between \"and must therefore be monitored more closely to prevent abuse.\" and \"After all, secret services tend to develop a life of their own (a state within a state), which would be irresponsible for democratic states.\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Not everyone should be obliged to pay the TV & radio licence. Particularly the younger generations are no longer dependent on the programming of public broadcasters. US series are preferred over \u201cTatort\u201d, and online magazines are turned to instead of the \u201cTagesthemen\u201d. The TV & radio licence enables economically independent journalism. But as long as the licence payers have no say in the distribution of the funds, the fee quite rightly annoys them.\nWhat is the relation between \"But as long as the licence payers have no say in the distribution of the funds, the fee quite rightly annoys them.\" and \"The TV & radio licence enables economically independent journalism.\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "2. und"
+    }
+]

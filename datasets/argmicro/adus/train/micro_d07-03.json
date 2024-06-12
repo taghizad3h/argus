@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "The current tour of Tokio Hotel is breaking all records. Never have there been longer queues at the advance ticket offices \u2013 in Japan there was one exceeding 3.2km \u2013 aside from, perhaps, during the heyday of Take That. But at times even the online sales outlets haven't been coping with the demand.\nWhat argument components exists in sentence \" But at times even the online sales outlets haven't been coping with the demand\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>But at times even the online sales outlets haven't been coping with the demand</pro>"
+    }
+]

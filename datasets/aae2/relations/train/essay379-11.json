@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to find the relation (support, attack or no_relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Salary is the most important consideration when choosing a job\n\nAlong with the increasing physical demands of human life, salary has become the most influential consideration in defining careers of everyone. I personally suppose that there are still many other aspects which should be seen as important as income when people choose a job. In the following paragraphs, some of my viewpoints would be given and analyzed respectively.\nOn one hand, i agree that money is very essential in order to meet human' basic needs. More specifically, people tend to choose high salary jobs so as to not only help themselves but also support partially or wholly their family's living needs such as food , clothes, accommodation, education, medication. It is obvious that people who are woking in art or painting industries, for example, will find it quite difficult to live comfortably and enjoyably. This is because they are doing what they love, their income however seems to be quite low compared to many other career paths.\nOn the other hand, i believe that if we are passionate about what we are working, we are likely to achieve success easily in that field. There are plenty of people, who are now really successful, have started working in challenging as well as competitive fields as singers, dancers and painters. Besides, important factors in choosing a job such as level of happiness, satisfaction of jobs, personal relationships, professional skills, working environment, managers and colleagues should not be underestimated. Finally, some people choose a career due to their desire to help others and contribute positively to their countries and societies.\nIn conclusion, it is undeniable that income is still a vital determination impacting us on choices of careers. Nonetheless, passion on jobs, in my opinion, can bring actual happiness and help us get promoted in working to earn even more money later on.\nWhat is the relation between \"if we are passionate about what we are working, we are likely to achieve success easily in that field\" and \"passion on jobs, in my opinion, can bring actual happiness and help us get promoted in working to earn even more money later on\" from the above essay? Choose from following options  1. attacks\n2. supports\n3. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "2. supports"
+    }
+]

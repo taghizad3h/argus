@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Alternative treatments should be subsidized in the same way as conventional treatments, since both methods can lead to the prevention, mitigation or cure of an illness. Besides it should be in the interest of the health insurers to recognize alternative medicine as treatment, since there is a chance of recovery. It doesn't matter after all that those who administer the treatment don't have 'doctor status'.\nWhat argument components exists in sentence \" It doesn't matter after all that those who administer the treatment don't have 'doctor status'\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>It doesn't matter after all that those who administer the treatment don't have 'doctor status'</pro>"
+    }
+]

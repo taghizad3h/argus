@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Rent increases upon re-letting aren't bad as such, if it's only a small amount, they\u2019re very bad however, if the rent suddenly climbs by \u20ac100 or \u20ac200. With those kinds of amounts you think twice about whether you really want to stay in the flat. If there must be rent increases, there should also be a cap to avoid nasty surprises. This helps the landlords, as they can adjust their expenses through the increase, and also the tenants, as they can plan for a maximum rent increase. That the landlords are then slightly restricted in the administration of their property is not a problem, as they have more pull in the end anyway.\nWhat argument components exists in sentence \" With those kinds of amounts you think twice about whether you really want to stay in the flat\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>With those kinds of amounts you think twice about whether you really want to stay in the flat</pro>"
+    }
+]

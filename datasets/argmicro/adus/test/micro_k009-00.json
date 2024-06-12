@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Germany should by no means introduce capital punishment. If there were capital punishment, this would mean people are allowed to put themselves above others and rule over their lives. Capital punishment would be murder and would have to be punished with the death penalty itself. What, then, ought to be done with criminals who have committed truly awful crimes such as murder or rape - should they simply be allowed to live on although they have taken or destroyed another life? Yes, for it is a much graver punishment to be imprisoned forever and be tortured by one's own thoughts than to be killed quickly and easily by an injection.\nWhat argument components exists in sentence \"Germany should by no means introduce capital punishment\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "<pro>Germany should by no means introduce capital punishment</pro>"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "The thought of television exclusively made up of private channels scares me. Admittedly trash and turmoil are exactly what the majority of people want to see. But to therefore offer TV according to audience rates only would be dangerous. Only in public TV programmes can viewers get information that is not profit-oriented. And since it is the duty of society to collectively finance certain areas that cannot hold their own in a market economy, everyone should chip in.\nWhat is the relation between \"everyone should chip in.\" and \"Admittedly trash and turmoil are exactly what the majority of people want to see.\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

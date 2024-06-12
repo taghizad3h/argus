@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Olympic events are rooted in old traditions. On the other hand, the events have a culturally determined character. Our society is strongly digitized and influenced by computers. Yet sports are usually associated with physical training. Since however skat, chess etc. are not accepted as Olympic events, computer games should also not be recognized as Olympic events.\nWhat is the relation between \"Yet sports are usually associated with physical training.\" and \"computer games should also not be recognized as Olympic events.\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "5. sup"
+    }
+]

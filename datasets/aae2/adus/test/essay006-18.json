@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Studies abroad and the cultural aspect of the experience\n\nStudying abroad is one very common thing that students do, and they have different reasons for that. I believe that studying abroad has many advantages. Students gain a lot out of the experience personally, academically, and culturally.\nFirst of all, students who study outside their countries can get a lot of experience living in a foreign country. Living in a new country requires a great amount of flexibility and adaptability in one's character. For example, students might face many challenges in the host country. Therefore, they should be able to deal with the obstacles that they may encounter. Overcoming problems teaches the students how to be more mature and self-independence. \nOne other important factor is the new academic experience that the students can obtain at the institution where they are pursuing their studies. For example, they will get exposed to a different educational system. They will meet new professors and new classmates which makes the academic experience different from that in their home country.\nMost important is the cultural aspect of the experience. While living in a foreign country, students can learn a lot about the culture of that country. Furthermore, they can meet different people of the country. They can learn about their way of thinking, their customs and traditions, and way of life. Learning about others' cultures is so important. It contributes in building a new understanding in us of how we see the world. It makes us more open, and willing to accept different ideas and thoughts. Also it educates us about the world we are living in. \nIn conclusion, studying abroad does not only have advantages, but also can change us in a very positive way. It can influence us in different aspects of life.\nWhat argument components exists in sentence \" Also it educates us about the world we are living in\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " Also <Premise>it educates us about the world we are living in</Premise>"
+    }
+]

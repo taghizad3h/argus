@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Classroom learnng vs online education\n\nThere are some people who believe that distance learning and online computer classes should replace classroom learning while there are some people who strongly disagree with this opinion. As far as I am concerned, I strongly believe that online classes should never replace classroom learning. I list my reasons as follows.\nFirst, indeed classroom learning is the best way to provide education comparing to online classes. In the classroom environment you can learn from your classmates, because if you see any of your classmates who is performing better, it will force you for making your performance more better. For example, When I was in First Year in B Com, I was not serious in my study, but when I saw some of my friends who took better grades than me, it influenced me and I intended to do better in my subjects. Finally I got 1st rank in final exam.\nSecond, in classroom learning you have to complete study work on time. It makes you perfect in time management skills. Moreover you can learn by participating in group studies how to communicate with others. It makes you communication and of course your group skills better, which can help you in your future and career.\nThird, professors play vital role in classroom learning, most of them are specialists is their subjects, and they help you by giving valuable information and useful skills. You can improve your skills by work under any professor; you can ask questions face to face, it will clear your doubts. In result you learn quickly. For example, I have my personal experience. For Toefl IBT Coaching first I was depend on some online courses, but after 1 month I realized that I was wasting my time so I joined an institute for preparation of Toefl IBT, and in 1 month I felt that my English skills have been improving faster.\nIt's undeniable that online classes have some advantages so they could be used as supplementary, but they could not be substitute of existing classroom learning. \nFrom the discussed above, we can easily draw the conclusion that the classroom learning is the best way to provide education for these reasons.\nWhat argument components exists in sentence \" I list my reasons as follows\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "The given sentence is not argumentative."
+    }
+]

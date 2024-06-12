@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "School uniforms should be introduced in our schools again. This provides an at least superficial equalization in our heavily economically oriented society, which may reduce discrimination of financially and/or socially disadvantaged children. Furthermore, it would facilitate the finding of truants, who may wish to get away with fewer classes at school. Uniforms always and immediately provoke fear of losing one's individuality but what's really lacking in schools today is rather a real sense of community, which would possibly be strengthened by an equal, collective appearance.\nWhat argument components exists in sentence \" This provides an at least superficial equalization in our heavily economically oriented society, which may reduce discrimination of financially and/or socially disadvantaged children\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>This provides an at least superficial equalization in our heavily economically oriented society,</pro> <pro>which may reduce discrimination of financially and/or socially disadvantaged children</pro>"
+    }
+]

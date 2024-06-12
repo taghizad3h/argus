@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to find the relation (support, attack or no_relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Which is better- Learning foreign language in home or host country?\n\nOur World has varied cultures and each culture has its own language. It has become essential for a person to learn at least one foreign language as one do interacts with foreigners once in a lifetime and learning a foreign langauge adds on to a person skill-set as well. Also, I think its better that people learn foreign language in their own country. The reasons for holding that opinion are illustrated in the subsequent paragraphs.\nFirst of all, it is not possible for everyone to visit a foreign country to learn a foreign language as it requires large amount of money and legal formalities. In the earlier periods, it was not easy to find a teacher to learn a foreign languge. But with the advent of globalization, one can easily find a teacher in their own country. For example, in Indian sub-continent there are large number of centers opened for getting trained in variety of languages like french, german etc.\nSecond, colleges and universities have introduced foreign language course as a part of their curriculum. Students can choose any language from the set of languages available at a university. So, it is very easy to learn a foreign in our own country. Also, highly qualified foreign language teachers are easily accessible in various schools and colleges.\nThird, technology has also played a great role in reducing the separation between learning a foreign languge in our own country. A large number of foreign language courses are available online and there are various forums where people can discuss their problems on different foreign languages.\nTo sum up, it is better for people to learn a foreign language in their own country. It is cost effective and there is a pool of opportunities available now to accomplish the same.\nWhat is the relation between \"it requires large amount of money and legal formalities\" and \"it is not possible for everyone to visit a foreign country to learn a foreign language\" from the above essay? Choose from following options  1. attacks\n2. supports\n3. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "2. supports"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Intelligence services should be more closely regulated by parliament, for, as the most recent NSA wiretapping scandal has shown, the federal state government is allegedly not always familiar with the scope of operations of its intelligence services. Checks could contribute to restricting the so far rather opaque scope of action of individual services. Yet it remains questionable whether the actual implementation of such supervision would at the same time lead to a stronger observance of laws, as ultimately this decision is in the hands of the respective government leaders.\nWhat argument components exists in sentence \" Yet it remains questionable whether the actual implementation of such supervision would at the same time lead to a stronger observance of laws, as ultimately this decision is in the hands of the respective government leaders\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <opp>Yet it remains questionable whether the actual implementation of such supervision would at the same time lead to a stronger observance of laws,</opp> <opp>as ultimately this decision is in the hands of the respective government leaders</opp>"
+    }
+]

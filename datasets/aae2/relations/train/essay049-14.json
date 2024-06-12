@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to find the relation (support, attack or no_relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Do modern communication technologies benefit all people\n\nModern communication technologies such as mobile phones, e-mails and internet chat programs like the MSN Messenger have brought significant changes to our lives in recent years. Yet, there remains some disagreement as to whether the overall effect of this innovation has been positive or negative. Although there are valid arguments to the contrary, it is my belief that the majority of people in the globe have benefited greatly from these powerful and effective means of modern communication.\nTo begin with, mobile phones and other tools of modern communication facilitate not only contact with friends and relatives in faraway places but also global business. With the click of a button, the vast amount of information can be transmitted from America to China in just a few seconds. Furthermore, it is generally felt that the access to these tools of communication is available in every corner of the world. With a mobile phone or a laptop, a person can talk or send messages online at a bus stop, in a corner shop or anywhere they could imagine. Therefore, it seems that these new forms of communication do bring a great deal of convenience to humankind.\nNevertheless, opponents of modern communications claim that only the more privileged are able to enjoy the benefits. They further point out that the wide spread use of these efficient and effective ways of communication costs a considerable amount of money. Anyone who aims to use these innovations have to not only pay for the appliances such as a mobile phone or a computer but also cover up costs for communication services. Consequently, people who live in poverty are less likely to be benefited from modern communication technologies.\nBy way of conclusion, I believe that modern communication technologies will benefit more people in the future as the pace of life increases; however, the have-nots cannot be ignored simply because they couldn't afford it.\n\nWhat is the relation between \"With a mobile phone or a laptop, a person can talk or send messages online at a bus stop, in a corner shop or anywhere they could imagine\" and \"Anyone who aims to use these innovations have to not only pay for the appliances such as a mobile phone or a computer but also cover up costs for communication services\" from the above essay? Choose from following options 1. attacks\n2. supports\n3. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "3. no relation"
+    }
+]

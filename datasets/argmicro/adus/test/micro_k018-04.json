@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Our society is in danger of overheating due to 'never clocking off'. Even though politicians stress the Christian character of our country, the last 20 years have seen the Sunday off work increasingly sacrificed to commerce. But after all, the purpose of having a day off is not just to make time to go to church. Rather it should give people the chance to have a mental break. That's why there ought to be one day a week when supermarkets and shopping centres stay closed.\nWhat argument components exists in sentence \" That's why there ought to be one day a week when supermarkets and shopping centres stay closed\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>That's why there ought to be one day a week when supermarkets and shopping centres stay closed</pro>"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "The death penalty is a legal means that as such is not practicable in Germany. For one thing, inviolable human dignity is anchored in our constitution, and furthermore no one may have the right to adjudicate upon the death of another human being. Even if many people think that a murderer has already decided on the life or death of another person, this is precisely the crime that we should not repay with the same.\nWhat is the relation between \"Even if many people think that a murderer has already decided on the life or death of another person,\" and \"The death penalty is a legal means that as such is not practicable in Germany.\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "1. reb"
+    }
+]

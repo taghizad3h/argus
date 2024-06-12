@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Today I will delete my Facebook account. Not only because I'm constantly astonished about who wants to be my friend. I'm also tired of my data boosting the market value of that corporation. Facebook warns me emphatically that I may lose contact with my friends. And yet now I'll actually have all the more time for them.\nWhat argument components exists in sentence \"Today I will delete my Facebook account\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "<pro>Today I will delete my Facebook account</pro>"
+    }
+]

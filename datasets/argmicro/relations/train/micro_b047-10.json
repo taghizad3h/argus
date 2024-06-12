@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "The morning-after pill has a number of side effects. A differentiated analysis of its side effects is not achievable for a layperson without medical advice. However these are clearly stated on the package insert, and a request for an early termination of a pregnancy is the right of every woman. The morning-after pill should only be prescribed after counselling by a physician or pharmacist.\nWhat is the relation between \"The morning-after pill has a number of side effects.\" and \"However these are clearly stated on the package insert,\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

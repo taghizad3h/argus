@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Actually it would be justified if all German universities charged tuition fees. As long as it is ensured that the funds really benefit the universities directly, one can continue to regard this as social justice. Those who study later decide this early on, anyway. It's always possible to take out a student loan or to earn a scholarship. To oblige non-academics to finance others' degrees through taxes, however, is not just.\nWhat is the relation between \"As long as it is ensured that the funds really benefit the universities directly, one can continue to regard this as social justice.\" and \"Those who study later decide this early on, anyway.\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

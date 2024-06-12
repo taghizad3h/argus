@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Alternative treatments should be subsidized in the same way as conventional treatments, since both methods can lead to the prevention, mitigation or cure of an illness. Besides it should be in the interest of the health insurers to recognize alternative medicine as treatment, since there is a chance of recovery. It doesn't matter after all that those who administer the treatment don't have 'doctor status'.\nWhat is the relation between \"Besides it should be in the interest of the health insurers to recognize alternative medicine as treatment,\" and \"Alternative treatments should be subsidized in the same way as conventional treatments,\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "5. sup"
+    }
+]

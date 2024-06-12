@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "'Property entails commitment' is one of the tenets of our social order. Everyone should be able to get the utmost profit from his or her property. A fixing of rent prices according to the market alone, however, will lead to a further division of society. The rich and poor live in different neighbourhoods. A constant increase in rent upon a change of tenants hence cannot be desired by society.\nWhat is the relation between \"The rich and poor live in different neighbourhoods.\" and \"A fixing of rent prices according to the market alone, however, will lead to a further division of society.\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "5. sup"
+    }
+]

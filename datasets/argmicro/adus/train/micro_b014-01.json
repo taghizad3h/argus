@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Actually only those people should pay a TV & radio licence fee who really watch ARD, ZDF, Arte etc. It is in fact good to support sophisticated programming through fees. Curiously, however, there are still adverts and product placements on the public channels. What are you paying for, then? That the same actors time and again get to have a laugh at exotic shooting locations? Also the scripts are often copied off each other.\nWhat argument components exists in sentence \" It is in fact good to support sophisticated programming through fees\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <opp>It is in fact good to support sophisticated programming through fees</opp>"
+    }
+]

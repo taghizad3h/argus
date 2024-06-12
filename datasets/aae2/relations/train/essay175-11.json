@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to find the relation (support, attack or no_relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Overemphasizing on personal lives of famous people by media\n\nAs a mass media majoring student, I think that it's true that media is overemphasizing the personal lives of famous people in this modern society. In my point of view, disadvantages of overemphasizing on personal lives of famous people by media outweigh its advantages. My reasons include the following:\nIt is no doubt that the media provide information about an event that recently occurred somewhere and which is important to the people. The most important of all is that the essence of coverage accurate and not based on gossip. However, journalism is changing. Some reporters are more interested with gossip than news relating to public issues, paying too much attention to the personal lives of famous people.\nFirst of all, gossip involves misleading images for the purpose of boosting newspaper sales or exciting public opinion. The audience may see a lot of photos in the kind of reports, which seems to tell a story. Moreover, it is unfair that the ridiculous coverage may be a vexation for the famous people who are reported.\nFurthermore, sensationalism distract the viewers from public or social problems. The media face the challenge that media executives must choose the content, which can attract the audience. Thus, these personal reports of famous people, unimportant information or distorted stories, will not solve problem related with the society. In other words, yellow journalism block the viewers from significant news, such as education, environment and public issues.\nBased on the above discussion, I agree with that paying too much attention on personal lives of famous people may be a serious problem.\nWhat is the relation between \"media provide information about an event that recently occurred somewhere and which is important to the people\" and \"disadvantages of overemphasizing on personal lives of famous people by media outweigh its advantages\" from the above essay? Choose from following options  1. attacks\n2. supports\n3. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "1. attacks"
+    }
+]

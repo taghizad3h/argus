@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Secret services must be more tightly regulated in order to prevent excessive surveillance. After all, secret services tend to develop a life of their own (a state within a state), which would be irresponsible for democratic states. Besides, intelligence services intervene massively in the privacy of citizens and must therefore be monitored more closely to prevent abuse. Parliamentary control however hampers the work of intelligence services for it jeopardizes the secrecy and security of confidential data and informants.\nWhat argument components exists in sentence \"Secret services must be more tightly regulated in order to prevent excessive surveillance\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "<pro>Secret services must be more tightly regulated in order to prevent excessive surveillance</pro>"
+    }
+]

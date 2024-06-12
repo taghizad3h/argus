@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "The TV/radio licence fee can only be required of all citizens/households equally. Critics point out that they are not using what's on offer by public broadcasting. I do doubt that there is anyone who has never at least indirectly watched the programming of the public broadcasters. However, it is impossible to monitor this and collect more customized fees. Just as with other choices in culture or infrastructure, public broadcasters are also to be financed, regardless of whether individuals make use of their programming or not.\nWhat argument components exists in sentence \" Critics point out that they are not using what's on offer by public broadcasting\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <opp>Critics point out that they are not using what's on offer by public broadcasting</opp>"
+    }
+]

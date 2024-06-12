@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "For years there has been a housing shortage in Berlin, so that using Tempelhofer Feld, which offers a lot of open space and is currently hardly developed, as living space is a sensible idea. Since the area belongs to the federal state, or the federation, it could even be used for social housing with affordable rents. Admittedly the fields have currently become an attractive leisure park with sporting areas for many visitors and Berliners, especially in spring and summer. If however one could find a compromise between green space and housing, then Tempelhofer Feld should definitely be made available for residential construction.\nWhat argument components exists in sentence \" Admittedly the fields have currently become an attractive leisure park with sporting areas for many visitors and Berliners, especially in spring and summer\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <opp>Admittedly the fields have currently become an attractive leisure park with sporting areas for many visitors and Berliners, especially in spring and summer</opp>"
+    }
+]

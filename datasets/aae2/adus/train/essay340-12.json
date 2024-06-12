@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Man to man interaction changed\n\nNowadays, the variety of communication systems used widely. As technology develops, it has negative influences in many respects. However, I strongly agree with that the technology has large positive effects on relationships between people. \nThe main advantage is that technology has enabled people stay in contact with each other more closely. While public use the Internet or smart phone to share information to each other at different positions. Instead of using letters, technology advanced not only gives us more spare time but also convenient and efficient. More, even if family members who are in different countries, they also can use the Internet to connect each others, especially though the images or videos, they can feel close. Furthermore, technology is also essential for students, live in remote districts, shared the valuable natural resources with friends. \nAnother issue is that in the ever-accelerated updating of science and technology, technology provides opportunities for people to establish the social network. In the past, people might have had pen friends in other countries, but now, thanks to the social networking websites, people can easily to find someone who has similar interests. Also, they can connect with friends who have been out of touch for a long time by using the Internet. In this way, technology is beneficial to humanity develops positive relationships. \nIn conclusion, I agree with that the technology has more optimal effects on people's interaction, because it helps ordinary people to make new friends and to maintain relationships.\nWhat argument components exists in sentence \" \nIn conclusion, I agree with that the technology has more optimal effects on people's interaction, because it helps ordinary people to make new friends and to maintain relationships\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " \nIn conclusion, I agree with that <MajorClaim>the technology has more optimal effects on people's interaction</MajorClaim>, because <Claim>it helps ordinary people to make new friends and to maintain relationships</Claim>"
+    }
+]

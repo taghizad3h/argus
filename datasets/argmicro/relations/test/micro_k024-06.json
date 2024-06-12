@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Dog owners should pay higher fines for dog dirt left on pavements, although there aren't enough bins and bag-dispensers for dog dirt. One reason for this is that they have thus far hardly had to fear the consequences despite the obligation to clean up. A higher fine, so dog owners would have to dig deeper into their pockets, is supposed to be a deterrent after all. The city, especially the green spaces, should be kept tidy after all, for they are there for our recreation. Besides you're not allowed to leave other rubbish without punishment.\nWhat is the relation between \"The city, especially the green spaces, should be kept tidy after all,\" and \"Besides you're not allowed to leave other rubbish without punishment.\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Considering what's on television these days, it would be appropriate to only have those people pay who actually (want to) follow the programming. In some cases there are only shows for older generations on at prime times, so why then should everyone pay for this? By now you have advertising on all channels, so there's no advantage for the current paying viewers of the public broadcasters. Nevertheless one has to point out that there'd probably be way fewer stations if it weren\u2019t the whole of Germany that\u2019s obliged to pay. That shouldn't be an issue though, given the sheer number of programmes and stations that essentially show the same things anyway.\nWhat argument components exists in sentence \" That shouldn't be an issue though, given the sheer number of programmes and stations that essentially show the same things anyway\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>That shouldn't be an issue though, given the sheer number of programmes and stations that essentially show the same things anyway</pro>"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Large events that stir national or even international attention attract many visitors, and nothing will get Berlin out of its financial jam more than a lot of spending visitors. Hence the Mayor of Berlin ought to keep the hurdles for organizing such events as low as possible. Of course a higher federal subsidy would be even better for Berlin's coffers, but you shouldn't bother hoping for that.\nWhat argument components exists in sentence \"Large events that stir national or even international attention attract many visitors, and nothing will get Berlin out of its financial jam more than a lot of spending visitors\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "<pro>Large events that stir national or even international attention attract many visitors,</pro> <pro>and nothing will get Berlin out of its financial jam more than a lot of spending visitors</pro>"
+    }
+]

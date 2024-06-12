@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Our society is in danger of overheating due to 'never clocking off'. Even though politicians stress the Christian character of our country, the last 20 years have seen the Sunday off work increasingly sacrificed to commerce. But after all, the purpose of having a day off is not just to make time to go to church. Rather it should give people the chance to have a mental break. That's why there ought to be one day a week when supermarkets and shopping centres stay closed.\nWhat is the relation between \"But after all, the purpose of having a day off is not just to make time to go to church.\" and \"That's why there ought to be one day a week when supermarkets and shopping centres stay closed.\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "5. sup"
+    }
+]

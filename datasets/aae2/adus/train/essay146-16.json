@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "High schools must be responsible for their future with well-planned curriculum\n\nSome people state that high schools should allow students to study what they want to. They believe this motivates students to study. I think, however, students should study a broad range of subjects from literature to mathematics. I believe that tertiary education should make students prepare for specialization at university. In addition, it should be to some extent paternalistic to prevent students from avoiding hurdles.\nTo begin with, students have to find one or more fields of study in which they are really interested. They should not decide their future major without trying a broad range of subjects, otherwise they might miss valuable encounter with the subject. For instance, a would-be mathematician student may be strongly intrigued by philosophy and make a success in the field.\nNext, students should obtain knowledge from a variety of academic fields. General education plays a significant role in specialized education. Science today, for example, is said to be more and more specialized, but in order to solve a problem scientists have to combine knowledge from chemistry to physics. In addition, although textbooks used in higher education are labelled particular subjects, in fact they require basic understanding of other subjects. For instance, you sometimes need knowledge about physics to read a text on chemistry. Therefore, high school students should learn broadly and prepare future learning at university.\nLast but not least, students have tendency to shun difficulties. They might avoid tough courses, but instead attend mainly Mickey Mouse courses and enjoy themselves too much. This might result in limited choices in the future. Therefore, schools should be responsible for their future and protect them.\nIn summary, students should find interesting subjects and acquire general knowledge to prepare higher education at tertiary education. Besides, high school must be responsible for their future with well-planned curriculum.\nWhat argument components exists in sentence \" This might result in limited choices in the future\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <Premise>This might result in limited choices in the future</Premise>"
+    }
+]

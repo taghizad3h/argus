@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Rent prices should be limited by a cap when there's a change of tenant. Landlords may want to earn as much as possible, and many, consistent with market principles, are prepared to pay higher rents, but that people with the same income suddenly must pay more and can't live in the same flat anymore seems implausible. Gentrification destroys entire districts and their culture.\nWhat is the relation between \"and many, consistent with market principles, are prepared to pay higher rents,\" and \"Rent prices should be limited by a cap when there's a change of tenant.\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "1. reb"
+    }
+]

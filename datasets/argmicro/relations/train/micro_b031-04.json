@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "One should not re-introduce capital punishment in Germany, since no one can claim the right to rule over the life or death of another human being. Capital punishment will not deter anyone else from an atrocity. Everyone must be given the chance to hone their conscience and possibly make amends for their deed.\nWhat is the relation between \"One should not re-introduce capital punishment in Germany,\" and \"Capital punishment will not deter anyone else from an atrocity.\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

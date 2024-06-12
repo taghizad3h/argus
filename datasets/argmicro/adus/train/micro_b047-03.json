@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "The morning-after pill has a number of side effects. A differentiated analysis of its side effects is not achievable for a layperson without medical advice. However these are clearly stated on the package insert, and a request for an early termination of a pregnancy is the right of every woman. The morning-after pill should only be prescribed after counselling by a physician or pharmacist.\nWhat argument components exists in sentence \" The morning-after pill should only be prescribed after counselling by a physician or pharmacist\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>The morning-after pill should only be prescribed after counselling by a physician or pharmacist</pro>"
+    }
+]

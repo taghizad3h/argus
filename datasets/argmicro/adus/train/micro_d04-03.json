@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Anti-virus software protects the users of a computer from dangers from the internet. That's why everyone should have an anti-virus programme on his or her Windows machine. Admittedly they do not generally prevent you from catching a virus, since they can only react to publicly known threats. But once a safeguard has been found against a new virus, everyone gets it in no time through the automatic update.\nWhat argument components exists in sentence \" But once a safeguard has been found against a new virus, everyone gets it in no time through the automatic update\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>But once a safeguard has been found against a new virus, everyone gets it in no time through the automatic update</pro>"
+    }
+]

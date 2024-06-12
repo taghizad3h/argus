@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "The current tour of Tokio Hotel is breaking all records. Never have there been longer queues at the advance ticket offices \u2013 in Japan there was one exceeding 3.2km \u2013 aside from, perhaps, during the heyday of Take That. But at times even the online sales outlets haven't been coping with the demand.\nWhat is the relation between \"in Japan there was one exceeding 3.2km \u2013\" and \"Never have there been longer queues at the advance ticket offices \u2013\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "4. exa"
+    }
+]

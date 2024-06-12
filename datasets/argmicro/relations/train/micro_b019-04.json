@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "It is desirable that no one channels his or her wealth past the tax authorities. Those who do or try to should be held accountable if at all possible. Having said that, state funds are often wasted on nonsensical investments, so that this ideal appears unworthy of support in many ways. Besides, the trading of information is obviously driven by greed of gain. Tax data that are not made available for free should therefore not be acquired by the state.\nWhat is the relation between \"Besides, the trading of information is obviously driven by greed of gain.\" and \"Tax data that are not made available for free should therefore not be acquired by the state.\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "5. sup"
+    }
+]

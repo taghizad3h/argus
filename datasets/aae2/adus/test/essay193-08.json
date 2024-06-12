@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Public transportation keeps society from the depletion of natural resources\n\nThe development of public transportation is the most essential thing for a developed society. Public transportation keeps society from the depletion of natural resources, the air pollution, the loss of a sense of community. So, I think the government have to spend more money on improving it.\nThe use of public transportation is the best way to conserve natural resources gradually run out. Cars depend on oil and gasoline to move. If people use too many private cars, the oil and gasoline nonrenewable will run out quickly. Instead of using many private cars, people can use public transportation, such as bus, train, subway, each one can get far more people and less oil and gasoline are used up per person.\nThe use of public transportation helps in reducing the air pollution. Cars use oil and gasoline and send out gas such as carbon dioxide, heat and so on. They cause pollution and make the Earth warmer. The more cars are driven, the more pollution will be put into air. If we use the public transportation, less cars will be used and less pollution will be emitted. The atmosphere, surrounding us, will be protected and help us more healthy.\nThe use of public transportation make us live more sociable. When we drive a private car, we are alone or only our family members that we already know and lost the opportunity to make friends with others or to see that we are a part of this society. When using public transportation, we have a chance to meet more people and more chances to discovery new aspects of life.\nUsing public transportation has a lot of advantages for the modern society facing a lot of problems: the environmental population, the isolation in life, the depletion of natural resources. So, the government have to invest more for it and encourage people to use.\nWhat argument components exists in sentence \" Cars use oil and gasoline and send out gas such as carbon dioxide, heat and so on\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <Premise>Cars use oil and gasoline and send out gas such as carbon dioxide, heat and so on</Premise>"
+    }
+]

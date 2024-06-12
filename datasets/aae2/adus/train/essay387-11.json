@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Life in Big Cities Vs People's health\n\nToday, more and more people are moving to big cities to live. However, while life in those cities is good in some ways, I completely argue that people's health would therefore be affected negatively.\nEnvironment pollution one of the primary reasons why life in cities is becoming worse than ever before. Exhaust from transportation, especially cars, and factories' tosix fumes can lead people to face with various respiratory deseases. Besides, water pollution makes people's health become more critical. The fact is that dangerous bacterias and germs in polluted water can go indirectly into people's bodies and create severe problems, which may result in death if the patients are not treated in time. \nMoreover, it is likely that many foods in big cities are not safe for people to eat or drink. Recent investigations reveal that toxic foods are sold pervasively in today's market. Also, overpopulation may make people suffer from infectious deseases, especially cough, sneezing and illness. Furthermore, living in such cities also means living in high crime rate areas. Unemployed workers or school dropouts can easily commit crime from petty offence to felony such as burglary, pickpocketing, trickery, vandalism, smuggling or even murder. Earning money for living becomes more difficult, living healthy in such places is getting harder also.\nIn conclusion, I believe that life in big cities can have negative effects on people's health. Thus, both government and individual should take steps to diminish the consequences involved.\nWhat argument components exists in sentence \" Earning money for living becomes more difficult, living healthy in such places is getting harder also\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <Claim>Earning money for living becomes more difficult, living healthy in such places is getting harder also</Claim>"
+    }
+]

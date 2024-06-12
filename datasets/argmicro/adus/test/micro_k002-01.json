@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Actually it would be justified if all German universities charged tuition fees. As long as it is ensured that the funds really benefit the universities directly, one can continue to regard this as social justice. Those who study later decide this early on, anyway. It's always possible to take out a student loan or to earn a scholarship. To oblige non-academics to finance others' degrees through taxes, however, is not just.\nWhat argument components exists in sentence \" As long as it is ensured that the funds really benefit the universities directly, one can continue to regard this as social justice\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>As long as it is ensured that the funds really benefit the universities directly, one can continue to regard this as social justice</pro>"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Young people move to cities\n\nThese days, there are increasing numbers of young people from the countryside moving to cities in search of jobs and educational opportunities. Personally, I think it has some drawbacks that will be discussed in this essay together with some reasons about this.\nTo begin with, the major cause that leads to urban migration of young adults is that cities often offer more well-paid jobs and study chances compared to rural areas. Obviously, many large companies and universities often locate in cities which are hailed as promising lands to develop their career. Therefore they move to big cities to pursue academic career and find jobs in order to have a higher standard of living. For example, if a gradate stays in the city after leaving his college and seeks a job with good salary instead of returning his village to do farm work, he could perhaps buy a house or his own car after a short time. \nHowever, this phenomenon sometimes poses several negative consequences. There can be no doubt that the burgeoning number of young adults from the countryside flocking to cities gives rise to overpopulation in cities. As a result, cities cannot provide adequate space for thousands of dwellers that might lead to poor housing conditions and sanitation. Additionally, it might put strain on the environment. If there are more people in the cities, there would be large numbers of vehicles on the road, which causes air pollution.\nIn conclusion, young people tend to study or work in urban areas since these provide them many educational opportunities and career potentials. In my opinion, however, I do not approve of this trend due to negative effects such as low quality of life and affecting the environment.\nWhat argument components exists in sentence \" There can be no doubt that the burgeoning number of young adults from the countryside flocking to cities gives rise to overpopulation in cities\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " There can be no doubt that <Premise>the burgeoning number of young adults from the countryside flocking to cities gives rise to overpopulation in cities</Premise>"
+    }
+]

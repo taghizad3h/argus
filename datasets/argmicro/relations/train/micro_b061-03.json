@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Higher penalties for dog dirt are pointless as long as there is not enough personnel to enforce them. In individual cases they may indeed act as a deterrent, in general, however, a clean environment and the role model effect of others is more likely to motivate the dog owner to pick up the droppings than a potential fine.\nWhat is the relation between \"Higher penalties for dog dirt are pointless as long as there is not enough personnel to enforce them.\" and \"in general, however, a clean environment and the role model effect of others is more likely to motivate the dog owner to pick up the droppings than a potential fine.\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "The idea of the bachelor degree is to put together a cumulative grade from various individual assignments in order to generate a final grade. This is also more akin to the real working world later, where performance isn't singular, but constant and has to be delivered over longer periods. That's why it makes sense that the bachelor thesis only makes up a relatively small portion of the final grade (15 out of 120 credits). However, the effort required for the individual equally weighted modules differs strongly. It would therefore be wise to adjust the required effort for final theses accordingly.\nWhat is the relation between \"The idea of the bachelor degree is to put together a cumulative grade from various individual assignments in order to generate a final grade.\" and \"That's why it makes sense that the bachelor thesis only makes up a relatively small portion of the final grade (15 out of 120 credits).\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "5. sup"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Vegetarianism - why some people are choosing to become vegetarian?\n\nSince the dawn of time, human has considered meat as a fundamental protein sources. Meat has served as the main dish in almost every family's meals all around the world. Recent years, however, has seen a rapid increase in the number of vegetarians. Some people claim that this is brought about by the care for animal rights issue, others think it is much beyond that. It is clear to me that people avoid eating meat mostly for the sake of their health and relegious aspect.\nFirstly, health improvement is the main reason for vegetarian diet to become so popular. Many researchers have convinced that many kinds of vegetable contain antioxydant which can prevent cancer. This fortifies the fact that a vegetable diet can do good for our health. Although some argue that a meal without meat can lead to a lack of protein intake, it is proved that many kinds of bean such as soy bean or pea are also comparable protein sources.\nSecondy, relegious beliefs also contributes to a vegetarian diet. Some religion, such as Buddha, believes that animals were human being in their previous life, so eating their meat mean you eat the flesh of your parent sentient beings. It is often said that this view is rather unscientific. However, I am convinced that it is vital to follow one's own religious practices which can bring the enlightenment in mind.\nTo sum up, it is evident for me that people choose to become vegetarians for health and religious concern rather than the benefits of animals. However, a meal which is nutritionally balanced is always most recommended.\nWhat argument components exists in sentence \" Recent years, however, has seen a rapid increase in the number of vegetarians\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "The given sentence is not argumentative."
+    }
+]

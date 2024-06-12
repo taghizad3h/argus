@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Parents can help their teenage children prepare for adult life\n\nNowadays, the society has become exceedingly competitive than ever before, parents have the responsibilitis to teach their children to survive and to be indepedent from them, just as animals teach their offspring skills of finding foods. Parents can use many methods to guide them to achieve that, for example, asking them to do some housework or clean the rooms by themselves. In my views, I agree that it is the best way for teenage children to take a part-time job to prepare their adult life for several reasons.\nFirst of all, when children get a job, they are able to earn money by themselves, instead of getting pocket money from their parents. Thus, it is an oppertunity to learn how to deal with money. Take me as an example, when I was 16, I found a job during summer vacation and earned some money by own. At the beginning of the semester, I was told to buy a text book. Unfortunately, I spent most of my salary hanging out with my friend. Therefore, I finally realized that I should learn to make a plan before I spend my money, and that did influence me in my life now.\nSecondly, by taking a part-time job, they certainly have to be responsible for anything they have done. For instance, if a student get a job in a company but he is frequently late for work, the company may reduce his payment or even fire him. To compare with the school life, they might suffer only a small punishment at school. Under the circumstances, he will learn that he has to obey the rule and take responsibility for their work.\nIn conclusion, to help their children to adapt adult life, parents should let them experience it as much as they can. Due to the reasons given above, to encourage children taking a part-time job is a good choice for them to get prepared for adult life.\nWhat argument components exists in sentence \"\nSecondly, by taking a part-time job, they certainly have to be responsible for anything they have done\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "\nSecondly, <Claim>by taking a part-time job, they certainly have to be responsible for anything they have done</Claim>"
+    }
+]

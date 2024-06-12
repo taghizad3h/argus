@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Video games ought to be included in the ranks of Olympic events. The performance often required by players is considerable and by all means comparable to physical efforts. Various skills are promoted and required by different games, including planning abilities, reaction time, and reasoning to name but a few. Considering their requirements, some video games are not relevant as sports, but this issue should be solvable through a clearly structured preselection process.\nWhat is the relation between \"Video games ought to be included in the ranks of Olympic events.\" and \"but this issue should be solvable through a clearly structured preselection process.\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

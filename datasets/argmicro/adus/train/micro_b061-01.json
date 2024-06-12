@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Higher penalties for dog dirt are pointless as long as there is not enough personnel to enforce them. In individual cases they may indeed act as a deterrent, in general, however, a clean environment and the role model effect of others is more likely to motivate the dog owner to pick up the droppings than a potential fine.\nWhat argument components exists in sentence \" In individual cases they may indeed act as a deterrent, in general, however, a clean environment and the role model effect of others is more likely to motivate the dog owner to pick up the droppings than a potential fine\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <opp>In individual cases they may indeed act as a deterrent,</opp> <pro>in general, however, a clean environment and the role model effect of others is more likely to motivate the dog owner to pick up the droppings than a potential fine</pro>"
+    }
+]

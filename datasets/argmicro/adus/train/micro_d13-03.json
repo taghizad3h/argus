@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Whenever Peter bumps into an ex-girlfriend at a party, he forgoes any further consumption of alcohol just in case. When he got back from Ralf's party last night he was still stone-cold sober. Thus one of his ex-girlfriends must have been there. Ralf does insist that they drank advocaat together. But even without an ex-girlfriend he would never touch that.\nWhat argument components exists in sentence \" Ralf does insist that they drank advocaat together\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <opp>Ralf does insist that they drank advocaat together</opp>"
+    }
+]

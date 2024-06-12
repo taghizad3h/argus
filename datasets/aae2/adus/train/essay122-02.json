@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "New high school\n\nAlthough some of my neighbors will oppose this idea, personally I approve it. The new high school will bring a lot of advantages to my community. The high school of my district is pretty old and lacks in necessities for students, so they can't get enough education. I really believe that new high school is a great addition to the educational system of my community.\t\nFirstly, I think that the new high school will bring a lots of opportunities for student concerned in education. Their old high school is pretty old and need in new educational materials, repairing of the place for sport activities. Also the laboratory of physics and chemistry was in bad condition, so the students can't study well during the classes. They will study with new breath and great enthusiasm in new school. \nSecondly, the new high school will be a place for new connections between the student of different communities and districts of the city. After classes students and not only the students will get together in building of high school, participate in different competitions. For instance during the football match the students of different high schools will come and after the competition they will keep in touch. This will increase the social connections of the students. The only disadvantage is the noisiness of the competitions. The people living in the neighborhood will be a bit perturbed, but I think this isn't a important reason for ceasing the competitions. \nTo sum up, this new construction has a lot of advantages like new connections between students from different communities, also the new educational equipment will increase the students' enthusiasm toward studying. The only disadvantage is the nosiness of competitions which students will participate, but I think that it isn't a big deal. So the new high school will be a great addition for my environment.\nWhat argument components exists in sentence \" The high school of my district is pretty old and lacks in necessities for students, so they can't get enough education\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <Claim>The high school of my district is pretty old and lacks in necessities for students, so they can't get enough education</Claim>"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Due to the increase in opening hours on Sundays and holidays there is a rise in employment. However it's mainly temps (that is, students, pupils etc.) who are employed, so this has hardly any effect on the level of full-time employment and the number of unemployed. On top of that, private and family life suffers massively because of this reduction and shifting in designated off-times. And it\u2019s only the large companies that can afford the additional personnel expenditure. For these reasons supermarkets and shopping centres should not be allowed to be open for business on arbitrary Sundays and holidays.\nWhat argument components exists in sentence \"Due to the increase in opening hours on Sundays and holidays there is a rise in employment\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "<opp>Due to the increase in opening hours on Sundays and holidays there is a rise in employment</opp>"
+    }
+]

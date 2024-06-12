@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "School uniforms should be introduced in our schools again. This provides an at least superficial equalization in our heavily economically oriented society, which may reduce discrimination of financially and/or socially disadvantaged children. Furthermore, it would facilitate the finding of truants, who may wish to get away with fewer classes at school. Uniforms always and immediately provoke fear of losing one's individuality but what's really lacking in schools today is rather a real sense of community, which would possibly be strengthened by an equal, collective appearance.\nWhat is the relation between \"Furthermore, it would facilitate the finding of truants, who may wish to get away with fewer classes at school.\" and \"School uniforms should be introduced in our schools again.\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "5. sup"
+    }
+]

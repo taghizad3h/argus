@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "No human being or human committee should again be given the permission to rule over 'life or death'. Courts are also subject to human error. That's why Germany should not introduce capital punishment! Every human, even those who have committed a despicable crime, can bring themselves to regret and change their opinion. A door must remain open for making amends.\nWhat is the relation between \"No human being or human committee should again be given the permission to rule over 'life or death'.\" and \"Courts are also subject to human error.\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

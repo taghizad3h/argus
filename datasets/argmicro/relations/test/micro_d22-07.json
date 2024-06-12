@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Large events that stir national or even international attention attract many visitors, and nothing will get Berlin out of its financial jam more than a lot of spending visitors. Hence the Mayor of Berlin ought to keep the hurdles for organizing such events as low as possible. Of course a higher federal subsidy would be even better for Berlin's coffers, but you shouldn't bother hoping for that.\nWhat is the relation between \"and nothing will get Berlin out of its financial jam more than a lot of spending visitors.\" and \"Of course a higher federal subsidy would be even better for Berlin's coffers,\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Opinions regarding world culture\n\nThere are many different opinions regarding world culture. Some people think that all the countries in the world cannot have a single culture. However, in my view, a single modern culture is being created by modern technology for the following reasons.\nFirstly, most of the countries have the same educational system based on technology. Teachers give topics to the students who should research on the internet to find data, and then students should type their research by using computer and even give a presentation by using PowerPoint. For example, students who are studying in Iran use the same software, Microsoft, to type their homework or have presentation compared to Canadian students.\nSecondly, new technology has created some similar jobs all around the world. Computer technology is a growing job in most of the countries, and students are being encouraged to study in this field. For example, many immigrants in Canada who have the degree in computer technology fields can easily go to Canadian universities and find jobs with good salaries. This example shows that jobs that are related to technology are in demand in most of the countries.\nSome people might argue that there are some cultures such as making foods which are unicq in each culture, and technology cannot affect them. This point has some merits on the surface; however, many countries such as Canada, the USA, and British have many restaurants which serve many foods form different countries and cultures. In fact, cooks can find many new food recipes easily on the Internet. For example, two days ago, I went to a Canadian restaurant, and I ate noodle, sushi, which are Chinese foods, and Greek salad.\nTo sum up, new technology has affected cultures of the world, and we can see many similarities in many cultures. In fact, new technology has influences on educational system, jobs and foods in the world.\nWhat argument components exists in sentence \"Opinions regarding world culture\n\nThere are many different opinions regarding world culture\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "The given sentence is not argumentative."
+    }
+]

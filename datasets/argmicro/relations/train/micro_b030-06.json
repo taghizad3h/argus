@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "School uniforms should not be worn in our schools. They do offer the benefit that the competition over brand-name clothes and the discrimination of the socially weak are prevented. Nevertheless hardly anyone wishes to dress themselves or their children in a standard uniform. Plus such uniforms also stand for ideological conformity and for the suppression of individual self-development.\nWhat is the relation between \"Plus such uniforms also stand for ideological conformity and for the suppression of individual self-development.\" and \"They do offer the benefit that the competition over brand-name clothes and the discrimination of the socially weak are prevented.\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

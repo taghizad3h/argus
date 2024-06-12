@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "It is unfair and unjustifiable that new tenants have to pay a much higher rent than previous residents. Clearly the landlord has to pay for some repairs before a new lease. But surely these costs could be covered by a minimal increase in rent over the course of the entire lease. All the more so as for an adequate profit the rental rate as compared to the base rent need not be raised for every new lease.\nWhat argument components exists in sentence \"It is unfair and unjustifiable that new tenants have to pay a much higher rent than previous residents\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "<pro>It is unfair and unjustifiable that new tenants have to pay a much higher rent than previous residents</pro>"
+    }
+]

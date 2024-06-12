@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "School uniforms should not be worn in our schools. They do offer the benefit that the competition over brand-name clothes and the discrimination of the socially weak are prevented. Nevertheless hardly anyone wishes to dress themselves or their children in a standard uniform. Plus such uniforms also stand for ideological conformity and for the suppression of individual self-development.\nWhat argument components exists in sentence \" Plus such uniforms also stand for ideological conformity and for the suppression of individual self-development\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>Plus such uniforms also stand for ideological conformity and for the suppression of individual self-development</pro>"
+    }
+]

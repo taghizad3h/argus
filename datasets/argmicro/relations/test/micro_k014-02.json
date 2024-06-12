@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Intelligence services should be more closely regulated by parliament, for, as the most recent NSA wiretapping scandal has shown, the federal state government is allegedly not always familiar with the scope of operations of its intelligence services. Checks could contribute to restricting the so far rather opaque scope of action of individual services. Yet it remains questionable whether the actual implementation of such supervision would at the same time lead to a stronger observance of laws, as ultimately this decision is in the hands of the respective government leaders.\nWhat is the relation between \"Yet it remains questionable whether the actual implementation of such supervision would at the same time lead to a stronger observance of laws,\" and \"Intelligence services should be more closely regulated by parliament,\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "1. reb"
+    }
+]

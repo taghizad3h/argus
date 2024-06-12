@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "The bachelor thesis reflects both the content and the methods of the topics covered during a degree programme. But one can make occasional mistakes in the thesis. If this carries more weight, many good individual assignments done during the course of study may be obscured. A good grade for the thesis also significantly depends on the supervision of a dedicated teacher. Due to the many random factors the bachelor thesis should not play a bigger role.\nWhat is the relation between \"The bachelor thesis reflects both the content and the methods of the topics covered during a degree programme.\" and \"A good grade for the thesis also significantly depends on the supervision of a dedicated teacher.\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

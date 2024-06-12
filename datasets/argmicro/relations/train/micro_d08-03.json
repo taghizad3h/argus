@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Although IBM's numbers haven't been staggering recently, and the mood in the stock market could be better on the whole, you should buy IBM shares if you want to invest. Because for one thing, their products will still sell in bad times, and in addition, such a share is not as sensitive as those of other IT companies.\nWhat is the relation between \"and in addition, such a share is not as sensitive as those of other IT companies.\" and \"you should buy IBM shares if you want to invest.\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "5. sup"
+    }
+]

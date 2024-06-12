@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "I find the peripheral housing development at Tempelhofer Feld right for urban planning reasons, as the area is right in the middle of the city (capital). The size of the field allows for both housing and generous open space.\nWhat is the relation between \"The size of the field allows for both housing and generous open space.\" and \"as the area is right in the middle of the city (capital).\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

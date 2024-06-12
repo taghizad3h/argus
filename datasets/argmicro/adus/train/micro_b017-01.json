@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Rent prices should be limited by a cap when there's a change of tenant. Landlords may want to earn as much as possible, and many, consistent with market principles, are prepared to pay higher rents, but that people with the same income suddenly must pay more and can't live in the same flat anymore seems implausible. Gentrification destroys entire districts and their culture.\nWhat argument components exists in sentence \" Landlords may want to earn as much as possible, and many, consistent with market principles, are prepared to pay higher rents, but that people with the same income suddenly must pay more and can't live in the same flat anymore seems implausible\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <opp>Landlords may want to earn as much as possible,</opp> <opp>and many, consistent with market principles, are prepared to pay higher rents,</opp> <pro>but that people with the same income suddenly must pay more and can't live in the same flat anymore seems implausible</pro>"
+    }
+]

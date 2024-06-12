@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "The EU should exert influence on the political events in Ukraine. The developments in that conflict should not be left to former Cold War opponents alone, for that course can only lead to escalation in some form. Furthermore, Ukraine is culturally and geographically much closer than other countries that the EU (used to) get involved with. Indeed one could argue that a country has to deal with internal political changes itself, but political power also brings about political responsibility, in this case the responsibility to protect the Ukrainian people from the rather strong interests of the two Great Powers.\nWhat is the relation between \"The developments in that conflict should not be left to former Cold War opponents alone,\" and \"The EU should exert influence on the political events in Ukraine.\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "5. sup"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to find the relation (support, attack or no_relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Roommates quality and their importance\n\nMuch has been said about the importance about good roommates and how roommates will affect our life in school. Research showed that friends that we made in university are more likely to be life time friends and this especially applicable to roommate. In my personal opinion, the most important quality of roommates is being considered. In the meantime, communication is also another essential particularity of a good roommate. \nConsideration is always important in relationship. For example, roommate turns down the music or television volume at night time. Sometimes we will not know what we have done until we have a taste of our own medicine. At all times, think about the other's feeling before doing any self-centered action would help to improve the roommate relationship tremendously. Therefore, having a considered roommate is significantly imperative to our school life. It will not only prevent conflicts but also to have a friend or even a family member.\nMoreover, communication is as well making a good roommate. People have different habit in daily life, such as tidy the blanket in the morning. One might think this is a piece of cake while other would consider it as immense project. If one requested to move out just because his roommate do not tidy up the blanket in the morning might be crying over split milk. Therefore, communication is very important as it would clear up the misinterpretation. Through communication, bonded are build and we could have better understanding of each others.\nIn conclusion, there are many valuable factors about roommate that are important. Consideration and communication, in my personal opinion, are the most important quality. However, people might not get what they want all the time. The sky is the limit; there are all kinds of personality out there. We need to be flexible to be account into society.\nWhat is the relation between \"communication is as well making a good roommate\" and \"communication is very important\" from the above essay? Choose from following options  1. attacks\n2. supports\n3. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "2. supports"
+    }
+]

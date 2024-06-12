@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Children should grow up in a big city!\n\nIt\u2019s certainly better for children to grow up in a big city. Of course you need to choose a good neighborhood. I hold this belief because of two main reasons, academic and social reasons.\nSome people thinks that if a child grows up in a big city they will be all day at home at the computer or at the video-game, but this is not true if you live in a neighborhood with other people about your age as I did. My friends and I used to play soccer, bike, climb trees and do a lot of other stuff every day. We did play video-games, but that wasn't our main activity. In a big city there are more kinds of people and more things to do.\nI have a friend that grew up in the countryside. He said that he had to study a lot to pass the test to enter the university. This is another downside of growing up in the countryside. In a big city you have more qualified teachers and a better access to technology.\nGrowing up in the countryside is not such a good experience, you won\u2019t know a lot of people, there are gossips everywhere, and your life will be really limited. If someday I have children, I\u2019m absolutely sure that they will grow up in a good neighborhood of a big city and they will be very happy about it.\nWhat argument components exists in sentence \"Children should grow up in a big city!\n\nIt\u2019s certainly better for children to grow up in a big city\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "Children should grow up in a big city!\n\n<MajorClaim>It\u2019s certainly better for children to grow up in a big city</MajorClaim>"
+    }
+]

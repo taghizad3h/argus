@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "The best way of learning life\n\nLife is full of challenges, difficulties and unexpected obstacles. Therefore, learning about life, which is useful for foreseeing problems and be assertive enough to overcome them are needed. Two main ways of learning about life are listening to the advice of family and friends and learning through personal experience. Both ways are good to follow because they all have their own distinct advantages.\nOn one hand, the way of learning life through listening to the advice of family and friends is more realistic than the latter. Family members such as your parents are experienced in life so they can give you proper and sincere guidance on every aspect of life. And friends, people who are the same generation with you, they are understand your favorite and ability enough to tell you which is suitable for you, which is not. By listening to your family and friends advice, you can definitely avoid many unexpected things.\nOn the other hand, finding out life through personal experience can help you become more independent and mature. For one thing, there are so many grate things that you can missed if you don't experience it by yourself. For example, a friend told you not to try skydiving because it was so dangerous. If you did as he told, you could fail to see how wonderful it is to be fall freely. In addition, family and friends accidentally harm you by giving you advice all the time. You will grow to be dependent and reliant. In contrast, free yourself and do what you desire without notice about consequences is the way that success people would like to choose.\nAccording to myself, both ways are good, but I prefer the latter. It is because growth is a long process that experience is indispensable. I believe that experiencing the real life by myself, I could learn more than just obey the advice. Parents and other predecessors used to experience their own life by themselves, why don't the younger try to do the same?\nIn summary, each way learning life has its own benefits. But to me, learning about life through personal experience seems more appropriate.\nWhat argument components exists in sentence \" If you did as he told, you could fail to see how wonderful it is to be fall freely\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <Premise>If you did as he told, you could fail to see how wonderful it is to be fall freely</Premise>"
+    }
+]

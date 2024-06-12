@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Capital punishment - necessary or not\n\nCrime is always punishable. Retribution is the method for countering criminals. Some countries have stringent rules, like capital punishment, while other have a lot of flexibility in the judicial system. However, strict laws, like capital punishment, are essential in a society.\nCapital punishment is given only in the \"rarest of the rare\" cases. Its first and foremost objective is safety of other human beings. When a criminal becomes a threat to the society, such that they can commit heinous crimes, then they are given capital punishment. Thus, capital punishment protects the society from hardcore criminals.\nMoreover, capital punishment curbs the inspiration and prospects of other hateful crimes. When a criminal mind knows the quantum of punishment, they will fear and not commit such crimes. Thus, the rate of crime and violence is effectively decreased.\nImportantly, capital punishment saves a lot of government funding which is wasted in maintenance of these hardcore criminals. Criminals who don't have any chance of improvement or who have a past record of such crimes are, therefore, given capital punishment.\nHowever, the jury giving the verdict are also humans. They have the life of a person at their discretion. They can make mistakes which can sometimes affect an innocent, circumstantially marred criminals. The jury must therefore, take into account the circumstances of committing a crime. For example, if an individual murders someone for self-defense, then such a crime is not heinous. Only deserving criminals, who commit such hateful crimes in their proper senses are subjected to capital punishment.\nCapital punishment is essential to control violence in the society. I firmly believe that psychopaths, terrorists or any other criminal who lacks empathy for other human lives deserve capital punishment. Capital punishment helps to safeguard human rights in a strict and effective manner. However, it should be considered as the last option by the jury and all circumstances must be taken into account before pronouncing the final verdict.\n\nWhat argument components exists in sentence \" Thus, capital punishment protects the society from hardcore criminals\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " Thus, <Claim>capital punishment protects the society from hardcore criminals</Claim>"
+    }
+]

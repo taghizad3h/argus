@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Whenever Peter bumps into an ex-girlfriend at a party, he forgoes any further consumption of alcohol just in case. When he got back from Ralf's party last night he was still stone-cold sober. Thus one of his ex-girlfriends must have been there. Ralf does insist that they drank advocaat together. But even without an ex-girlfriend he would never touch that.\nWhat is the relation between \"When he got back from Ralf's party last night he was still stone-cold sober.\" and \"But even without an ex-girlfriend he would never touch that.\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

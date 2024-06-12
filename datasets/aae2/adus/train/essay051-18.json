@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Universities should give money to sport activities or libraries\n\nLibraries and sports activities play important roles in universities success. Most university rankings pay attention to quality of these two activities. In my opinion universities should invest in libraries more than anywhere else.\nFirst, I think a library is vital and strategical part of a university. All professors and students need to have a modern and well-equipped library because, after internet, library plays an important role in research. Although sport is important, it does not have the same priority of library has. In addition only small part of students attend sport activities. For example, in my university number of students who use the library is much more than students do sports activities.\nSecond, usually libraries do not have income. Most libraries are free not for students also for public. Hence, universities support is vital for libraries. But sport activities have a good income because every sport has different matches and for each match they have a lot sponsors. Also, they have this chance to sell their important matches tickets. To conclude, there are good ways for sports activities to compensate their expenses, but it is very hard for libraries to find a good way for have an income.\nLast but not least, investing in libraries has a long-time result. For example, a library can buy a lot of new books or they can buy more computers. Most of the library facilities are stable and you can use them for a long time. Besides, in the far future, they become more valuable. On the other side, most sports facilities except buildings are usually can be used in short-time and they are not persistent for a long-time.\nIn spite of the importance of sports activities, libraries are more important. They are critical part of universities and a good university has to have a modern library.\nWhat argument components exists in sentence \" On the other side, most sports facilities except buildings are usually can be used in short-time and they are not persistent for a long-time\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " On the other side, <Premise>most sports facilities except buildings are usually can be used in short-time and they are not persistent for a long-time</Premise>"
+    }
+]

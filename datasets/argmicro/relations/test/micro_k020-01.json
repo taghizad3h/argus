@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Despite the death penalty there are significantly more homicides in the US than in Germany. Fear of punishment hence does not deter murderers. 'An eye for an eye' seems to miss the point. The state ought to prevent murder - not avenge it. A re-introduction of capital punishment in Germany would be a step back into the Middle Ages.\nWhat is the relation between \"Fear of punishment hence does not deter murderers.\" and \"'An eye for an eye' seems to miss the point.\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "5. sup"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "You should watch less television, as too much TV makes you stupid in the long run, like your brother. It would be an exception if you only watched quiz shows, but you tend to watch Big Brother and X-Diaries.\nWhat is the relation between \"like your brother.\" and \"as too much TV makes you stupid in the long run,\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "4. exa"
+    }
+]

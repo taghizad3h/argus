@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to find the relation (support, attack or no_relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "International aid\n\nThe world has become more prosperous than ever yet a great number of people are still living in poverty or suffering by wars or disasters. Charity organisations have been playing an important role to provide support to those people. However, it is controversial whether the help should go to the people who need it most or the citizens of the country where the charity organisations are located. My view is that international aid should be prioritised.\nInternational aid is critical because people from other countries may be facing much more serious problems. Many people, for example in some African countries, are living below the basic standards. They lack food, water or clothes which keep them warm, not to mention the education needs. What is worse, people who live in countries that are confronted with wars or natural disasters are facing even more severe issues such as security, homelessness or the pain of losing best friends or family members. It is clear that those people are in desperate need of international support.\nDespite the importance of helping those beyond our national borders, it is reasonable to lend a hand to our fellow citizens. After all, charity organisations are mainly funded by the home country thus there is a high demand that the money should be spent in the place where it is collected. Another reason is that, even within the most developed countries, there are still poor people who lack their basic needs. By solving the problems in the home country, it is beneficial for social stability and steady economic growth.\nIn conclusion, people from unfortunate countries need more international assistance while helping citizens in the home country is also necessary.\nWhat is the relation between \"What is worse, people who live in countries that are confronted with wars or natural disasters are facing even more severe issues such as security, homelessness or the pain of losing best friends or family members\" and \"International aid is critical\" from the above essay? Choose from following options  1. attacks\n2. supports\n3. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "2. supports"
+    }
+]

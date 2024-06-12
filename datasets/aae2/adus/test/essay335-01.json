@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "There have been significant developments in the field of IT!\n\nDecade after decade, every day, scientists discover magnificent devices in the field of IT, such as interactive boards, multicore computers and laptops, tablets, which have an incredible resolution and also mobile phones, which have the power of a computer. World Wide Web and communication via email are some of the positive sides of information technology, however, there are some negative aspects.\nFirstly, connecting people by email is easy and fast. In addition, World Wide Web offers humanity to access to information, which they want to know for less than 10 seconds. These are two of the benefits, why IT is useful.\nBesides, nowadays technology is entering into our society really quick and scientists develop robots, which help people cope with their problems or just invent coffee machines, engines with integrated computers and etc. For example, before centeries, there were not washing machines, which clean your clothes, while a person do another job.\nSecondly, there are some drawbacks about this issue. Scientists believe that one day people will face their developments, for instance robots, and they will not succeed to control them. All this inventions will try to take control of the Earth.\nIn conclusion, I agree that IT discoveries are likely to have more disadvantages than benefits and people should know how to use their developments properly.\nWhat argument components exists in sentence \" World Wide Web and communication via email are some of the positive sides of information technology, however, there are some negative aspects\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "The given sentence is not argumentative."
+    }
+]

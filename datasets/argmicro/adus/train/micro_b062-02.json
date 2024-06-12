@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "I am not of the opinion that the retirement age should be set at 63 years. This would mean that organizations would be lacking a great deal of manpower in the future. The introductory phase of retirement at 63 would also be a particular challenge as upon introduction many current employees of advanced age would immediately be eligible to retire. This is detrimental for Germany as a business location and leaves employers without a transition period. The danger here is that experienced junior staff is not available in sufficient numbers.\nWhat argument components exists in sentence \" The introductory phase of retirement at 63 would also be a particular challenge as upon introduction many current employees of advanced age would immediately be eligible to retire\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>The introductory phase of retirement at 63 would also be a particular challenge</pro> <pro>as upon introduction many current employees of advanced age would immediately be eligible to retire</pro>"
+    }
+]

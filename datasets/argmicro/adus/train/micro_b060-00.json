@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Owner-run shops may potentially be overwhelmed by additional work times on Sundays and holidays, then again supermarkets and large shopping centres dominate the market today already. Thus smaller shops could benefit from the additional freedom, as customers are on average more laid-back on Sunday. Opening on Sundays and holidays would therefore help both customers and shops.\nWhat argument components exists in sentence \"Owner-run shops may potentially be overwhelmed by additional work times on Sundays and holidays, then again supermarkets and large shopping centres dominate the market today already\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": "<opp>Owner-run shops may potentially be overwhelmed by additional work times on Sundays and holidays,</opp> <pro>then again supermarkets and large shopping centres dominate the market today already</pro>"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "We should go to the Baltic Sea on the weekend. According to the weather report it'll be perfect beach weather, and one mustn't let this go to waste, even if I do have to prepare a presentation for Tuesday. Besides, I get to use my folks' big, comfy car.\nWhat is the relation between \"even if I do have to prepare a presentation for Tuesday.\" and \"We should go to the Baltic Sea on the weekend.\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "1. reb"
+    }
+]

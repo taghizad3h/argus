@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified sentence from it. Annotate the argumentative parts of specified sentence with their argumentative roles such as MajorClaim, Claim and Premise using xml like tags to indicate start and end of a component. Note that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "International tourism leads to both - tension and understanding\n\nI agree with both opinions that international tourism not only causes tension but also leads to understanding between people from different culture, because most people will be trying to understand each other after they have conflict or debates.\nThere is no doubt that some behaviors of the tourists are not welcome in the local area. Firstly, some people leave the rubbish after visiting the attractions. Therefore, those local residents have to clean the place frequently so that the new batch of tourists will have a tidy and neat environment. Moreover, tourists may offend the local people due to their different culture background. For example, Indians don't eat beef since they worship cows. Thus, if tourists want to respect the tradition, they will not order any beef in the local restaurant. \nOn the other hand, in order to avoid the conflicts between foreigners and locals, people are trying to understand different culture and find solutions. For instance, tourists are given the brochures about the local traditions and customs before they visit the place. Furthermore, the tour guide are willing to help tourists to understand the culture from other countries. Thus, the possibility of the conflicts is reduced because the understanding between both parties.\nObviously, people are looking for the solution such as understanding each other while they encounter the conflicts caused by international tourism. Hence, I think international tourism leads to both tension and understanding between people from different culture.\nWhat argument components exists in sentence \" Moreover, tourists may offend the local people due to their different culture background\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " Moreover, <Premise>tourists may offend the local people due to their different culture background</Premise>"
+    }
+]

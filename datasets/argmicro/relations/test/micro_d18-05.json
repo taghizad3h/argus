@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "Schweinsteiger has now been injured for three days. We urgently need a midfield replacement for the coming match. The doctor was able to sign him off as fit for play with enough painkillers, but that would only make the injury worse in the long run. And a young substitute always invigorates the team.\nWhat is the relation between \"We urgently need a midfield replacement for the coming match.\" and \"but that would only make the injury worse in the long run.\" from the above essay? Choose from following options 1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "6. no relation"
+    }
+]

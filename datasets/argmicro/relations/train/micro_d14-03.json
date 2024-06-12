@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an argumentation and asked about to find the relation from relation types: sup (support), exa (support by example), add (additional source), reb (rebutting attack), und (undercutting attack), joint (joining relation) between two selected argument components from it."
+    },
+    {
+        "role": "user",
+        "content": "I think Fritz has never been in a fight in his life. As a boy he did use to scuffle with the other choirboys, but that hardly counts as a proper brawl. And he always chickens out when things get dicey. Yesterday, when the bouncer wouldn't let us in, he was suddenly gone.\nWhat is the relation between \"Yesterday, when the bouncer wouldn't let us in, he was suddenly gone.\" and \"And he always chickens out when things get dicey.\" from the above essay? Choose from following options  1. reb\n2. und\n3. joint\n4. exa\n5. sup\n6. no relation"
+    },
+    {
+        "role": "assistant",
+        "content": "4. exa"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "\nYou will be given an argumentation and will be asked about to annotate a specified sentence from it for it's argument components.\nAnnotate the argumentative parts of specified sentence with their argumentative roles such as pro (proponent), opp (opponent) using xml like tags to indicate start and end of a component.\nNote that most of the sentences are argumentative. Annotate as much as you can."
+    },
+    {
+        "role": "user",
+        "content": "Every German citizen has a right to education. Quality at universities has its price, which is why students also ought to be involved in this cost factor. But education must not be a question of money in a wealthy society such as Germany. Therefore universities should not charge tuition fees in Germany.\nWhat argument components exists in sentence \" But education must not be a question of money in a wealthy society such as Germany\" from the above dispute? Please annotate the constituing words."
+    },
+    {
+        "role": "assistant",
+        "content": " <pro>But education must not be a question of money in a wealthy society such as Germany</pro>"
+    }
+]
