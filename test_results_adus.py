@@ -1,18 +1,23 @@
+import json
 import os
 import re
 from typing import List, Tuple
 
 from joblib import Parallel, delayed
 from rouge.rouge_score import rouge_l_summary_level
-from sklearn.metrics import confusion_matrix, f1_score
-from sklearn.metrics import precision_recall_fscore_support as score
+from seqeval.metrics import accuracy_score as saccuracy_score
+from seqeval.metrics import classification_report as sclassification_report
+from seqeval.metrics import f1_score as sf1_score
+from sklearn.metrics import classification_report, confusion_matrix, f1_score
 from tqdm import tqdm
-
 
 from settings import Settings
 
-dataset = 'aae2/relations'
-model_name = 'TinyLlama/TinyLlama-1.1B-Chat-v1.0'
+dataset = 'pe2-adus-single-embedded-essay-level'
+# dataset = 'pe2-adus-embedded-paragraph-level'
+# model_name = 'NousResearch/Llama-2-7b-chat-hf'
+# model_name = 'unsloth/llama-2-7b'
+model_name = 'unsloth/mistral-7b'
 use_lora = True
 
 settings = Settings(
@@ -36,54 +41,102 @@ gold_path = f'{settings.dataset_path}/test'
 pred_path = f"preds/{settings.output_dir.replace('output/', '')}"
 
 
+def convert_to_bio(text, labels: list = ['MajorClaim', 'Claim', 'Premise']):
+    clean_text = re.sub(r'<(/?\w+)>', ' ', text, flags = re.MULTILINE|re.IGNORECASE)
+    clean_text = ' '.join(clean_text.split())    
+    tags_pattern = re.compile(r'<(\w+)>([\w\s]+)<\/\w+>')
+    tags = ['O'] * len(clean_text.split())
+    last_start_index = -1
+    for match in tags_pattern.finditer(text):
+        tag = match.group(1)
+        tag_text = match.group(2).rstrip()
+        char_start_indexs = [m.start() for m in re.finditer(tag_text, clean_text)]
+        for csi in char_start_indexs: #some times same argumet exists in multiple spans
+            start_index = len(clean_text[:csi].split())
+            if start_index > last_start_index:
+                last_start_index = start_index
+                break
+        end_index = start_index + len(tag_text.split())
+        for i in range(start_index, end_index):
+            tags[i] = tag
+            
+    return tags
+
+
 def decompose(name, output: str) -> List[Tuple[str, str]]:
     result = []
-    claims = re.findall('(?<=<claim>)(.*?)(?=<\/claim>)', output,  re.MULTILINE | re.IGNORECASE)
-    major_claims = re.findall('(?<=<majorclaim>)(.*?)(?=<\/majorclaim>)', output,  re.MULTILINE | re.IGNORECASE)
-    premises = re.findall('(?<=<premise>)(.*?)(?=<\/premise>)', output,  re.MULTILINE | re.IGNORECASE)
-    for c in claims:
-        result.append(('Claim', c))
-    for mc in major_claims:
-        result.append(('MajorClaim', mc))
-    for p in premises:
-        result.append(('Premise', p))
-    print(name, len(result))
-    print(major_claims)
-    print(claims)
-    print(premises)
+    if 'This sentence is not argumentative' in output:
+        return result
+    
+    tags_pattern = re.compile(r'<(\w+)>([\w\s]+)<\/\w+>')
+    for match in tags_pattern.finditer(output):
+        tag = match.group(1)
+        tag_text = match.group(2).rstrip()
+        if tag_text is not None and tag_text.strip() != '':
+            result.append((tag, tag_text))
     return result
 
 
-def calculate_scores(golds, preds):
-    golds_labels = []
-    preds_labels = ['O'] * len(golds)
-    matched_preds_text = []
-    matched_preds_text_label = []
-    for j, g in enumerate(golds):
-        golds_labels.append(g[0])
-        for i, p in enumerate(preds):
-            lcs = rouge_l_summary_level(g[1], p[1])
-            if lcs['f'] > 0.9 and i not in matched_preds_text: #check if already not matched
-                matched_preds_text.append(i)
-                if p[0] == g[0]:
-                    preds_labels[j] = g[0]
-                    matched_preds_text_label.append(i)
-    text_acc = len(matched_preds_text)/len(golds)
-    text_label_acc = len(matched_preds_text_label)/len(golds)
-    return text_acc, text_label_acc, golds_labels, preds_labels
+def refine_preds(preds):
+    refined = []
+    
+    def already_exists(text):
+        for r in refined:
+            lcs = rouge_l_summary_level(r[1], text)
+            if lcs['f'] > 0.9: #check if already not matched
+                return True
+        return False
+    
+    for p1 in preds:
+        if not already_exists(p1[1]):
+            refined.append(p1)
+    return refined
+
+
+
+def calculate_tags(golds, preds, gold_annotated_sentence, target_sentence):
+    gold_tags = ['O'] * len(target_sentence.split())
+    pred_tags = ['O'] * len(target_sentence.split())
+    
+    for g in golds:
+        gtext = g[1]
+        glabel = g[0]
+        char_start_index = [m.start() for m in re.finditer(gtext.strip(), target_sentence, flags=re.IGNORECASE|re.MULTILINE)][0]
+        start_index = len(target_sentence[:char_start_index].split())
+        end_index = start_index +  len(gtext.split())
+        for i in range(start_index, end_index):
+            gold_tags[i] = glabel
+    
+    for p in preds:
+        ptext = p[1]
+        plabel = p[0]
+        char_start_indexes = [m.start() for m in re.finditer(ptext.strip(), target_sentence, flags=re.IGNORECASE|re.MULTILINE)]
+        if len(char_start_indexes) == 0:
+            continue
+        char_start_index = char_start_indexes[0]
+        start_index = len(target_sentence[:char_start_index].split())
+        end_index = start_index +  len(ptext.strip().split())
+        for i in range(start_index, end_index):
+            pred_tags[i] = plabel
+            
+    return gold_tags, pred_tags
 
 
 text_accs = []
 text_label_accs = []
 
 
-def calculate_metrics(gold, pred):
+def extract_tags(gold, pred):
     pred_adus = decompose(pred[0], pred[1])
+    pred_adus = refine_preds(pred_adus)
     gold_adus = decompose(gold[0], gold[1])
-    if len(gold_adus) == 0: # not all paragraphs have adus
-        return
-    text_acc, text_label_acc, golds_labels, preds_labels = calculate_scores(gold_adus, pred_adus)
-    return text_acc, text_label_acc, golds_labels, preds_labels
+    gold_adus_dict = json.loads(gold[1])
+    gold_annotated_sentence = gold_adus_dict[2]['content'].replace('The annotated format of given sentence is:\n', '')
+    # gold_annotated_sentence = gold_adus_dict[2]['content'].replace('The annotated format of given paragraph is:\n', '')
+    target_sentence = re.findall(r'(?<=What argumentative components exist in sentence \" )(.*)(?= \" from the above essay)', gold_adus_dict[1]['content'])[0]
+    # target_sentence = ' '.join(gold_adus_dict[1]['content'].split('\n')[2:])
+    golds_labels, preds_labels = calculate_tags(gold_adus, pred_adus, gold_annotated_sentence, target_sentence)
+    return golds_labels, preds_labels
 
 
 gold_samples = []
@@ -98,20 +151,33 @@ def flatten(xss):
     return [x for xs in xss for x in xs]
 
 
+gold_samples = sorted(gold_samples, key=lambda x : x[0])
+pred_samples = sorted(pred_samples, key=lambda x : x[0])
 
-results = Parallel(n_jobs=1)(delayed(calculate_metrics)(g,p) for g,p in zip(gold_samples, pred_samples))
-text_accs = [r[0] for r in results if r is not None]
-text_label_accs = [r[1]for r in results if r is not None]
-golds_labels = flatten([r[2] for r in results if r is not None])
-preds_labels = flatten([r[3] for r in results if r is not None])
+print(len(gold_samples))
+print(len(pred_samples))
+
+# for g, p in zip(gold_samples, pred_samples):
+#     print(g[0])
+#     print(p[0])
+#     extract_tags(g, p)
+    
+
+results = Parallel(n_jobs=10)(delayed(extract_tags)(g,p) for g,p in zip(gold_samples, pred_samples))
+
+y_true = [r[0] for r in results if r is not None]
+y_pred = [r[0] for r in results if r is not None]
+
+print(f1_score(y_true, y_pred))
+print(classification_report(y_true, y_pred))
+
+
+golds_labels = flatten([r[0] for r in results if r is not None])
+preds_labels = flatten([r[1] for r in results if r is not None])
 
 
 score = f1_score(golds_labels, preds_labels, average='macro',)
 conf_mat = confusion_matrix(golds_labels, preds_labels, labels=["MajorClaim", "Claim", "Premise", "O"])
 print(score)
 print(conf_mat)
-preds_labels = [l if l != 'O' else 'Premise' for l in preds_labels]
-score = f1_score(golds_labels, preds_labels, average='macro',)
-conf_mat = confusion_matrix(golds_labels, preds_labels, labels=["MajorClaim", "Claim", "Premise"])
-print(score)
-print(conf_mat)
+print(classification_report(golds_labels, preds_labels))
