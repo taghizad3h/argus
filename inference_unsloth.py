@@ -60,11 +60,15 @@ for root, _, files in os.walk(settings.dataset_path+"/test"):
             with open(os.path.join(root, f)) as f1, torch.no_grad():
                 sample = json.load(f1)
                 prompt = []
+                response_length = 0
                 for item in sample:
                     if item['role'] != 'assistant':
                         prompt.append(item)
+                    else:
+                        response_length = len(item['content'])
+                        
                 inputs = tokenizer.apply_chat_template(prompt, return_tensors='pt', tokenize=True, add_generation_prompt=True).to('cuda')
-                output = model.generate(input_ids = inputs, max_new_tokens=5)
+                output = model.generate(input_ids = inputs, max_new_tokens=response_length+10)
                 response = tokenizer.decode(output[0].tolist())
             # result = generate(prompt)
             # print(response)
