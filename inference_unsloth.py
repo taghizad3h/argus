@@ -77,7 +77,7 @@ for root, _, files in os.walk(settings.dataset_path+"/test"):
                     if item['role'] != 'assistant':
                         prompt.append(item)
                     else:
-                        response_length = int(len(item['content'].split()*1.5))
+                        response_length = int(len(item['content'].split())*1.5)
                         
                 inputs = tokenizer.apply_chat_template(prompt, return_tensors='pt', tokenize=True, add_generation_prompt=True).to('cuda')
                 output = model.generate(input_ids = inputs, max_new_tokens=response_length)
