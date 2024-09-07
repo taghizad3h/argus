@@ -50,6 +50,8 @@ model, tokenizer = FastLanguageModel.from_pretrained(
     load_in_4bit = settings.load_in_4bit,
 )
 
+FastLanguageModel.for_inference(model)
+
 
 tokenizer.pad_token = tokenizer.eos_token
 tokenizer.padding_side = "right" # Fix weird overflow issue with fp16 training
@@ -77,7 +79,7 @@ for root, _, files in os.walk(settings.dataset_path+"/test"):
                     if item['role'] != 'assistant':
                         prompt.append(item)
                     else:
-                        response_length = int(len(item['content'].split())*1.5)
+                        response_length = int(len(tokenizer(item['content']))*1.3)
                         
                 inputs = tokenizer.apply_chat_template(prompt, return_tensors='pt', tokenize=True, add_generation_prompt=True).to('cuda')
                 output = model.generate(input_ids = inputs, max_new_tokens=response_length)
