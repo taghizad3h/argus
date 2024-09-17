@@ -18,6 +18,10 @@ parser.add_argument('--epochs', type=int, help='number of epochs', default=1)
 parser.add_argument('--batch_size', type=int, help='train batch size', default=8)
 parser.add_argument('--gradient_steps', type=int, help='gradient_accumulation_steps', default=1)
 parser.add_argument('--lora', action='store_true', help='user lora', default=True)
+parser.add_argument('--bit4', action='store_true', help='user 4bit quantization', default=False)
+parser.add_argument('--bit8', action='store_true', help='user 8bit quantization', default=False)
+
+
 
 args = parser.parse_args()
 use_lora = args.lora
@@ -27,8 +31,8 @@ settings = Settings(
     per_device_train_batch_size = args.batch_size,
     model_name = args.model_name,
     output_dir = f'output/{args.model_name.replace("/", "-")}{"-lora" if use_lora else ""}-{args.dataset}',
-    use_4bit = False,
-    use_8bit = False,
+    use_4bit = args.bit4,
+    use_8bit = args.bit8,
     fp16 = not torch.cuda.is_bf16_supported(),
     bf16 = torch.cuda.is_bf16_supported(),
     gradient_accumulation_steps = args.gradient_steps,
@@ -37,7 +41,7 @@ settings = Settings(
     num_train_epochs=args.epochs,
     max_seq_length=1024,
     save_steps = 1000,
-    load_in_4bit = False
+    load_in_4bit = args.bit4
 )
 
 
@@ -58,6 +62,7 @@ elif 'llama-2' in settings.model_name.lower() or 'mistral' in settings.model_nam
     tokenizer.chat_template = chat_templates.llama_2
 elif 'phi' in settings.model_name.lower():
     tokenizer.chat_template = chat_templates.phi2
+
 
 
 if 'tiny' in settings.model_name.lower():
