@@ -10,23 +10,28 @@ from seqeval.metrics import classification_report as sclassification_report
 from seqeval.metrics import f1_score as sf1_score
 from sklearn.metrics import classification_report, confusion_matrix, f1_score
 from tqdm import tqdm
+from seqeval.scheme import IOB2, IOB1
 
 from settings import Settings
 
-dataset = 'pe2-adus-single-embedded-essay-level'
+dataset = 'aae2/adus'
 # dataset = 'pe2-adus-embedded-paragraph-level'
 # model_name = 'NousResearch/Llama-2-7b-chat-hf'
 # model_name = 'unsloth/llama-2-7b'
-model_name = 'unsloth/mistral-7b'
+# model_name = 'unsloth/mistral-7b'
+# model_name = 'unsloth/llama-3-8b-Instruct'
+# model_name = 'TinyLlama/TinyLlama-1.1B-Chat-v1.0'
+model_name = 'unsloth/Meta-Llama-3.1-8B-Instruct'
+config_name = '-r16-qkv-gud-fp' #r = rank of lora g=gate-proj u=up-proj d=down-proj fp = full presicion
 use_lora = True
 
 settings = Settings(
-    dataset_path = f'data/processed/{dataset}',
+    dataset_path = f'datasets/{dataset}',
     per_device_train_batch_size = 1,
     # model_name = 'models/microsoft/phi-2',
     model_name = model_name,
     # output_dir = 'output/phi-28bitqlora',
-    output_dir = f'output/{model_name.replace("/", "-")}{"-lora" if use_lora else ""}-{dataset}',
+    output_dir = f'output/{model_name.replace("/", "-")}{"-lora" if use_lora else ""}{config_name}-{dataset}',
     use_4bit = False,
     use_8bit = False,
     gradient_accumulation_steps = 4,
@@ -38,7 +43,7 @@ settings = Settings(
 )
 
 gold_path = f'{settings.dataset_path}/test'
-pred_path = f"preds/{settings.output_dir.replace('output/', '')}"
+pred_path = settings.output_dir.replace('output/', 'preds/')
 
 
 def convert_to_bio(text, labels: list = ['MajorClaim', 'Claim', 'Premise']):
@@ -133,7 +138,7 @@ def extract_tags(gold, pred):
     gold_adus_dict = json.loads(gold[1])
     gold_annotated_sentence = gold_adus_dict[2]['content'].replace('The annotated format of given sentence is:\n', '')
     # gold_annotated_sentence = gold_adus_dict[2]['content'].replace('The annotated format of given paragraph is:\n', '')
-    target_sentence = re.findall(r'(?<=What argumentative components exist in sentence \" )(.*)(?= \" from the above essay)', gold_adus_dict[1]['content'])[0]
+    target_sentence = re.findall(r'(?<=What argument components exists in sentence \")([.\s\S]*)(?=\" from the above dispute)', gold_adus_dict[1]['content'])[0]
     # target_sentence = ' '.join(gold_adus_dict[1]['content'].split('\n')[2:])
     golds_labels, preds_labels = calculate_tags(gold_adus, pred_adus, gold_annotated_sentence, target_sentence)
     return golds_labels, preds_labels
@@ -166,10 +171,34 @@ print(len(pred_samples))
 results = Parallel(n_jobs=10)(delayed(extract_tags)(g,p) for g,p in zip(gold_samples, pred_samples))
 
 y_true = [r[0] for r in results if r is not None]
-y_pred = [r[0] for r in results if r is not None]
+y_pred = [r[1] for r in results if r is not None]
 
-print(f1_score(y_true, y_pred))
-print(classification_report(y_true, y_pred))
+
+def convert_to_bio(labels):
+    bio_labels = []
+    prev_label = 'O'
+    
+    for label in labels:
+        if label == 'O':
+            bio_labels.append('O')
+        elif label == prev_label:
+            bio_labels.append('I-' + label)
+        else:
+            bio_labels.append('B-' + label)
+        
+        prev_label = label
+
+    return bio_labels
+
+bio_true = [convert_to_bio(y) for y in y_true]
+bio_pred = [convert_to_bio(y) for y in y_pred]
+            
+
+print(sf1_score(bio_true, bio_pred))
+print(sclassification_report(bio_true, bio_pred))
+
+print(sf1_score(bio_true, bio_pred, mode='strict', scheme=IOB2))
+print(sclassification_report(bio_true, bio_pred, mode='strict', scheme=IOB2))
 
 
 golds_labels = flatten([r[0] for r in results if r is not None])
@@ -181,3 +210,10 @@ conf_mat = confusion_matrix(golds_labels, preds_labels, labels=["MajorClaim", "C
 print(score)
 print(conf_mat)
 print(classification_report(golds_labels, preds_labels))
+
+
+score = f1_score(golds_labels, preds_labels, average='macro', labels=["MajorClaim", "Claim", "Premise"])
+conf_mat = confusion_matrix(golds_labels, preds_labels, labels=["MajorClaim", "Claim", "Premise"])
+print(score)
+print(conf_mat)
+print(classification_report(golds_labels, preds_labels, labels=["MajorClaim", "Claim", "Premise"]))
