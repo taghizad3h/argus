@@ -127,3 +127,4 @@ class Settings(BaseSettings):
     ################################################################################
     dtype: str | None = None # None for auto detection. Float16 for Tesla T4, V100, Bfloat16 for Ampere+
     load_in_4bit: bool | None = True # Use 4bit quantization to reduce memory usage. Can be False.
+    load_pretrained: bool | None = True

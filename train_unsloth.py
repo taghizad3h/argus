@@ -20,7 +20,7 @@ parser.add_argument('--gradient_steps', type=int, help='gradient_accumulation_st
 parser.add_argument('--lora', action='store_true', help='user lora', default=True)
 parser.add_argument('--bit4', action='store_true', help='user 4bit quantization', default=False)
 parser.add_argument('--bit8', action='store_true', help='user 8bit quantization', default=False)
-
+parser.add_argument('--load_pretrained', action='store_true', help='load from pretrained model', default=False)
 
 
 args = parser.parse_args()
@@ -41,12 +41,13 @@ settings = Settings(
     num_train_epochs=args.epochs,
     max_seq_length=1024,
     save_steps = 1000,
-    load_in_4bit = args.bit4
+    load_in_4bit = args.bit4,
+    load_pretrained = args.load_pretrained
 )
 
 
 model, tokenizer = FastLanguageModel.from_pretrained(
-    model_name = settings.model_name,
+    model_name = settings.output_dir if args.load_pretrained else settings.model_name,
     max_seq_length = settings.max_seq_length,
     dtype = settings.dtype,
     load_in_4bit = settings.load_in_4bit,
