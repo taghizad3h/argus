@@ -17,12 +17,14 @@ from settings import Settings
 dataset = 'aae2/adus'
 # dataset = 'pe2-adus-embedded-paragraph-level'
 # model_name = 'NousResearch/Llama-2-7b-chat-hf'
-# model_name = 'unsloth/llama-2-7b'
+# model_name = 'unsloth/llama-2-7b'Saleh but assistant
 # model_name = 'unsloth/mistral-7b'
 # model_name = 'unsloth/llama-3-8b-Instruct'
 # model_name = 'TinyLlama/TinyLlama-1.1B-Chat-v1.0'
+# model_name = 'unsloth/Llama-3.2-1B-Instruct'
+# model_name = 'unsloth/Llama-3.2-3B-Instruct'
 model_name = 'unsloth/Meta-Llama-3.1-8B-Instruct'
-config_name = '-r16-qkv-gud-fp' #r = rank of lora g=gate-proj u=up-proj d=down-proj fp = full presicion
+config_name = '-r16-qkv-gud-fp-bs8-e2' #r = rank of lora g=gate-proj u=up-proj d=down-proj fp = full presicion
 use_lora = True
 
 settings = Settings(
