@@ -32,6 +32,10 @@ output_extra_detail += f"lora-r{args.lora_r}-{''.join([r[0] for r in args.lora_m
 output_extra_detail += f"-bs{args.batch_size}"
 output_extra_detail += f"-ac{args.gradient_steps}"
 output_extra_detail += f"-e{args.epochs}"
+output_extra_detail += "-q4" if args.use_4bit else ""
+output_extra_detail += "-q8" if args.use_4bit else ""
+output_extra_detail += "-fp" if (not (args.use_4bit and args.use_8bit)) else ""
+
 
 
 settings = Settings(
