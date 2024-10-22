@@ -18,17 +18,29 @@ parser.add_argument('--epochs', type=int, help='number of epochs', default=1)
 parser.add_argument('--batch_size', type=int, help='train batch size', default=8)
 parser.add_argument('--gradient_steps', type=int, help='gradient_accumulation_steps', default=1)
 parser.add_argument('--lora', action='store_true', help='user lora', default=True)
-parser.add_argument('--start_percent', type=int, help='user lora', default=0)
-parser.add_argument('--end_percent', type=int, help='user lora', default=25)
+parser.add_argument('--lora_r', type=int, help='lora rank', default=16)
+parser.add_argument('--lora_modules', type=str, help='lora rank', default='q_proj,k_proj,v_proj,gate_proj,up_proj,down_proj')
+parser.add_argument('--bit4', action='store_true', help='user 4bit quantization', default=False)
+parser.add_argument('--bit8', action='store_true', help='user 8bit quantization', default=False)
+parser.add_argument('--load_pretrained', action='store_true', help='load from pretrained model', default=False)
 
 args = parser.parse_args()
 use_lora = args.lora
+output_extra_detail = ''
+output_extra_detail += f"lora-r{args.lora_r}-{''.join([r[0] for r in args.lora_modules.split(',')])}" if use_lora else ""
+output_extra_detail += f"-bs{args.batch_size}"
+output_extra_detail += f"-ac{args.gradient_steps}"
+output_extra_detail += f"-e{args.epochs}"
+output_extra_detail += "-q4" if args.bit4 else ""
+output_extra_detail += "-q8" if args.bit8 else ""
+output_extra_detail += "-fp" if (not (args.bit4 and args.bit8)) else ""
+
 
 settings = Settings(
     dataset_path = f'datasets/{args.dataset}',
     per_device_train_batch_size = args.batch_size,
     model_name = args.model_name,
-    output_dir = f'output/{args.model_name.replace("/", "-")}{"-lora" if use_lora else ""}-{args.dataset}',
+    output_dir = f'output/{args.model_name.replace("/", "-")}-{output_extra_detail}-{args.dataset}',
     use_4bit = False,
     use_8bit = False,
     fp16 = not torch.cuda.is_bf16_supported(),
@@ -39,7 +51,8 @@ settings = Settings(
     num_train_epochs=args.epochs,
     max_seq_length=1024,
     save_steps = 1000,
-    load_in_4bit = False
+    load_in_4bit = False,
+    lora_r = args.lora_r
 )
 
 
