@@ -34,7 +34,7 @@ output_extra_detail += f"-ac{args.gradient_steps}"
 output_extra_detail += f"-e{args.epochs}"
 output_extra_detail += "-q4" if args.bit4 else ""
 output_extra_detail += "-q8" if args.bit8 else ""
-output_extra_detail += "-fp" if (not (args.use_4bit and args.use_8bit)) else ""
+output_extra_detail += "-fp" if (not (args.bit4 and args.bit8)) else ""
 
 
 
