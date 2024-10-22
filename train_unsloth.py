@@ -18,6 +18,8 @@ parser.add_argument('--epochs', type=int, help='number of epochs', default=1)
 parser.add_argument('--batch_size', type=int, help='train batch size', default=8)
 parser.add_argument('--gradient_steps', type=int, help='gradient_accumulation_steps', default=1)
 parser.add_argument('--lora', action='store_true', help='user lora', default=True)
+parser.add_argument('--lora_r', type=int, help='lora rank', default=16)
+parser.add_argument('--lora_modules', type=str, help='lora rank', default='q_proj,k_proj,v_proj,gate_proj,up_proj,down_proj')
 parser.add_argument('--bit4', action='store_true', help='user 4bit quantization', default=False)
 parser.add_argument('--bit8', action='store_true', help='user 8bit quantization', default=False)
 parser.add_argument('--load_pretrained', action='store_true', help='load from pretrained model', default=False)
@@ -25,12 +27,18 @@ parser.add_argument('--load_pretrained', action='store_true', help='load from pr
 
 args = parser.parse_args()
 use_lora = args.lora
+output_extra_detail = ''
+output_extra_detail += f"lora-r{args.lora_r}-{''.join([r[0] for r in args.lora_modules.split(',')])}" if use_lora else ""
+output_extra_detail += f"-bs{args.batch_size}"
+output_extra_detail += f"-ac{args.gradient_steps}"
+output_extra_detail += f"-e{args.epochs}"
+
 
 settings = Settings(
     dataset_path = f'datasets/{args.dataset}',
     per_device_train_batch_size = args.batch_size,
     model_name = args.model_name,
-    output_dir = f'output/{args.model_name.replace("/", "-")}{"-lora" if use_lora else ""}-{args.dataset}',
+    output_dir = f'output/{args.model_name.replace("/", "-")}-{output_extra_detail}-{args.dataset}',
     use_4bit = args.bit4,
     use_8bit = args.bit8,
     fp16 = not torch.cuda.is_bf16_supported(),
@@ -42,7 +50,8 @@ settings = Settings(
     max_seq_length=1024,
     save_steps = 1000,
     load_in_4bit = args.bit4,
-    load_pretrained = args.load_pretrained
+    load_pretrained = args.load_pretrained,
+    lora_r = args.lora_r
 )
 
 
@@ -78,7 +87,7 @@ elif 'llama-3' in settings.model_name.lower():
 
 model = FastLanguageModel.get_peft_model(
     model,
-    r = 16, # Choose any number > 0 ! Suggested 8, 16, 32, 64, 128
+    r = settings.lora_r, # Choose any number > 0 ! Suggested 8, 16, 32, 64, 128
     target_modules = ['q_proj', 'k_proj', 'v_proj', 'gate_proj', 'up_proj', 'down_proj'],
     lora_alpha = settings.lora_alpha,
     lora_dropout = settings.lora_dropout, # Supports any, but = 0 is optimized

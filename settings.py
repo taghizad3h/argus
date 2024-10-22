@@ -18,7 +18,7 @@ class Settings(BaseSettings):
     ################################################################################
 
     # LoRA attention dimension
-    lora_r: int = 64
+    lora_r: int = 16
 
     # Alpha parameter for LoRA scaling
     lora_alpha: int = 16
