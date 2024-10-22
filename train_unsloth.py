@@ -83,6 +83,8 @@ elif 'phi' in settings.model_name.lower():
     response_template = "Output: "
 elif 'llama-3' in settings.model_name.lower():
     response_template = '<|start_header_id|>assistant<|end_header_id|>\n\n'
+elif 'qwen' in settings.model_name.lower():
+    response_template = '<|im_start|>assistant\\n'
 
 
 model = FastLanguageModel.get_peft_model(
