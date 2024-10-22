@@ -82,7 +82,7 @@ os.makedirs(pred_dir, exist_ok=True)
 
 counter = 0
 for root, _, files in os.walk(settings.dataset_path+"/test"):
-    for f in tqdm(files[floor(len(files) * (args.start_percent/100)): floor(len(files) * (args.end_percent/100))]):
+    for f in tqdm(files):
         try:
             with open(os.path.join(root, f)) as f1, torch.no_grad():
                 sample = json.load(f1)
