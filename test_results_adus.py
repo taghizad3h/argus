@@ -24,8 +24,7 @@ dataset = 'aae2/adus'
 # model_name = 'unsloth/Llama-3.2-1B-Instruct'
 # model_name = 'unsloth/Llama-3.2-3B-Instruct'
 model_name = 'unsloth/Meta-Llama-3.1-8B-Instruct'
-config_name = '-r16-qkv-gud-fp-bs8-e2' #r = rank of lora g=gate-proj u=up-proj d=down-proj fp = full presicion
-use_lora = True
+config_name = 'lora-r16-qkvgud-bs8-ac1-e10-fp' #r = rank of lora g=gate-proj u=up-proj d=down-proj fp = full presicion
 
 settings = Settings(
     dataset_path = f'datasets/{dataset}',
@@ -33,7 +32,7 @@ settings = Settings(
     # model_name = 'models/microsoft/phi-2',
     model_name = model_name,
     # output_dir = 'output/phi-28bitqlora',
-    output_dir = f'output/{model_name.replace("/", "-")}{"-lora" if use_lora else ""}{config_name}-{dataset}',
+    output_dir = f'output/{model_name.replace("/", "-")}-{config_name}-{dataset}',
     use_4bit = False,
     use_8bit = False,
     gradient_accumulation_steps = 4,
