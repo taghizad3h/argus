@@ -25,6 +25,24 @@ parser.add_argument('--bit4', action='store_true', help='user 4bit quantization'
 parser.add_argument('--bit8', action='store_true', help='user 8bit quantization', default=False)
 parser.add_argument('--load_pretrained', action='store_true', help='load from pretrained model', default=False)
 parser.add_argument('--all_snapshots', action='store_true', help='we inference on all the snapshots in the given directory or not')
+parser.add_argument('--remove_system_message', action='store_true', help='load from pretrained model', default=False)
+
+def convert_to_chat_json(text, should_remove_system_role = False):
+    if not should_remove_system_role:
+        return json.loads(text)
+    else:
+        chat = json.loads(text)
+        system_message = ''
+        user_message = ''
+        assistant_message = ''
+        for turn in chat:
+            if turn['role'] == 'system':
+                system_message = turn['content']
+            if turn['role'] == 'user':
+                user_message = turn['content']
+            if turn['role'] == 'assistant':
+                assistant_message = turn['content']
+        return [{'role': 'user', 'content': system_message +'\n'+ user_message}, {'role': 'assistant', 'content': assistant_message}]
 
 args = parser.parse_args()
 use_lora = args.lora
@@ -96,7 +114,7 @@ for i, model_dir in enumerate(dirs):
         for f in tqdm(files):
             try:
                 with open(os.path.join(root, f)) as f1, torch.no_grad():
-                    sample = json.load(f1)
+                    sample = convert_to_chat_json(f1.read(), args.remove_system_message)
                     prompt = []
                     response_length = 0
                     for item in sample:
