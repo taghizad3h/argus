@@ -3,6 +3,7 @@ import json
 import os
 import re
 from math import floor
+import gc
 
 import torch
 from tqdm import tqdm
@@ -77,13 +78,15 @@ settings = Settings(
 
 dirs = []
 if args.all_snapshots:
-    dirs = [os.path.join(settings.output_dir, d) for d in os.listdir(settings.output_dir) if os.path.isdir(os.path.join(settings.output_dir, d))]
-    dirs = sorted(dirs, key=lambda x: int(x.split("-")[1]))
+    dirs = [os.path.join(settings.output_dir, d) for d in os.listdir(settings.output_dir) if os.path.isdir(os.path.join(settings.output_dir, d)) and 'runs' not in d and 'logs' not in d]
+    dirs = sorted(dirs, key=lambda x: int(x.split("-")[-1]))
 else:
     dirs = [settings.output_dir]
 
+print(f'we will inference of {len(dirs)} epochs')
 
 for i, model_dir in enumerate(dirs):
+    print(f'inferencing on model of epoch {i+1} from directory {model_dir}')
     model, tokenizer = FastLanguageModel.from_pretrained(
         model_name = model_dir,
         max_seq_length = settings.max_seq_length,
@@ -106,9 +109,9 @@ for i, model_dir in enumerate(dirs):
 
     pred_dir = settings.output_dir.replace('output', 'preds')
     if args.all_snapshots:
-        pred_dir = re.sub('-e\d+', f'-e{i+1:2d}')
+        pred_dir = re.sub('-e\d+', f'-e{i+1:02d}', pred_dir)
     os.makedirs(pred_dir, exist_ok=True)
-
+    print(f'prediction dir is {pred_dir}')
     counter = 0
     for root, _, files in os.walk(settings.dataset_path+"/test"):
         for f in tqdm(files):
@@ -134,3 +137,6 @@ for i, model_dir in enumerate(dirs):
                 print(e)
                 print(prompt)
                 print(f)
+
+    del model
+    gc.collect()
