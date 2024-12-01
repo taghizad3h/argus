@@ -139,7 +139,8 @@ training_arguments = TrainingArguments(
     group_by_length=settings.group_by_length,
     lr_scheduler_type=settings.lr_scheduler_type,
     report_to="tensorboard",
-    save_total_limit=3,
+    save_total_limit=settings.num_train_epochs,
+    save_strategy='epoch'
     # load_best_model_at_end = True
 )
 
