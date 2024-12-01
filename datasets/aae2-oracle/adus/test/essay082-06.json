@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1. MajorClaim, 2. Claim and 3. Premise. Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nAdvertising - positive or negative part of our lives\n\nNowadays, the use of advertisement through different forms of media such as newspapers, radio and television has become very prevalent, so it is thought to be a necessary part of today's society. Many believe that advertising has brought great benefits to lives therefore it should be considered a positive activity while others have held a complete different idea about this. Both views will be critiqued before a reasonable conclusion is drawn.\nFirst, it is generally understood that advertising is carried out with the main purpose of promoting different products and services or encouraging people to consume more. Advertisements are, therefore, very important for many businesses to increase sales and hence profits. Also, to consumers, advertising can bring them many benefits. For example, customers of telecommunication services will have an idea about the current offers of different companies and hence they can compare them and then have a better decision in choosing their internet or mobile phone plans. From all of these, it is easy to see why the idea that advertising is a positive part of life will garner strong support.\nHowever, it can be seen that some people have argued against advertising due to its negative impacts. Firstly, a huge amount of different advertisements could be sent automatically by a system to personal phones or email addresses, this is generally known as spam, and causes discomfort or even annoyance to many people. Secondly, advertising can be very expensive and not every advertising campaign can be done successfully and brings good results. Therefore, advertising is believed by many, a financial burden to businesses.\nIn conclusion, after analyzing the pros and cons of advertising, both of the views have strong support, but it is felt that more good comes from advertising than bad. Thus, the idea that advertising is a positive part of life can be more supported.\n\nWhat is the argumentative role of \"they can compare them and then have a better decision in choosing their internet or mobile phone plans\" from the given essay? choose from 1. MajorClaim 2. Claim 3. Premise \n"
+    },
+    {
+        "role": "assistant",
+        "content": "3. Premise"
+    }
+]

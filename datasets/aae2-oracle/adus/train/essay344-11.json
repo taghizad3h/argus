@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1. MajorClaim, 2. Claim and 3. Premise. Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nHigh sum of money of modern artist\n\nThe amount of money people earning sometimes is unfair. In a field of art, modern artist may receive high salary for their masterpiece creation while labors should be break their bone for years to get similar amount of money. Although some people view that government should be take a responsibility for this unfair situation, critics against such view. I agree that in this occasion the government is not granted to hand in.\nProficiency brings perfectness in terms of art work. It is true while the modern artists who implement their creative thinking onto high value creation are paid with immense sum by the art collector. Also, the high sum which modern artists receive is related to the quality instead of the quantity and their rare talent. For example, a 15 centimeter Buddha temple made by hand is granted times in comparison with factory production. On the other hand, modern artists also devote themselves find a unique concept in which ordinary people cannot do, such making impossible become possible. Pieter Padang, Minion creator, has brilliant idea to alter part of song lyric \"I swear\" become \"underwear\" when the Minion sing in Despicable Me. He granted huge sums for such idea.\nStriking contrast, labor working in the merchandise factory receive coin of dollar even they make a hundred of 15 cm Buddha temples a day. In any case, a musician playing \"I swear\" several times receives different earnings that Padang got because the musician re-plays the song without any creation. Moreover, government cannot equalize the price of creation of modern artist because there is no certain parameter to value it, art value is about taste.\nHaving said that the huge sums of modern artists receives related to their struggle in the field of art, while the term of struggle might different with other field of job. I agree that government cannot take steps to make the salary between modern artists and other job similar because art price is about taste.\nWhat is the argumentative role of \"a musician playing \"I swear\" several times receives different earnings that Padang got\" from the given essay? choose from 1. MajorClaim 2. Claim 3. Premise \n"
+    },
+    {
+        "role": "assistant",
+        "content": "3. Premise"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1. MajorClaim, 2. Claim and 3. Premise. Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nPrevention is better than cure\n\nIt is a completely right and extremely wise policy to focus on health education and preventative measures rather than treatment. Once applied, it will bring many benefits to both citizens and governments.\nHealth education causes long-term positive effects on our next generations. First of all, thank to a full health education from their childhoods, children will have good habits of taking care of their own health and these habits may be kept in their adolescences. For example, if a child is educated to have a hygienic lifestyle at a very young age, he also keeps it when older. Secondly, health education will prepare for people especially children necessary knowledge to protect themselves from risks of diseases. Instead of afraid or panic, they may be calmer if unfortunately committing some normal diseases such as allergy or illness in seasonal changes. Many diseases which may be cured easily can turn to serious ones if we do not have right treatment. Health education will help people to have right choices of treatment to recover more quickly.\nPreventative measures will help improve general health state of all citizens. For example, vaccines will guarantee that pregnant women and their babies are protected from serious infectious diseases such as flu, smallpox, rubella so on. When huge injection campaigns are organized throughout our country, the community's health state will be improved remarkably. As human resources play a key role in the development of a country, investing money to enhance the general health state is a totally right decision. In addition, because the cost of treatment is often much higher than that of prevention, the government can save a lot of money for our country's health budget.\nIn conclusion, I strongly agree that we should give more priority to health education and preventative measures than to treatment. However, reasonable attentions should be paid to treatment so that our citizens are always looked after with best services.\n\nWhat is the argumentative role of \"Instead of afraid or panic, they may be calmer if unfortunately committing some normal diseases such as allergy or illness in seasonal changes\" from the given essay? choose from 1. MajorClaim 2. Claim 3. Premise \n"
+    },
+    {
+        "role": "assistant",
+        "content": "3. Premise"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1. MajorClaim, 2. Claim and 3. Premise. Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nNowadays there are more opportunities for women than there were in the past\n\nThe modern times have witnessed profound changes in most aspects of life, including the revolution of feminism. Women have been opened up to more chances than ever. This, contrary to some ideas, is a positive progress in human society from my point of view.\nTo start with, the fairness between males and females is inevitable in such a developed society. Gone are the days when women could do nothing rather than stick to boring house work and take care of children. Women nowadays are much more active, they may be successful businessmen, they join the political world, they become scientists and so on. This is to say, the \"weaker\" gender as often be thought has enough right as well as ability to contribute to the development of human beings just like any other men, not to mention they even perform better in some fields.\nIn the second place, the revolution in females' right has brought about many benefits not only to themselves but society as well. The financial burden of families, for instance, has decreased significantly with both the wives and the husbands working to earn money. What is more, women have the outstanding instinct to take up some careers like healthcare or human resource management due to their patience and elaboration.\nAdmittedly, such changes do lead to some negative results like an upward trend in divorce rate or, under many circumstances, women find it difficult to balance their work and their traditional role as the wives. Also, children might enjoy less care from parents as they are both busy with their work. Yet everything has it upside and downside, women should find the best way to overcome such challenges.\nAll things considered, in a society where females are given equal opportunities compared with males would obviously enjoy lots of benefits far outweighing its obstacles.\n\nWhat is the argumentative role of \"Women nowadays are much more active, they may be successful businessmen, they join the political world, they become scientists and so on\" from the given essay? choose from 1. MajorClaim 2. Claim 3. Premise \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. Claim"
+    }
+]

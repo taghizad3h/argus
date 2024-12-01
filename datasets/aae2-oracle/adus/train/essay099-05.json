@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1. MajorClaim, 2. Claim and 3. Premise. Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nTaking a break before starting higher education is a good idea\n\nNowadays, it is an increasingly common trend to take a break before starting university studies. It is not just becoming common among rich students but also in the poor students. Students take a break of year or two, some students travel all around the world during this time, and some choose to take up a job.\nExperience gained through traveling to different places, meeting different people and even at job goes long way. It not only enhances the confidence of a student but also makes them independent. Student's who works tend to gather better financial resources which they can rely on during their university studies. This experience also makes them aware of what they would like to make of their life. They develop broader view and can make a better choice of their future studies or courses.\nTaking a break not just has benefits but it also comes with some negative impacts. Once student's starts earning, they might not like to go back to studies where they would lose their financial independence. They might even find it difficult to adapt to education environment. There is also a risk of student never going back to university or higher education. Probably some might take some short term courses instead of proper and complete university education, which will help them to get a better job and salaries. This might only help them in a short run as it is a known fact that to make a reasonable career in longer runs, one needs a proper and higher qualification.\nIn my view point, I would agree to idea of taking a break before starting higher education. Students who take break, gain lot of benefits by traveling around the places or by working. They tend to contribute more due to their real world experiences which makes them more mature.\n\nWhat is the argumentative role of \"Student's who works tend to gather better financial resources which they can rely on during their university studies\" from the given essay? choose from 1. MajorClaim 2. Claim 3. Premise \n"
+    },
+    {
+        "role": "assistant",
+        "content": "3. Premise"
+    }
+]

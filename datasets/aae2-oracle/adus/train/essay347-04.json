@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1. MajorClaim, 2. Claim and 3. Premise. Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nAdvertising impact on people's choice of consumption\n\nNowdays, people's choice of consumption is heavily affected by various of advertising on television, street, magazine etc. This argument may be true that people will be swayed by the advertising and buy things they do not need it for their life. For example, in most asian countries, advertisement company usually hire popular singers or actors to advertise the products to boosts the sales, and some people, especially adolescent may buy things from their favourite singer advertised to support their idol instead of to fill their needs.\nIn addition, products usually look more gorgeous and with good quality in advertisement, people are more likely to buy goods impulsively without a second thought. A good advertisement can convince people to believe that it is what they want, even though it is not the real needs of the society. And there are always people purchase particular products swayed by advertising which makes it a trend to follow for other people who is unnecessarily need it.\nHowever, buying habit is a very personal things for individuals, the advertisement is not the only cause for people to buy, sometimes it depends on one's needs and ability of consumption. It is unlikely to buy things impulsively for adults who have concern of arranging disposable income. Most of them have to allocate the money if they doing other purchase. On the other hand, children and adolescents who is not economic independence is more possible to buy things impulsively without considering whether they need it or not, since they do not have financial pressure from life and ability to define what is necessary.\nIn my opinion, I think buying habit is people's choice to make, not entirely affected by advertisements. But for children or adolescents who is not mentally develop, it might be hard for them not to swayed by advertising. So it is important that government needs to impose rules on particularly advertisement company (for example, toys company) to avoid youngster have bias thought on what they really need.\nWhat is the argumentative role of \"for children or adolescents who is not mentally develop, it might be hard for them not to swayed by advertising\" from the given essay? choose from 1. MajorClaim 2. Claim 3. Premise \n"
+    },
+    {
+        "role": "assistant",
+        "content": "3. Premise"
+    }
+]
