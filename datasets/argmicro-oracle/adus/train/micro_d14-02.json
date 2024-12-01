@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nI think Fritz has never been in a fight in his life. As a boy he did use to scuffle with the other choirboys, but that hardly counts as a proper brawl. And he always chickens out when things get dicey. Yesterday, when the bouncer wouldn't let us in, he was suddenly gone.\nWhat is the argumentative role of \"but that hardly counts as a proper brawl.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

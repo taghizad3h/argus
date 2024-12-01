@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nIt is desirable that no one channels his or her wealth past the tax authorities. Those who do or try to should be held accountable if at all possible. Having said that, state funds are often wasted on nonsensical investments, so that this ideal appears unworthy of support in many ways. Besides, the trading of information is obviously driven by greed of gain. Tax data that are not made available for free should therefore not be acquired by the state.\nWhat is the argumentative role of \"so that this ideal appears unworthy of support in many ways.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

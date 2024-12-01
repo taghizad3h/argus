@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nRetirement at 63, that's something everyone who has toiled away (nonstop) up to this point surely deserves. Only the question remains whether this early 'leisure' will be nicer if you have no idea what do to all day and you statistically still have almost 20 (!!!) years to go? Also, one isn't taking responsibility for society if one gives up one's experienced, healthy and highly qualified capabilities earlier than necessary for private/personal reasons. Especially now, as there is a lack of skilled labour, it's irresponsible for the economy and prosperity to retire at 63.\nWhat is the argumentative role of \"Only the question remains whether this early 'leisure' will be nicer if you have no idea what do to all day and you statistically still have almost 20 (!!!) years to go?\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

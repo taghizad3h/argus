@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nNo human being or human committee should again be given the permission to rule over 'life or death'. Courts are also subject to human error. That's why Germany should not introduce capital punishment! Every human, even those who have committed a despicable crime, can bring themselves to regret and change their opinion. A door must remain open for making amends.\nWhat is the argumentative role of \"No human being or human committee should again be given the permission to rule over 'life or death'.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

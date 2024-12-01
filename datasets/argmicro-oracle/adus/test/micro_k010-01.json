@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nConsidering what's on television these days, it would be appropriate to only have those people pay who actually (want to) follow the programming. In some cases there are only shows for older generations on at prime times, so why then should everyone pay for this? By now you have advertising on all channels, so there's no advantage for the current paying viewers of the public broadcasters. Nevertheless one has to point out that there'd probably be way fewer stations if it weren\u2019t the whole of Germany that\u2019s obliged to pay. That shouldn't be an issue though, given the sheer number of programmes and stations that essentially show the same things anyway.\nWhat is the argumentative role of \"In some cases there are only shows for older generations on at prime times, so why then should everyone pay for this?\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

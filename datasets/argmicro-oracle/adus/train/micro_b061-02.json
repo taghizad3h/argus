@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nHigher penalties for dog dirt are pointless as long as there is not enough personnel to enforce them. In individual cases they may indeed act as a deterrent, in general, however, a clean environment and the role model effect of others is more likely to motivate the dog owner to pick up the droppings than a potential fine.\nWhat is the argumentative role of \"in general, however, a clean environment and the role model effect of others is more likely to motivate the dog owner to pick up the droppings than a potential fine.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

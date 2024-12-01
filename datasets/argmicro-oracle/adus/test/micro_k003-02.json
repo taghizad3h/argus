@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nUsually you only have eight weeks to complete a bachelor thesis in linguistics degrees. Adjusting the portion of the total grade upwards anyway would not be commensurate to other study assignments and examinations. Current regulations for the calculation of the total grade should therefore be maintained. Indeed the preparation of such a scientific work is a fundamental competency that must be acquired in philological degrees. Throughout the six or seven semesters, however, topics are covered that likewise ought to carry weight.\nWhat is the argumentative role of \"Current regulations for the calculation of the total grade should therefore be maintained.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

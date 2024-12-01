@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nWhenever Peter bumps into an ex-girlfriend at a party, he forgoes any further consumption of alcohol just in case. When he got back from Ralf's party last night he was still stone-cold sober. Thus one of his ex-girlfriends must have been there. Ralf does insist that they drank advocaat together. But even without an ex-girlfriend he would never touch that.\nWhat is the argumentative role of \"Whenever Peter bumps into an ex-girlfriend at a party, he forgoes any further consumption of alcohol just in case.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

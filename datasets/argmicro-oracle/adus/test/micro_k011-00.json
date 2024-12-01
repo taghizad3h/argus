@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nRent increases upon re-letting aren't bad as such, if it's only a small amount, they\u2019re very bad however, if the rent suddenly climbs by \u20ac100 or \u20ac200. With those kinds of amounts you think twice about whether you really want to stay in the flat. If there must be rent increases, there should also be a cap to avoid nasty surprises. This helps the landlords, as they can adjust their expenses through the increase, and also the tenants, as they can plan for a maximum rent increase. That the landlords are then slightly restricted in the administration of their property is not a problem, as they have more pull in the end anyway.\nWhat is the argumentative role of \"Rent increases upon re-letting aren't bad as such, if it's only a small amount,\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "1. opp"
+    }
+]

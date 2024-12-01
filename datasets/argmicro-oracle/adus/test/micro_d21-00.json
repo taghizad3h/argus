@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nEnergy saving light bulbs contain a significant amount of toxins. A commercially available bulb may contain for example up to five milligrams of mercury. That's why they should be taken off the market, unless they're unbreakable. But precisely this is unfortunately not the case.\nWhat is the argumentative role of \"Energy saving light bulbs contain a significant amount of toxins.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

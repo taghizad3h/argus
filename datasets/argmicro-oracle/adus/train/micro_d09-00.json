@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nYou should watch less television, as too much TV makes you stupid in the long run, like your brother. It would be an exception if you only watched quiz shows, but you tend to watch Big Brother and X-Diaries.\nWhat is the argumentative role of \"You should watch less television,\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

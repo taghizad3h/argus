@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nSchweinsteiger has now been injured for three days. We urgently need a midfield replacement for the coming match. The doctor was able to sign him off as fit for play with enough painkillers, but that would only make the injury worse in the long run. And a young substitute always invigorates the team.\nWhat is the argumentative role of \"but that would only make the injury worse in the long run.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

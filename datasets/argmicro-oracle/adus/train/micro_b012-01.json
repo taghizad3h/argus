@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nSome may find the idea of a school uniform anachronistic, or regard it as too much of an intervention into the leeway of students and parents to make decisions. Indeed, however, it's already the case today that students of apparently 'uniform-free' schools are essentially wearing a uniform consisting of certain brand-name garments. A simply designed practical outfit would even out the overall visual image of a school, and direct attention towards the character and achievements of the students - and not their buying power.\nWhat is the argumentative role of \"or regard it as too much of an intervention into the leeway of students and parents to make decisions.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "1. opp"
+    }
+]

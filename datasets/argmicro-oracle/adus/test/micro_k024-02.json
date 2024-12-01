@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nDog owners should pay higher fines for dog dirt left on pavements, although there aren't enough bins and bag-dispensers for dog dirt. One reason for this is that they have thus far hardly had to fear the consequences despite the obligation to clean up. A higher fine, so dog owners would have to dig deeper into their pockets, is supposed to be a deterrent after all. The city, especially the green spaces, should be kept tidy after all, for they are there for our recreation. Besides you're not allowed to leave other rubbish without punishment.\nWhat is the argumentative role of \"One reason for this is that they have thus far hardly had to fear the consequences despite the obligation to clean up.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

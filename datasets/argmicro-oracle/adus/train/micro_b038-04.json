@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nSchool uniforms should be introduced in our schools again. This provides an at least superficial equalization in our heavily economically oriented society, which may reduce discrimination of financially and/or socially disadvantaged children. Furthermore, it would facilitate the finding of truants, who may wish to get away with fewer classes at school. Uniforms always and immediately provoke fear of losing one's individuality but what's really lacking in schools today is rather a real sense of community, which would possibly be strengthened by an equal, collective appearance.\nWhat is the argumentative role of \"Uniforms always and immediately provoke fear of losing one's individuality\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "1. opp"
+    }
+]

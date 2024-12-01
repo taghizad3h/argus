@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nBy purchasing illegally acquired tax data of citizens, the state is not only turning itself into a felon, but it is paying criminals, too. Besides, the purchase of such CDs is unnecessary today, as, due to changed terms of business, many banks urge their customers to turn themselves in. Acquiring CDs with tax data of tax delinquents is therefore out of the question. It is indisputable, however, that by purchasing such data the state increases the pressure on tax evaders to turn themselves in.\nWhat is the argumentative role of \"It is indisputable, however, that by purchasing such data the state increases the pressure on tax evaders to turn themselves in.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "1. opp"
+    }
+]

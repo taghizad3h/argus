@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nThe TV/radio licence fee can only be required of all citizens/households equally. Critics point out that they are not using what's on offer by public broadcasting. I do doubt that there is anyone who has never at least indirectly watched the programming of the public broadcasters. However, it is impossible to monitor this and collect more customized fees. Just as with other choices in culture or infrastructure, public broadcasters are also to be financed, regardless of whether individuals make use of their programming or not.\nWhat is the argumentative role of \"Critics point out that they are not using what's on offer by public broadcasting.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "1. opp"
+    }
+]

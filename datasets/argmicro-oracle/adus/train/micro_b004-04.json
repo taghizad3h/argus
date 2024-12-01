@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nOf course there are a number of programmes in public broadcasting that are not worth the licencing fee, and others, such as \u201cMusikantenstadl\u201d and soap operas, are only interesting to certain audiences. Nevertheless, everybody should contribute to the funding of the public broadcasters in equal measure, for we need general and independent media. After all we want to get our view of the world neither through the lens of the government nor through that of rich media entrepreneurs.\nWhat is the argumentative role of \"After all we want to get our view of the world neither through the lens of the government nor through that of rich media entrepreneurs.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nNo one should have the possibility to pick up the morning-after pill over the counter at the pharmacy. Though there'd be the advantage of forgoing the embarrassment of a visit to the doctor or a nighttime trip to the walk-in clinic, women should still be informed about the risks and have a gynaecological examination before taking it. Furthermore there's the risk that women could use the over-the-counter morning-after pill as a substitute for contraception.\nWhat is the argumentative role of \"Though there'd be the advantage of forgoing the embarrassment of a visit to the doctor or a nighttime trip to the walk-in clinic,\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "1. opp"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nThe current tour of Tokio Hotel is breaking all records. Never have there been longer queues at the advance ticket offices \u2013 in Japan there was one exceeding 3.2km \u2013 aside from, perhaps, during the heyday of Take That. But at times even the online sales outlets haven't been coping with the demand.\nWhat is the argumentative role of \"aside from, perhaps, during the heyday of Take That.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "1. opp"
+    }
+]

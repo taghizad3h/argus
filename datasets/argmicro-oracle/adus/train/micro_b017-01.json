@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nRent prices should be limited by a cap when there's a change of tenant. Landlords may want to earn as much as possible, and many, consistent with market principles, are prepared to pay higher rents, but that people with the same income suddenly must pay more and can't live in the same flat anymore seems implausible. Gentrification destroys entire districts and their culture.\nWhat is the argumentative role of \"Landlords may want to earn as much as possible,\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "1. opp"
+    }
+]

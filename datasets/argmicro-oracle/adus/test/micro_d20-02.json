@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nThe prototype of Audi's new sports car has car lovers raving. The steering system may still need a bit of tweaking, as the car jack-knifes at higher speeds, and surely you'll want to be speeding a lot with that beauty. But aside from that the car caters to pretty much every wish.\nWhat is the argumentative role of \"as the car jack-knifes at higher speeds,\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "1. opp"
+    }
+]

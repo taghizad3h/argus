@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nAlternative treatments should be subsidized in the same way as conventional treatments, since both methods can lead to the prevention, mitigation or cure of an illness. Besides it should be in the interest of the health insurers to recognize alternative medicine as treatment, since there is a chance of recovery. It doesn't matter after all that those who administer the treatment don't have 'doctor status'.\nWhat is the argumentative role of \"since both methods can lead to the prevention, mitigation or cure of an illness.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nOlympic events are rooted in old traditions. On the other hand, the events have a culturally determined character. Our society is strongly digitized and influenced by computers. Yet sports are usually associated with physical training. Since however skat, chess etc. are not accepted as Olympic events, computer games should also not be recognized as Olympic events.\nWhat is the argumentative role of \"Yet sports are usually associated with physical training.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

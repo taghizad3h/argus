@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nSecret services must be more tightly regulated in order to prevent excessive surveillance. After all, secret services tend to develop a life of their own (a state within a state), which would be irresponsible for democratic states. Besides, intelligence services intervene massively in the privacy of citizens and must therefore be monitored more closely to prevent abuse. Parliamentary control however hampers the work of intelligence services for it jeopardizes the secrecy and security of confidential data and informants.\nWhat is the argumentative role of \"Parliamentary control however hampers the work of intelligence services\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "1. opp"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nThe morning-after pill has a number of side effects. A differentiated analysis of its side effects is not achievable for a layperson without medical advice. However these are clearly stated on the package insert, and a request for an early termination of a pregnancy is the right of every woman. The morning-after pill should only be prescribed after counselling by a physician or pharmacist.\nWhat is the argumentative role of \"However these are clearly stated on the package insert,\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "1. opp"
+    }
+]

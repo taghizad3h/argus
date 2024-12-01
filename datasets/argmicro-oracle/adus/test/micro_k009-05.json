@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nGermany should by no means introduce capital punishment. If there were capital punishment, this would mean people are allowed to put themselves above others and rule over their lives. Capital punishment would be murder and would have to be punished with the death penalty itself. What, then, ought to be done with criminals who have committed truly awful crimes such as murder or rape - should they simply be allowed to live on although they have taken or destroyed another life? Yes, for it is a much graver punishment to be imprisoned forever and be tortured by one's own thoughts than to be killed quickly and easily by an injection.\nWhat is the argumentative role of \"Yes, for it is a much graver punishment to be imprisoned forever and be tortured by one's own thoughts than to be killed quickly and easily by an injection.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

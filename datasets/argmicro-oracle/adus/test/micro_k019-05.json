@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nThe thought of television exclusively made up of private channels scares me. Admittedly trash and turmoil are exactly what the majority of people want to see. But to therefore offer TV according to audience rates only would be dangerous. Only in public TV programmes can viewers get information that is not profit-oriented. And since it is the duty of society to collectively finance certain areas that cannot hold their own in a market economy, everyone should chip in.\nWhat is the argumentative role of \"everyone should chip in.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

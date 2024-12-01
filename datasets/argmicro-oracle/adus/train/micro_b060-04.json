@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nOwner-run shops may potentially be overwhelmed by additional work times on Sundays and holidays, then again supermarkets and large shopping centres dominate the market today already. Thus smaller shops could benefit from the additional freedom, as customers are on average more laid-back on Sunday. Opening on Sundays and holidays would therefore help both customers and shops.\nWhat is the argumentative role of \"Opening on Sundays and holidays would therefore help both customers and shops.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

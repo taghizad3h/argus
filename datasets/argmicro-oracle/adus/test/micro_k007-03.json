@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nSupermarkets and shopping centres should be allowed to open any Sundays and holidays at their discretion. For in this way, Sunday shopping days would be better spread out through the year. Also streets and shops would presumably be emptier as not everyone would be open on the same day. However then you'd have a worse overview of which shop is open on a given day.\nWhat is the argumentative role of \"as not everyone would be open on the same day.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

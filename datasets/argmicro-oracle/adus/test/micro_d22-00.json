@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nLarge events that stir national or even international attention attract many visitors, and nothing will get Berlin out of its financial jam more than a lot of spending visitors. Hence the Mayor of Berlin ought to keep the hurdles for organizing such events as low as possible. Of course a higher federal subsidy would be even better for Berlin's coffers, but you shouldn't bother hoping for that.\nWhat is the argumentative role of \"Large events that stir national or even international attention attract many visitors,\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

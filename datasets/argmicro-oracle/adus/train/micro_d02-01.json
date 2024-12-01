@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nBerlin's basketball team has just come out of a sobering season. Especially the home games have seen the team stay behind expectations. A sad highlight: Losing 60:87 to the weakish Mannheimers in a sold-out stadium. Indeed the team ended up third in the league, but given the cost of the star-players one could've expected more.\nWhat is the argumentative role of \"Especially the home games have seen the team stay behind expectations.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

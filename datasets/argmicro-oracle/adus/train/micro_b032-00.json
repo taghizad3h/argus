@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nThere should be a higher fine for dog dirt on the pavement. Dog dirt is disgusting and a hygiene problem. Also children, adults and other animals aren't allowed to leave droppings on the pavement. If you dispose of the waste then and there yourself, no fine is necessary.\nWhat is the argumentative role of \"There should be a higher fine for dog dirt on the pavement.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

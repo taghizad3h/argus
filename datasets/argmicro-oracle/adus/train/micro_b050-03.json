@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nGermany's aging society is undergoing demographic change, and the age of those who are physically and mentally fit is increasing steadily. Thus social security and pension costs are increasing. Yet no one should be required to work for more than 40 years. Raising the relative retirement age on the basis of the physical fitness of the average citizen is fair.\nWhat is the argumentative role of \"Yet no one should be required to work for more than 40 years.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "1. opp"
+    }
+]

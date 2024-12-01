@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nThe death penalty is a legal means that as such is not practicable in Germany. For one thing, inviolable human dignity is anchored in our constitution, and furthermore no one may have the right to adjudicate upon the death of another human being. Even if many people think that a murderer has already decided on the life or death of another person, this is precisely the crime that we should not repay with the same.\nWhat is the argumentative role of \"For one thing, inviolable human dignity is anchored in our constitution,\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

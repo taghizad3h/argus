@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nAnti-virus software protects the users of a computer from dangers from the internet. That's why everyone should have an anti-virus programme on his or her Windows machine. Admittedly they do not generally prevent you from catching a virus, since they can only react to publicly known threats. But once a safeguard has been found against a new virus, everyone gets it in no time through the automatic update.\nWhat is the argumentative role of \"Anti-virus software protects the users of a computer from dangers from the internet.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

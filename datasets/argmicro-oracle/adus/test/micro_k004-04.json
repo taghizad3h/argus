@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nSupermarkets and shopping centres should be allowed to open on any Sundays and holidays. This may be a change for the employees that cannot to be implemented easily. However, especially for working customers this would mean greater flexibility and fewer nerve-racking peak times during the week. Considering the growing digitization of society, the traditional model of the weekend will soon be obsolete. Many European countries, for instance the Netherlands, Sweden and Great Britain, have already understood this and successfully adjusted the opening hours for retailers.\nWhat is the argumentative role of \"Many European countries, for instance the Netherlands, Sweden and Great Britain, have already understood this and successfully adjusted the opening hours for retailers.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nComplementary medicine includes treatments with proven health benefits in many areas which are often less costly than medication from conventional medicine, which are also paid for after all. Often natural treatments do not put as much of a strain on the patient. Such therapies can frequently result in an improvement in the condition through the active participation of the patient. The health insurance companies ought to be enabled to recognize a doctor's decision for natural treatment and also to cover it.\nWhat is the argumentative role of \"The health insurance companies ought to be enabled to recognize a doctor's decision for natural treatment and also to cover it.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

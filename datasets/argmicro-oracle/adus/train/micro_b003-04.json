@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nHealth insurance companies should not cover treatment in complementary medicine unless the promised effect and its medical benefit have been concretely proven. Yet this very proof is lacking in most cases. Patients do often report relief of their complaints after such treatments. But as long as it is unclear as to how this works, the funds should rather be spent on therapies where one knows with certainty.\nWhat is the argumentative role of \"But as long as it is unclear as to how this works, the funds should rather be spent on therapies where one knows with certainty.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

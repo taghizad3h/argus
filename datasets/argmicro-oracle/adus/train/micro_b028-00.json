@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nThe universities in Germany should not under any circumstances charge tuition fees. This would impede or prevent access to those who are financially weaker. The anticipated objectives of tuition fees can be achieved by other means. There are other instruments to motivate tighter discipline while studying. And funding-wise it ought to be considered how costs incurred by students from other (federal) states can be reimbursed.\nWhat is the argumentative role of \"The universities in Germany should not under any circumstances charge tuition fees.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

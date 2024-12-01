@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nTuition fees should not be charged in Germany. Studying and taking higher degrees must remain a basic right for everyone. Fees result in longer durations of studies. That's costly!\nWhat is the argumentative role of \"Tuition fees should not be charged in Germany.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

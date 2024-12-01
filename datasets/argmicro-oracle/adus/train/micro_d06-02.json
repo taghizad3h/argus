@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nPeter should close his snack bar as soon as possible. Pricing pressures are just too high, and his pool of customers is shrinking constantly. Of course he could do another big ad campaign, but that won't do the trick if the whole neighbourhood is going down the drain in the end.\nWhat is the argumentative role of \"and his pool of customers is shrinking constantly.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

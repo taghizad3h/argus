@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nIt is unfair and unjustifiable that new tenants have to pay a much higher rent than previous residents. Clearly the landlord has to pay for some repairs before a new lease. But surely these costs could be covered by a minimal increase in rent over the course of the entire lease. All the more so as for an adequate profit the rental rate as compared to the base rent need not be raised for every new lease.\nWhat is the argumentative role of \"But surely these costs could be covered by a minimal increase in rent over the course of the entire lease.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

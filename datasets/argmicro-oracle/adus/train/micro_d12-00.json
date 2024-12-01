@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nI can only recommend the new smartphone XYZ-123 to everyone. Of course the camera could be better, as it only has mediocre resolution and images in dark surroundings are often snowy. But for snap shots that's still enough.\nWhat is the argumentative role of \"I can only recommend the new smartphone XYZ-123 to everyone.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nAs a central airport Berlin Tegel is particularly attractive for business travellers and should by all means remain operational. It is an asset for the economy. The negative impact of air traffic however is considerable. Air traffic is extremely environmentally unfriendly. Particularly in Tegel, the residents have been bearing the stress of aircraft noise for decades.\nWhat is the argumentative role of \"It is an asset for the economy.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

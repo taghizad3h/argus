@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nBER should be re-conceptualized from scratch, even if billions of Euros have already been invested in the existing airport project and this would delay the date of completion indefinitely. Both the drawn-out building operations and the mounting safety issues show clear shortcomings in the entire planning.\nWhat is the argumentative role of \"and this would delay the date of completion indefinitely.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "1. opp"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nWell, I as an employee find it very practical to be able to shop at least on weekends. Sure, other people have to work in the shops on the weekend, but they can have days off during the week and run errands at their leisure while I'm stuck in the office. Plus, the state wants me to spend my money, and how am I supposed to do that when the shops aren't open when I'm off work?\nWhat is the argumentative role of \"Well, I as an employee find it very practical to be able to shop at least on weekends.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

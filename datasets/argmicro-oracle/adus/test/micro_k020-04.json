@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nDespite the death penalty there are significantly more homicides in the US than in Germany. Fear of punishment hence does not deter murderers. 'An eye for an eye' seems to miss the point. The state ought to prevent murder - not avenge it. A re-introduction of capital punishment in Germany would be a step back into the Middle Ages.\nWhat is the argumentative role of \"A re-introduction of capital punishment in Germany would be a step back into the Middle Ages.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

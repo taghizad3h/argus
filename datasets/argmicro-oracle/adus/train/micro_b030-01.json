@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nSchool uniforms should not be worn in our schools. They do offer the benefit that the competition over brand-name clothes and the discrimination of the socially weak are prevented. Nevertheless hardly anyone wishes to dress themselves or their children in a standard uniform. Plus such uniforms also stand for ideological conformity and for the suppression of individual self-development.\nWhat is the argumentative role of \"They do offer the benefit that the competition over brand-name clothes and the discrimination of the socially weak are prevented.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "1. opp"
+    }
+]

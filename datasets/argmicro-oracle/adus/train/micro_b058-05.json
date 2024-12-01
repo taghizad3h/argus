@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nVideo games, namely FIFA in my case, can fascinate young people for hours more intensively and emotionally than any sport in the world! It would be fair to make them into an Olympic event. Perhaps it is less thrilling for a spectator than for the player, but also for contemporary Olympic events, I recall curling and 50km cross-country skiing, you have to be more than a freak to follow those more properly than only in the roundup of highlights. Plus the hurdle to make video games Olympic events is minimal, as you don't even need doping tests, only a neutral console. And many a video game is physically and particularly mentally more demanding, when I think of the last FIFA tournament's final, than kicking a ball 20 metres.\nWhat is the argumentative role of \"as you don't even need doping tests, only a neutral console.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

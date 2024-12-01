@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nIn a few decades our society will have a disproportionate number of old people: the life expectancy is constantly rising, and at the same time birth rates are declining. Although having children has become more fashionable again in recent years, these short-term fluctuations in birth rates don't change the general trend at all.\nWhat is the argumentative role of \"Although having children has become more fashionable again in recent years,\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "1. opp"
+    }
+]

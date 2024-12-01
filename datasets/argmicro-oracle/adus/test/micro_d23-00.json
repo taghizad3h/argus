@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nTomorrow I will skydive for the first time in my life. Yes, there is a certain risk to life. But I want to experience this incredible moment of freedom that skydivers report time and again. Besides, Jochen was given a parachute jump the other day as a gift, and it mustn't be that this wannabe-adventurer has one up on me.\nWhat is the argumentative role of \"Tomorrow I will skydive for the first time in my life.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

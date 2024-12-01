@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nThe EU should exert influence on the political events in Ukraine. The developments in that conflict should not be left to former Cold War opponents alone, for that course can only lead to escalation in some form. Furthermore, Ukraine is culturally and geographically much closer than other countries that the EU (used to) get involved with. Indeed one could argue that a country has to deal with internal political changes itself, but political power also brings about political responsibility, in this case the responsibility to protect the Ukrainian people from the rather strong interests of the two Great Powers.\nWhat is the argumentative role of \"for that course can only lead to escalation in some form.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "2. pro"
+    }
+]

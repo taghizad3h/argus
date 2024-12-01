@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "You will be given an essay and asked about to annotate a specified part from it. Choose the argumentative role of the given sentence from list 1.opp (opponent), 2.pro (proponent). Choose only one label."
+    },
+    {
+        "role": "user",
+        "content": "\nIntelligence services should be more closely regulated by parliament, for, as the most recent NSA wiretapping scandal has shown, the federal state government is allegedly not always familiar with the scope of operations of its intelligence services. Checks could contribute to restricting the so far rather opaque scope of action of individual services. Yet it remains questionable whether the actual implementation of such supervision would at the same time lead to a stronger observance of laws, as ultimately this decision is in the hands of the respective government leaders.\nWhat is the argumentative role of \"as ultimately this decision is in the hands of the respective government leaders.\" from the given essay? choose from 1. opp 2. pro \n"
+    },
+    {
+        "role": "assistant",
+        "content": "1. opp"
+    }
+]
