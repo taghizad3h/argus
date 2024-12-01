@@ -6,15 +6,21 @@ from tqdm import tqdm
 
 from settings import Settings
 
-dataset = 'aae2/relations'
-model_name = 'unsloth/llama-3-8b-Instruct'
+# dataset = 'aae2/relations'
+dataset = 'argmicro/relations'
+
+# model_name = 'unsloth/llama-3-8b-Instruct'
+model_name = 'unsloth/Meta-Llama-3.1-8B-Instruct'
+
+config_name = 'lora-r16-q-bs8-ac1-e10-fp' #r = rank of lora g=gate-proj u=up-proj d=down-proj fp = full presicion
+
 use_lora = True
 
 settings = Settings(
     dataset_path = f'datasets/{dataset}',
-    per_device_train_batch_size = 3,
+    per_device_train_batch_size = 1,
     model_name = model_name,
-    output_dir = f'output/{model_name.replace("/", "-")}{"-lora" if use_lora else ""}-{dataset}',
+    output_dir = f'output/{model_name.replace("/", "-")}-{config_name}-{dataset}',
     use_4bit = False,
     use_8bit = False,
     gradient_accumulation_steps = 4,
@@ -25,8 +31,23 @@ settings = Settings(
     save_steps = 100
 )
 
+# relations = [
+#     "1. attacks",
+#     "2. supports",
+#     "3. no relation"
+# ]
 
-response_template = '<|assistant|>'
+relations = [
+    "1. reb",
+    "2. und",
+    "3. joint",
+    "4. exa",
+    "5. sup",
+    "6. no relation"
+]
+
+
+response_template = 'assistant<|end_header_id|>'
 
 if 'tiny' in settings.model_name.lower():
     response_template = "<|assistant|>"
@@ -65,21 +86,21 @@ for (gold, pred) in tqdm(zip(sorted(os.listdir(gold_path)), sorted(os.listdir(pr
 #             pred_label = "Claim"
 #         else:
 #             pred_label = "Premise"
-
-        if pred_label.startswith('2. support'):
-            pred_label = "2. supports"
-        elif pred_label.startswith('1. attacks'):
-            pred_label = "1. attacks"
-        else:
-            pred_label = "3. no relation"
-        
+        found = False
+        for r in relations:
+            if pred_label.startswith(r[0]):
+                found = True
+                pred_label = r
+                break
+        if not found:
+            pred_label = relations[-1]
         gold_labels.append(gold_label)
         pred_labels.append(pred_label)
 
 
 score = f1_score(gold_labels, pred_labels, average='macro')
 # conf_mat = confusion_matrix(gold_labels, pred_labels, labels=["MajorClaim", "Claim", "Premise"])
-conf_mat = confusion_matrix(gold_labels, pred_labels, labels=["2. supports", "1. attacks", "3. no relation"])
+conf_mat = confusion_matrix(gold_labels, pred_labels, labels=relations)
 
 print(score)
 print(conf_mat)

@@ -14,7 +14,8 @@ from seqeval.scheme import IOB2, IOB1
 
 from settings import Settings
 
-dataset = 'aae2/adus'
+# dataset = 'aae2/adus'
+dataset = 'argmicro/adus'
 # dataset = 'pe2-adus-embedded-paragraph-level'
 # model_name = 'NousResearch/Llama-2-7b-chat-hf'
 # model_name = 'unsloth/llama-2-7b'Saleh but assistant
@@ -24,7 +25,7 @@ dataset = 'aae2/adus'
 # model_name = 'unsloth/Llama-3.2-1B-Instruct'
 # model_name = 'unsloth/Llama-3.2-3B-Instruct'
 model_name = 'unsloth/Meta-Llama-3.1-8B-Instruct'
-config_name = 'lora-r16-qkvgud-bs8-ac1-e10-fp' #r = rank of lora g=gate-proj u=up-proj d=down-proj fp = full presicion
+config_name = 'lora-r16-qkvgud-bs8-ac1-e20-fp' #r = rank of lora g=gate-proj u=up-proj d=down-proj fp = full presicion
 
 settings = Settings(
     dataset_path = f'datasets/{dataset}',
@@ -103,10 +104,12 @@ def refine_preds(preds):
 def calculate_tags(golds, preds, gold_annotated_sentence, target_sentence):
     gold_tags = ['O'] * len(target_sentence.split())
     pred_tags = ['O'] * len(target_sentence.split())
+    # print(f'len of tags {len(pred_tags)}')
     
     for g in golds:
         gtext = g[1]
         glabel = g[0]
+        # print(f'the gold text is {gtext.strip()}')
         char_start_index = [m.start() for m in re.finditer(gtext.strip(), target_sentence, flags=re.IGNORECASE|re.MULTILINE)][0]
         start_index = len(target_sentence[:char_start_index].split())
         end_index = start_index +  len(gtext.split())
@@ -115,14 +118,18 @@ def calculate_tags(golds, preds, gold_annotated_sentence, target_sentence):
     
     for p in preds:
         ptext = p[1]
+        # print(f'the text is {ptext}')
         plabel = p[0]
+        # print(f'the label is {plabel}')
         char_start_indexes = [m.start() for m in re.finditer(ptext.strip(), target_sentence, flags=re.IGNORECASE|re.MULTILINE)]
-        if len(char_start_indexes) == 0:
+        if len(char_start_indexes) != 1:
             continue
+        # print(f'len of chat start index {len(char_start_indexes)}')
         char_start_index = char_start_indexes[0]
         start_index = len(target_sentence[:char_start_index].split())
         end_index = start_index +  len(ptext.strip().split())
         for i in range(start_index, end_index):
+            # print(i)
             pred_tags[i] = plabel
             
     return gold_tags, pred_tags
@@ -169,7 +176,7 @@ print(len(pred_samples))
 #     extract_tags(g, p)
     
 
-results = Parallel(n_jobs=10)(delayed(extract_tags)(g,p) for g,p in zip(gold_samples, pred_samples))
+results = Parallel(n_jobs=1)(delayed(extract_tags)(g,p) for g,p in zip(gold_samples, pred_samples))
 
 y_true = [r[0] for r in results if r is not None]
 y_pred = [r[1] for r in results if r is not None]
