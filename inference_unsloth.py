@@ -45,6 +45,14 @@ def convert_to_chat_json(text, should_remove_system_role = False):
                 assistant_message = turn['content']
         return [{'role': 'user', 'content': system_message +'\n'+ user_message}, {'role': 'assistant', 'content': assistant_message}]
 
+
+def get_gpu_memory_usage():
+  if torch.cuda.is_available():
+    gpu_memory = torch.cuda.memory_allocated() / (1024**2)  # in MB
+    return gpu_memory
+  else:
+    return "GPU is not available."
+
 args = parser.parse_args()
 use_lora = args.lora
 output_extra_detail = ''
@@ -113,6 +121,8 @@ for i, model_dir in enumerate(dirs):
     os.makedirs(pred_dir, exist_ok=True)
     print(f'prediction dir is {pred_dir}')
     counter = 0
+    gpu_usage = get_gpu_memory_usage()
+    print(f'gpu usage of this model is {gpu_usage} MB')
     for root, _, files in os.walk(settings.dataset_path+"/test"):
         for f in tqdm(files):
             try:

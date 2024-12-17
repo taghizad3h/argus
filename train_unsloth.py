@@ -66,6 +66,12 @@ model, tokenizer = FastLanguageModel.from_pretrained(
     load_in_4bit = settings.load_in_4bit,
 )
 
+def get_gpu_memory_usage():
+  if torch.cuda.is_available():
+    gpu_memory = torch.cuda.memory_allocated() / (1024**2)  # in MB
+    return gpu_memory
+  else:
+    return "GPU is not available."
 
 tokenizer.pad_token = tokenizer.eos_token
 tokenizer.padding_side = "right" # Fix weird overflow issue with fp16 training
@@ -158,6 +164,10 @@ trainer = SFTTrainer(
 
 # Train model
 trainer.train()
+
+gpu_usage = get_gpu_memory_usage()
+
+print(f'gpu usage of this model is {gpu_usage} MB')
 
 # Save trained model
 trainer.model.save_pretrained(settings.output_dir)
