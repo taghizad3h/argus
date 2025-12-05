@@ -95,7 +95,6 @@ model = FastLanguageModel.get_peft_model(
     use_gradient_checkpointing = True,
     random_state = 3407,
     use_rslora = False,  # We support rank stabilized LoRA,
-    device_map = "balanced",
 )
 
 model.train()
