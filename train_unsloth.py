@@ -64,6 +64,7 @@ model, tokenizer = FastLanguageModel.from_pretrained(
     max_seq_length = settings.max_seq_length,
     dtype = settings.dtype,
     load_in_4bit = settings.load_in_4bit,
+    device_map = "balanced",
 )
 
 def get_gpu_memory_usage():
@@ -93,7 +94,8 @@ model = FastLanguageModel.get_peft_model(
 #     bias = "none",    # Supports any, but = "none" is optimized
     use_gradient_checkpointing = True,
     random_state = 3407,
-    use_rslora = False,  # We support rank stabilized LoRA
+    use_rslora = False,  # We support rank stabilized LoRA,
+    device_map = "balanced",
 )
 
 model.train()
