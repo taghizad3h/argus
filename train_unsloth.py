@@ -1,9 +1,9 @@
+import unsloth
 import argparse
 import json
 
 import torch
-from transformers import TrainingArguments
-from trl import DataCollatorForCompletionOnlyLM, SFTTrainer
+from trl import SFTConfig, SFTTrainer
 from unsloth import FastLanguageModel
 
 import chat_templates
@@ -13,7 +13,7 @@ from settings import Settings
 parser = argparse.ArgumentParser()
 
 parser.add_argument('--dataset', type=str, help='The dataset root folder', default='aae2/adus')
-parser.add_argument('--model_name', type=str, help='LLM Model name or path', default='TinyLlama/TinyLlama-1.1B-Chat-v1.0')
+parser.add_argument('--model_name', type=str, help='LLM Model name or path', default='unsloth/gemma-3-1b-it-GGUF')
 parser.add_argument('--epochs', type=int, help='number of epochs', default=1)
 parser.add_argument('--batch_size', type=int, help='train batch size', default=8)
 parser.add_argument('--gradient_steps', type=int, help='gradient_accumulation_steps', default=1)
@@ -84,19 +84,6 @@ elif 'phi' in settings.model_name.lower():
     tokenizer.chat_template = chat_templates.phi2
 
 
-
-if 'tiny' in settings.model_name.lower():
-    response_template = "<|assistant|>"
-elif 'llama-2' in settings.model_name.lower() or 'mistral' in settings.model_name.lower() or 'zephyr' in settings.model_name.lower():
-    response_template = "[/INST]"
-elif 'phi' in settings.model_name.lower():
-    response_template = "Output: "
-elif 'llama-3' in settings.model_name.lower():
-    response_template = '<|start_header_id|>assistant<|end_header_id|>\n\n'
-elif 'qwen' in settings.model_name.lower():
-    response_template = '<|im_start|>assistant\\n'
-
-
 model = FastLanguageModel.get_peft_model(
     model,
     r = settings.lora_r, # Choose any number > 0 ! Suggested 8, 16, 32, 64, 128
@@ -115,19 +102,19 @@ print(model)
 
 
 dataset = load_dataset("text", data_dir=settings.dataset_path, sample_by="document", split="train")
-dataset = dataset.map(lambda x: {"formatted_chat": tokenizer.apply_chat_template(json.loads(x['text']), tokenize=False, add_generation_prompt=False)}, load_from_cache_file = False)
+
+def format_dataset(example):
+    messages = json.loads(example['text'])
+    # Split messages into prompt (all but last) and completion (last message)
+    prompt = messages[:-1]
+    completion = messages[-1:]
+    return {"prompt": prompt, "completion": completion}
+
+dataset = dataset.map(format_dataset, load_from_cache_file=False)
 
 
-if 'tiny' in settings.model_name.lower():
-    response_template_with_context = f"\n{response_template}"
-    response_template_ids = tokenizer.encode(response_template_with_context, add_special_tokens=False)[2:]
-    collator = DataCollatorForCompletionOnlyLM(response_template_ids, tokenizer=tokenizer)
-else:
-    collator = DataCollatorForCompletionOnlyLM(response_template, tokenizer=tokenizer)
-
-
-# Set training parameters
-training_arguments = TrainingArguments(
+# Set training parameters with SFTConfig
+training_arguments = SFTConfig(
     output_dir=settings.output_dir,
     num_train_epochs=settings.num_train_epochs,
     per_device_train_batch_size=settings.per_device_train_batch_size,
@@ -146,7 +133,10 @@ training_arguments = TrainingArguments(
     lr_scheduler_type=settings.lr_scheduler_type,
     report_to="tensorboard",
     save_total_limit=settings.num_train_epochs,
-    save_strategy='epoch'
+    save_strategy='epoch',
+    completion_only_loss=True,  # New approach for training only on completions
+    max_seq_length=settings.max_seq_length,
+    packing=settings.packing
     # load_best_model_at_end = True
 )
 
@@ -154,12 +144,8 @@ training_arguments = TrainingArguments(
 trainer = SFTTrainer(
     model=model,
     train_dataset=dataset,
-    dataset_text_field="formatted_chat",
-    max_seq_length=settings.max_seq_length,
     tokenizer=tokenizer,
     args=training_arguments,
-    packing=settings.packing,
-    data_collator=collator,
 )
 
 # Train model
