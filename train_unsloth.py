@@ -1,4 +1,5 @@
 import unsloth
+
 import argparse
 import json
 
@@ -112,6 +113,7 @@ def format_dataset(example):
     return {"prompt": prompt, "completion": completion}
 
 dataset = dataset.map(format_dataset, load_from_cache_file=False)
+dataset = dataset.remove_columns(['text'])
 
 
 # Set training parameters with SFTConfig
