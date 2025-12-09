@@ -66,6 +66,7 @@ model, tokenizer = FastLanguageModel.from_pretrained(
     dtype = settings.dtype,
     load_in_4bit = settings.load_in_4bit,
     device_map = "balanced",
+    full_finetuning = False
 )
 
 def get_gpu_memory_usage():
@@ -105,19 +106,26 @@ print(model)
 
 dataset = load_dataset("text", data_dir=settings.dataset_path, sample_by="document", split="train")
 
-def format_dataset(example):
-    messages = json.loads(example['text'])
-    # Split messages into prompt (all but last) and completion (last message)
-    prompt = messages[:-1]
-    completion = messages[-1:]
-    return {"prompt": prompt, "completion": completion}
+def formatting_prompts_func(examples):
+    """Apply chat template to format the conversations"""
+    texts = []
+    for text in examples['text']:
+        messages = json.loads(text)
+        # Apply chat template to the full conversation
+        formatted = tokenizer.apply_chat_template(
+            messages, 
+            tokenize=False, 
+            add_generation_prompt=False
+        )
+        texts.append(formatted)
+    return {"text": texts}
 
-dataset = dataset.map(format_dataset, load_from_cache_file=False)
-dataset = dataset.remove_columns(['text'])
+dataset = dataset.map(formatting_prompts_func, batched=True, load_from_cache_file=False)
 
 
 # Set training parameters with SFTConfig
 training_arguments = SFTConfig(
+    dataset_text_field="text",  # Use the formatted text field
     output_dir=settings.output_dir,
     num_train_epochs=settings.num_train_epochs,
     per_device_train_batch_size=settings.per_device_train_batch_size,
@@ -137,10 +145,8 @@ training_arguments = SFTConfig(
     report_to="tensorboard",
     save_total_limit=settings.num_train_epochs,
     save_strategy='epoch',
-    completion_only_loss=True,  # New approach for training only on completions
     max_seq_length=settings.max_seq_length,
     packing=settings.packing
-    # load_best_model_at_end = True
 )
 
 # Set supervised fine-tuning parameters
@@ -150,6 +156,39 @@ trainer = SFTTrainer(
     tokenizer=tokenizer,
     args=training_arguments,
 )
+
+# Train only on assistant responses (Unsloth's method)
+from unsloth.chat_templates import train_on_responses_only
+
+# Determine the response marker based on the model
+if 'gemma' in settings.model_name.lower():
+    instruction_part = "<start_of_turn>user\n"
+    response_part = "<start_of_turn>model\n"
+elif 'llama-3' in settings.model_name.lower():
+    instruction_part = "<|start_header_id|>user<|end_header_id|>\n\n"
+    response_part = "<|start_header_id|>assistant<|end_header_id|>\n\n"
+elif 'tiny' in settings.model_name.lower():
+    instruction_part = "<|user|>\n"
+    response_part = "<|assistant|>\n"
+elif 'phi' in settings.model_name.lower():
+    instruction_part = "Input: "
+    response_part = "Output: "
+else:
+    # Default for other models
+    instruction_part = None
+    response_part = None
+
+if instruction_part and response_part:
+    trainer = train_on_responses_only(
+        trainer,
+        instruction_part=instruction_part,
+        response_part=response_part,
+    )
+    print(f"✓ Training only on assistant responses using markers:")
+    print(f"  Instruction: {repr(instruction_part)}")
+    print(f"  Response: {repr(response_part)}")
+else:
+    print("⚠ Training on full text (no response masking)")
 
 # Train model
 trainer.train()
