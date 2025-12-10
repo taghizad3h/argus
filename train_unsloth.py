@@ -170,6 +170,9 @@ elif 'llama-3' in settings.model_name.lower():
 elif 'tiny' in settings.model_name.lower():
     instruction_part = "<|user|>\n"
     response_part = "<|assistant|>\n"
+elif 'qwen' in settings.model_name.lower():
+    instruction_part = "<|im_start|>user\n"
+    response_part = "<|im_start|>assistant\n"
 elif 'phi' in settings.model_name.lower():
     instruction_part = "Input: "
     response_part = "Output: "
