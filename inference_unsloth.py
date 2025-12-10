@@ -28,9 +28,9 @@ parser.add_argument('--load_pretrained', action='store_true', help='load from pr
 parser.add_argument('--all_snapshots', action='store_true', help='we inference on all the snapshots in the given directory or not')
 parser.add_argument('--remove_system_message', action='store_true', help='load from pretrained model', default=False)
 
-def convert_to_chat_json(text, should_remove_system_role = False):
+def convert_to_chat_json(text, should_remove_system_role = False, is_gemma_3=False):
     if not should_remove_system_role:
-        return json.loads(text)
+        messages = json.loads(text)
     else:
         chat = json.loads(text)
         system_message = ''
@@ -43,7 +43,12 @@ def convert_to_chat_json(text, should_remove_system_role = False):
                 user_message = turn['content']
             if turn['role'] == 'assistant':
                 assistant_message = turn['content']
-        return [{'role': 'user', 'content': system_message +'\n'+ user_message}, {'role': 'assistant', 'content': assistant_message}]
+        messages = [{'role': 'user', 'content': system_message +'\n'+ user_message}, {'role': 'assistant', 'content': assistant_message}]
+    
+    if is_gemma_3:
+        messages = [{'role': m['role'], 'content': [{'text': m['content'], 'type': 'text'}]} for m in messages]
+    
+    return messages
 
 
 def get_gpu_memory_usage():
@@ -127,18 +132,33 @@ for i, model_dir in enumerate(dirs):
         for f in tqdm(files):
             try:
                 with open(os.path.join(root, f)) as f1, torch.no_grad():
-                    sample = convert_to_chat_json(f1.read(), args.remove_system_message)
+                    sample = convert_to_chat_json(f1.read(), args.remove_system_message, is_gemma_3='gemma-3' in settings.model_name.lower())
                     prompt = []
                     response_length = 0
                     for item in sample:
                         if item['role'] != 'assistant':
                             prompt.append(item)
                         else:
-                            response_length = int(len(tokenizer(item['content'])['input_ids'])*1.3)
+                            # Handle both regular and Gemma-3 format
+                            if 'gemma-3' in settings.model_name.lower():
+                                content = item['content'][0]['text']
+                            else:
+                                content = item.get('content', '') or ''
+                            response_length = int(len(content) * 1.5) if content else 128
 
-                    inputs = tokenizer.apply_chat_template(prompt, return_tensors='pt', tokenize=True, add_generation_prompt=True).to('cuda')
-                    output = model.generate(input_ids = inputs, max_new_tokens=response_length)
-                    response = tokenizer.decode(output[0].tolist())
+                    inputs = tokenizer.apply_chat_template(
+                        prompt, 
+                        return_tensors='pt', 
+                        tokenize=True, 
+                        add_generation_prompt=True,
+                        return_dict=True
+                    ).to('cuda')
+                    
+                    # Get the prompt length to skip it later
+                    prompt_length = inputs['input_ids'].shape[1]
+                    output = model.generate(**inputs, max_new_tokens=response_length)
+                    # Decode only the generated tokens (skip the prompt)
+                    response = tokenizer.decode(output[0][prompt_length:], skip_special_tokens=True)
                 # result = generate(prompt)
                 # print(response)
                 with open(f"{pred_dir}/{f.replace('.json', '')}.txt", 'w') as f2:
