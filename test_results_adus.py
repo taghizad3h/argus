@@ -227,28 +227,42 @@ y_pred = [r[1] for r in results if r is not None]
 
 bio_true = [convert_to_bio(y) for y in y_true]
 bio_pred = [convert_to_bio(y) for y in y_pred]
-            
-
-print(sf1_score(bio_true, bio_pred))
-print(sclassification_report(bio_true, bio_pred))
-
-print(sf1_score(bio_true, bio_pred, mode='strict', scheme=IOB2))
-print(sclassification_report(bio_true, bio_pred, mode='strict', scheme=IOB2))
-
 
 golds_labels = flatten([r[0] for r in results if r is not None])
 preds_labels = flatten([r[1] for r in results if r is not None])
 
+print("\n" + "="*80)
+print("EVALUATION RESULTS")
+print("="*80)
 
-score = f1_score(golds_labels, preds_labels, average='macro',)
+# === Sequence-Level Evaluation (BIO Format) ===
+print("\n### Sequence-Level Evaluation (BIO Format, Default Mode) ###")
+print(f"F1-Score: {sf1_score(bio_true, bio_pred):.4f}")
+print("\nClassification Report:")
+print(sclassification_report(bio_true, bio_pred))
+
+print("\n### Sequence-Level Evaluation (BIO Format, Strict IOB2 Mode) ###")
+print(f"F1-Score: {sf1_score(bio_true, bio_pred, mode='strict', scheme=IOB2):.4f}")
+print("\nClassification Report:")
+print(sclassification_report(bio_true, bio_pred, mode='strict', scheme=IOB2))
+
+# === Token-Level Evaluation (All Labels) ===
+print("\n### Token-Level Evaluation (All Labels Including 'O') ###")
+score = f1_score(golds_labels, preds_labels, average='macro')
 conf_mat = confusion_matrix(golds_labels, preds_labels, labels=["MajorClaim", "Claim", "Premise", "O"])
-print(score)
+print(f"Macro F1-Score: {score:.4f}")
+print("\nConfusion Matrix:")
 print(conf_mat)
+print("\nClassification Report:")
 print(classification_report(golds_labels, preds_labels))
 
-
+# === Token-Level Evaluation (Argumentative Components Only) ===
+print("\n### Token-Level Evaluation (Argumentative Components Only - Without 'O') ###")
 score = f1_score(golds_labels, preds_labels, average='macro', labels=["MajorClaim", "Claim", "Premise"])
 conf_mat = confusion_matrix(golds_labels, preds_labels, labels=["MajorClaim", "Claim", "Premise"])
-print(score)
+print(f"Macro F1-Score: {score:.4f}")
+print("\nConfusion Matrix:")
 print(conf_mat)
+print("\nClassification Report:")
 print(classification_report(golds_labels, preds_labels, labels=["MajorClaim", "Claim", "Premise"]))
+print("="*80)
