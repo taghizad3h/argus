@@ -24,6 +24,7 @@ parser.add_argument('--lora_modules', type=str, help='lora rank', default='q_pro
 parser.add_argument('--bit4', action='store_true', help='user 4bit quantization', default=False)
 parser.add_argument('--bit8', action='store_true', help='user 8bit quantization', default=False)
 parser.add_argument('--load_pretrained', action='store_true', help='load from pretrained model', default=False)
+parser.add_argument('--remove_system_message', action='store_true', help='remove system message and merge with user message', default=False)
 
 
 args = parser.parse_args()
@@ -104,13 +105,37 @@ model.train()
 print(model)
 
 
+def convert_to_chat_json(text, should_remove_system_role=False):
+    """Convert text to chat messages, optionally removing system role"""
+    if not should_remove_system_role:
+        return json.loads(text)
+    else:
+        chat = json.loads(text)
+        system_message = ''
+        user_message = ''
+        assistant_message = ''
+        for turn in chat:
+            if turn['role'] == 'system':
+                system_message = turn['content']
+            if turn['role'] == 'user':
+                user_message = turn['content']
+            if turn['role'] == 'assistant':
+                assistant_message = turn['content']
+        # Merge system message with user message
+        merged_user_content = f"{system_message}\n{user_message}" if system_message else user_message
+        return [
+            {'role': 'user', 'content': merged_user_content},
+            {'role': 'assistant', 'content': assistant_message}
+        ]
+
+
 dataset = load_dataset("text", data_dir=settings.dataset_path, sample_by="document", split="train")
 
 def formatting_prompts_func(examples):
     """Apply chat template to format the conversations"""
     texts = []
     for text in examples['text']:
-        messages = json.loads(text)
+        messages = convert_to_chat_json(text, args.remove_system_message)
         # Apply chat template to the full conversation
         formatted = tokenizer.apply_chat_template(
             messages, 
