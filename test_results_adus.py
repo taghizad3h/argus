@@ -1,6 +1,7 @@
 import json
 import os
 import re
+import argparse
 from typing import List, Tuple
 
 from joblib import Parallel, delayed
@@ -14,73 +15,73 @@ from seqeval.scheme import IOB2, IOB1
 
 from settings import Settings
 
-# dataset = 'aae2/adus'
-dataset = 'argmicro/adus'
-# dataset = 'pe2-adus-embedded-paragraph-level'
-# model_name = 'NousResearch/Llama-2-7b-chat-hf'
-# model_name = 'unsloth/llama-2-7b'Saleh but assistant
-# model_name = 'unsloth/mistral-7b'
-# model_name = 'unsloth/llama-3-8b-Instruct'
-# model_name = 'TinyLlama/TinyLlama-1.1B-Chat-v1.0'
-# model_name = 'unsloth/Llama-3.2-1B-Instruct'
-# model_name = 'unsloth/Llama-3.2-3B-Instruct'
-model_name = 'unsloth/Meta-Llama-3.1-8B-Instruct'
-config_name = 'lora-r16-qkvgud-bs8-ac1-e20-fp' #r = rank of lora g=gate-proj u=up-proj d=down-proj fp = full presicion
+# Parse command line arguments
+parser = argparse.ArgumentParser()
+parser.add_argument('--dataset', type=str, help='The dataset root folder', default='aae2/adus')
+parser.add_argument('--model_name', type=str, help='LLM Model name or path', default='unsloth/Meta-Llama-3.1-8B-Instruct')
+parser.add_argument('--epochs', type=int, help='number of epochs', default=1)
+parser.add_argument('--batch_size', type=int, help='train batch size', default=8)
+parser.add_argument('--gradient_steps', type=int, help='gradient_accumulation_steps', default=1)
+parser.add_argument('--lora_r', type=int, help='lora rank', default=16)
+parser.add_argument('--lora_modules', type=str, help='lora modules', default='q_proj,k_proj,v_proj,gate_proj,up_proj,down_proj')
+parser.add_argument('--bit4', action='store_true', help='user 4bit quantization', default=False)
+parser.add_argument('--bit8', action='store_true', help='user 8bit quantization', default=False)
+
+args = parser.parse_args()
+
+# Build config name
+output_extra_detail = ''
+output_extra_detail += f"lora-r{args.lora_r}-{''.join([r[0] for r in args.lora_modules.split(',')])}"
+output_extra_detail += f"-bs{args.batch_size}"
+output_extra_detail += f"-ac{args.gradient_steps}"
+output_extra_detail += f"-e{args.epochs}"
+output_extra_detail += "-q4" if args.bit4 else ""
+output_extra_detail += "-q8" if args.bit8 else ""
+output_extra_detail += "-fp" if (not (args.bit4 and args.bit8)) else ""
+
+dataset = args.dataset
+model_name = args.model_name
+config_name = output_extra_detail
 
 settings = Settings(
-    dataset_path = f'datasets/{dataset}',
-    per_device_train_batch_size = 1,
-    # model_name = 'models/microsoft/phi-2',
-    model_name = model_name,
-    # output_dir = 'output/phi-28bitqlora',
-    output_dir = f'output/{model_name.replace("/", "-")}-{config_name}-{dataset}',
-    use_4bit = False,
-    use_8bit = False,
-    gradient_accumulation_steps = 4,
-    llm_int8_enable_fp32_cpu_offload = True,
-    per_device_eval_batch_size = 4,
-    num_train_epochs=10,
+    dataset_path=f'datasets/{dataset}',
+    per_device_train_batch_size=args.batch_size,
+    model_name=model_name,
+    output_dir=f'output/{model_name.replace("/", "-")}-{config_name}-{dataset}',
+    use_4bit=args.bit4,
+    use_8bit=args.bit8,
+    gradient_accumulation_steps=args.gradient_steps,
+    llm_int8_enable_fp32_cpu_offload=True,
+    per_device_eval_batch_size=4,
+    num_train_epochs=args.epochs,
     max_seq_length=1024,
-    save_steps = 100
+    save_steps=1000,
+    load_in_4bit=args.bit4,
+    lora_r=args.lora_r
 )
 
 gold_path = f'{settings.dataset_path}/test'
 pred_path = settings.output_dir.replace('output/', 'preds/')
 
 
-def convert_to_bio(text, labels: list = ['MajorClaim', 'Claim', 'Premise']):
-    clean_text = re.sub(r'<(/?\w+)>', ' ', text, flags = re.MULTILINE|re.IGNORECASE)
-    clean_text = ' '.join(clean_text.split())    
-    tags_pattern = re.compile(r'<(\w+)>([\w\s]+)<\/\w+>')
-    tags = ['O'] * len(clean_text.split())
-    last_start_index = -1
-    for match in tags_pattern.finditer(text):
-        tag = match.group(1)
-        tag_text = match.group(2).rstrip()
-        char_start_indexs = [m.start() for m in re.finditer(tag_text, clean_text)]
-        for csi in char_start_indexs: #some times same argumet exists in multiple spans
-            start_index = len(clean_text[:csi].split())
-            if start_index > last_start_index:
-                last_start_index = start_index
-                break
-        end_index = start_index + len(tag_text.split())
-        for i in range(start_index, end_index):
-            tags[i] = tag
-            
-    return tags
-
-
 def decompose(name, output: str) -> List[Tuple[str, str]]:
+    """Extract tagged components from the model output.
+    Note: output now contains only the assistant message (no full conversation).
+    """
     result = []
-    if 'This sentence is not argumentative' in output:
+    
+    # Check for non-argumentative response
+    if 'not argumentative' in output.lower() or 'This sentence is not argumentative' in output:
         return result
     
-    tags_pattern = re.compile(r'<(\w+)>([\w\s]+)<\/\w+>')
+    # Extract all tagged components (improved regex to handle any content)
+    tags_pattern = re.compile(r'<(\w+)>([^<]+)<\/\w+>')
     for match in tags_pattern.finditer(output):
         tag = match.group(1)
         tag_text = match.group(2).rstrip()
-        if tag_text is not None and tag_text.strip() != '':
+        if tag_text and tag_text.strip():
             result.append((tag, tag_text))
+    
     return result
 
 
@@ -98,6 +99,24 @@ def refine_preds(preds):
         if not already_exists(p1[1]):
             refined.append(p1)
     return refined
+
+
+def convert_to_bio(labels):
+    """Convert sequence labels to BIO format: B- for first occurrence, I- for subsequent."""
+    bio_labels = []
+    prev_label = 'O'
+    
+    for label in labels:
+        if label == 'O':
+            bio_labels.append('O')
+        elif label == prev_label:
+            bio_labels.append('I-' + label)
+        else:
+            bio_labels.append('B-' + label)
+        
+        prev_label = label
+
+    return bio_labels
 
 
 
@@ -180,23 +199,6 @@ results = Parallel(n_jobs=1)(delayed(extract_tags)(g,p) for g,p in zip(gold_samp
 
 y_true = [r[0] for r in results if r is not None]
 y_pred = [r[1] for r in results if r is not None]
-
-
-def convert_to_bio(labels):
-    bio_labels = []
-    prev_label = 'O'
-    
-    for label in labels:
-        if label == 'O':
-            bio_labels.append('O')
-        elif label == prev_label:
-            bio_labels.append('I-' + label)
-        else:
-            bio_labels.append('B-' + label)
-        
-        prev_label = label
-
-    return bio_labels
 
 bio_true = [convert_to_bio(y) for y in y_true]
 bio_pred = [convert_to_bio(y) for y in y_pred]
