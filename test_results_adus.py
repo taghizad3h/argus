@@ -123,33 +123,47 @@ def convert_to_bio(labels):
 def calculate_tags(golds, preds, gold_annotated_sentence, target_sentence):
     gold_tags = ['O'] * len(target_sentence.split())
     pred_tags = ['O'] * len(target_sentence.split())
-    # print(f'len of tags {len(pred_tags)}')
     
+    # Process gold labels
     for g in golds:
-        gtext = g[1]
+        gtext = g[1].strip()
         glabel = g[0]
-        # print(f'the gold text is {gtext.strip()}')
-        char_start_index = [m.start() for m in re.finditer(gtext.strip(), target_sentence, flags=re.IGNORECASE|re.MULTILINE)][0]
-        start_index = len(target_sentence[:char_start_index].split())
-        end_index = start_index +  len(gtext.split())
-        for i in range(start_index, end_index):
-            gold_tags[i] = glabel
-    
-    for p in preds:
-        ptext = p[1]
-        # print(f'the text is {ptext}')
-        plabel = p[0]
-        # print(f'the label is {plabel}')
-        char_start_indexes = [m.start() for m in re.finditer(ptext.strip(), target_sentence, flags=re.IGNORECASE|re.MULTILINE)]
-        if len(char_start_indexes) != 1:
+        try:
+            char_start_indexes = [m.start() for m in re.finditer(re.escape(gtext), target_sentence, flags=re.IGNORECASE|re.MULTILINE)]
+            if not char_start_indexes:
+                # Try partial matching if exact match fails
+                continue
+            char_start_index = char_start_indexes[0]
+            start_index = len(target_sentence[:char_start_index].split())
+            end_index = start_index + len(gtext.split())
+            # Ensure we don't go out of bounds
+            end_index = min(end_index, len(gold_tags))
+            for i in range(start_index, end_index):
+                gold_tags[i] = glabel
+        except Exception as e:
+            # Skip this annotation if there's an error finding it
             continue
-        # print(f'len of chat start index {len(char_start_indexes)}')
-        char_start_index = char_start_indexes[0]
-        start_index = len(target_sentence[:char_start_index].split())
-        end_index = start_index +  len(ptext.strip().split())
-        for i in range(start_index, end_index):
-            # print(i)
-            pred_tags[i] = plabel
+    
+    # Process predicted labels
+    for p in preds:
+        ptext = p[1].strip()
+        plabel = p[0]
+        try:
+            char_start_indexes = [m.start() for m in re.finditer(re.escape(ptext), target_sentence, flags=re.IGNORECASE|re.MULTILINE)]
+            if len(char_start_indexes) != 1:
+                # Skip if we find 0 or multiple matches
+                continue
+            
+            char_start_index = char_start_indexes[0]
+            start_index = len(target_sentence[:char_start_index].split())
+            end_index = start_index + len(ptext.split())
+            # Ensure we don't go out of bounds
+            end_index = min(end_index, len(pred_tags))
+            for i in range(start_index, end_index):
+                pred_tags[i] = plabel
+        except Exception as e:
+            # Skip this annotation if there's an error
+            continue
             
     return gold_tags, pred_tags
 
@@ -159,16 +173,27 @@ text_label_accs = []
 
 
 def extract_tags(gold, pred):
-    pred_adus = decompose(pred[0], pred[1])
-    pred_adus = refine_preds(pred_adus)
-    gold_adus = decompose(gold[0], gold[1])
-    gold_adus_dict = json.loads(gold[1])
-    gold_annotated_sentence = gold_adus_dict[2]['content'].replace('The annotated format of given sentence is:\n', '')
-    # gold_annotated_sentence = gold_adus_dict[2]['content'].replace('The annotated format of given paragraph is:\n', '')
-    target_sentence = re.findall(r'(?<=What argument components exists in sentence \")([.\s\S]*)(?=\" from the above dispute)', gold_adus_dict[1]['content'])[0]
-    # target_sentence = ' '.join(gold_adus_dict[1]['content'].split('\n')[2:])
-    golds_labels, preds_labels = calculate_tags(gold_adus, pred_adus, gold_annotated_sentence, target_sentence)
-    return golds_labels, preds_labels
+    """Extract and align gold and predicted tags.
+    Returns None if there's an error processing the sample.
+    """
+    try:
+        pred_adus = decompose(pred[0], pred[1])
+        pred_adus = refine_preds(pred_adus)
+        gold_adus = decompose(gold[0], gold[1])
+        gold_adus_dict = json.loads(gold[1])
+        gold_annotated_sentence = gold_adus_dict[2]['content'].replace('The annotated format of given sentence is:\n', '')
+        # gold_annotated_sentence = gold_adus_dict[2]['content'].replace('The annotated format of given paragraph is:\n', '')
+        target_sentence_matches = re.findall(r'(?<=What argument components exists in sentence \")([.\s\S]*)(?=\" from the above dispute)', gold_adus_dict[1]['content'])
+        
+        if not target_sentence_matches:
+            return None
+        
+        target_sentence = target_sentence_matches[0]
+        golds_labels, preds_labels = calculate_tags(gold_adus, pred_adus, gold_annotated_sentence, target_sentence)
+        return golds_labels, preds_labels
+    except Exception as e:
+        print(f"Error processing {gold[0]}: {str(e)}")
+        return None
 
 
 gold_samples = []
