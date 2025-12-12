@@ -1,123 +1,172 @@
+import argparse
 import json
 import os
+import re
+from math import floor
+import gc
 
 import torch
-from peft import LoraConfig, PeftModel
 from tqdm import tqdm
-from transformers import (
-    AutoModelForCausalLM,
-    AutoTokenizer,
-    BitsAndBytesConfig,
-    logging,
-)
+from unsloth import FastLanguageModel
 
 import chat_templates
 from settings import Settings
 
-# Ignore warnings
-logging.set_verbosity(logging.CRITICAL)
+parser = argparse.ArgumentParser()
 
-dataset = 'aae2/adus'
-model_name = 'TinyLlama/TinyLlama-1.1B-Chat-v1.0'
-use_lora = True
+parser.add_argument('--dataset', type=str, help='The dataset root folder', default='aae2/adus')
+parser.add_argument('--model_name', type=str, help='LLM Model name or path', default='TinyLlama/TinyLlama-1.1B-Chat-v1.0')
+parser.add_argument('--epochs', type=int, help='number of epochs', default=1)
+parser.add_argument('--batch_size', type=int, help='train batch size', default=8)
+parser.add_argument('--gradient_steps', type=int, help='gradient_accumulation_steps', default=1)
+parser.add_argument('--lora', action='store_true', help='user lora', default=True)
+parser.add_argument('--lora_r', type=int, help='lora rank', default=16)
+parser.add_argument('--lora_modules', type=str, help='lora rank', default='q_proj,k_proj,v_proj,gate_proj,up_proj,down_proj')
+parser.add_argument('--bit4', action='store_true', help='user 4bit quantization', default=False)
+parser.add_argument('--bit8', action='store_true', help='user 8bit quantization', default=False)
+parser.add_argument('--load_pretrained', action='store_true', help='load from pretrained model', default=False)
+parser.add_argument('--all_snapshots', action='store_true', help='we inference on all the snapshots in the given directory or not')
+parser.add_argument('--remove_system_message', action='store_true', help='load from pretrained model', default=False)
+
+def convert_to_chat_json(text, should_remove_system_role = False, is_gemma_3=False):
+    if not should_remove_system_role:
+        messages = json.loads(text)
+    else:
+        chat = json.loads(text)
+        system_message = ''
+        user_message = ''
+        assistant_message = ''
+        for turn in chat:
+            if turn['role'] == 'system':
+                system_message = turn['content']
+            if turn['role'] == 'user':
+                user_message = turn['content']
+            if turn['role'] == 'assistant':
+                assistant_message = turn['content']
+        messages = [{'role': 'user', 'content': system_message +'\n'+ user_message}, {'role': 'assistant', 'content': assistant_message}]
+    
+    if is_gemma_3:
+        messages = [{'role': m['role'], 'content': [{'text': m['content'], 'type': 'text'}]} for m in messages]
+    
+    return messages
+
+
+def get_gpu_memory_usage():
+  if torch.cuda.is_available():
+    gpu_memory = torch.cuda.memory_allocated() / (1024**2)  # in MB
+    return gpu_memory
+  else:
+    return "GPU is not available."
+
+args = parser.parse_args()
+use_lora = args.lora
+output_extra_detail = ''
+output_extra_detail += f"lora-r{args.lora_r}-{''.join([r[0] for r in args.lora_modules.split(',')])}" if use_lora else ""
+output_extra_detail += f"-bs{args.batch_size}"
+output_extra_detail += f"-ac{args.gradient_steps}"
+output_extra_detail += f"-e{args.epochs}"
+output_extra_detail += "-q4" if args.bit4 else ""
+output_extra_detail += "-q8" if args.bit8 else ""
+output_extra_detail += "-fp" if (not (args.bit4 and args.bit8)) else ""
+
 
 settings = Settings(
-    dataset_path = f'datasets/{dataset}',
-    per_device_train_batch_size = 1,
-    # model_name = 'models/microsoft/phi-2',
-    model_name = model_name,
-    # output_dir = 'output/phi-28bitqlora',
-    output_dir = f'output/{model_name.replace("/", "-")}{"-lora" if use_lora else ""}-{dataset}',
+    dataset_path = f'datasets/{args.dataset}',
+    per_device_train_batch_size = args.batch_size,
+    model_name = args.model_name,
+    output_dir = f'output/{args.model_name.replace("/", "-")}-{output_extra_detail}-{args.dataset}',
     use_4bit = False,
     use_8bit = False,
-    gradient_accumulation_steps = 4,
+    fp16 = not torch.cuda.is_bf16_supported(),
+    bf16 = torch.cuda.is_bf16_supported(),
+    gradient_accumulation_steps = args.gradient_steps,
     llm_int8_enable_fp32_cpu_offload = True,
     per_device_eval_batch_size = 4,
-    num_train_epochs=10,
+    num_train_epochs=args.epochs,
     max_seq_length=1024,
-    save_steps = 100
+    save_steps = 1000,
+    load_in_4bit = False,
+    lora_r = args.lora_r
 )
 
-print(settings.dataset_path)
+dirs = []
+if args.all_snapshots:
+    dirs = [os.path.join(settings.output_dir, d) for d in os.listdir(settings.output_dir) if os.path.isdir(os.path.join(settings.output_dir, d)) and 'runs' not in d and 'logs' not in d]
+    dirs = sorted(dirs, key=lambda x: int(x.split("-")[-1]))
+else:
+    dirs = [settings.output_dir]
 
-compute_dtype = getattr(torch, settings.bnb_4bit_compute_dtype)
+print(f'we will inference of {len(dirs)} epochs')
 
-bnb_config = BitsAndBytesConfig(
-    load_in_4bit=settings.use_4bit,
-    load_in_8bit=settings.use_8bit,
-    bnb_4bit_quant_type=settings.bnb_4bit_quant_type,
-    bnb_4bit_compute_dtype=compute_dtype,
-    bnb_4bit_use_double_quant=settings.use_nested_quant,
-)
+for i, model_dir in enumerate(dirs):
+    print(f'inferencing on model of epoch {i+1} from directory {model_dir}')
+    model, tokenizer = FastLanguageModel.from_pretrained(
+        model_name = model_dir,
+        max_seq_length = settings.max_seq_length,
+        dtype = settings.dtype,
+        load_in_4bit = settings.load_in_4bit,
+    )
 
+    FastLanguageModel.for_inference(model)
 
-# Load the model (use bf16 for faster inference)
-model = AutoModelForCausalLM.from_pretrained(
-    settings.model_name,
-    # quantization_config=bnb_config,
-    device_map=settings.device_map,
-    trust_remote_code=True,
-    # flash_attn=True, 
-    # flash_rotary=True, 
-    # fused_dense=True #for phi-2
-)
+    tokenizer.pad_token = tokenizer.eos_token
+    tokenizer.padding_side = "right" # Fix weird overflow issue with fp16 training
 
-tokenizer = AutoTokenizer.from_pretrained(settings.model_name, trust_remote_code=True)
-tokenizer.pad_token = tokenizer.eos_token
-tokenizer.padding_side = "right" # Fix weird overflow issue with fp16 training
-
-
-if 'llama-2' in settings.model_name.lower():
-    tokenizer.chat_template = chat_templates.llama_2
-elif 'phi' in settings.model_name.lower():
-    tokenizer.chat_template = chat_templates.phi2
+    if 'tiny' in settings.model_name.lower():
+        tokenizer.chat_template = chat_templates.tiny_llama
+    elif 'llama-2' in settings.model_name.lower() or 'mistral' in settings.model_name.lower() or 'zephyr' in settings.model_name.lower():
+        tokenizer.chat_template = chat_templates.llama_2
+    elif 'phi' in settings.model_name.lower():
+        tokenizer.chat_template = chat_templates.phi2
 
 
-# Load LoRA configuration
-peft_config = LoraConfig(
-    lora_alpha=settings.lora_alpha,
-    lora_dropout=settings.lora_dropout,
-    r=settings.lora_r,
-    bias="none",
-    task_type="CAUSAL_LM",
-    # target_modules= ["Wqkv", "out_proj"] #phi1.5, llama
-    target_modules = ['q_proj', 'k_proj', 'v_proj', 'gate_proj', 'up_proj', 'down_proj'] #tinyllama
-)
+    pred_dir = settings.output_dir.replace('output', 'preds')
+    if args.all_snapshots:
+        pred_dir = re.sub('-e\d+', f'-e{i+1:02d}', pred_dir)
+    os.makedirs(pred_dir, exist_ok=True)
+    print(f'prediction dir is {pred_dir}')
+    counter = 0
+    gpu_usage = get_gpu_memory_usage()
+    print(f'gpu usage of this model is {gpu_usage} MB')
+    for root, _, files in os.walk(settings.dataset_path+"/test"):
+        for f in tqdm(files):
+            try:
+                with open(os.path.join(root, f)) as f1, torch.no_grad():
+                    sample = convert_to_chat_json(f1.read(), args.remove_system_message, is_gemma_3='gemma-3' in settings.model_name.lower())
+                    prompt = []
+                    response_length = 0
+                    for item in sample:
+                        if item['role'] != 'assistant':
+                            prompt.append(item)
+                        else:
+                            # Handle both regular and Gemma-3 format
+                            if 'gemma-3' in settings.model_name.lower():
+                                content = item['content'][0]['text']
+                            else:
+                                content = item.get('content', '') or ''
+                            response_length = int(len(content) * 1.5) if content else 128
 
-model = PeftModel.from_pretrained(model, model_id = settings.output_dir, config = peft_config)
-# model = model.merge_and_unload()
-model.to('cuda')
-model.eval()
+                    inputs = tokenizer.apply_chat_template(
+                        prompt, 
+                        return_tensors='pt', 
+                        tokenize=True, 
+                        add_generation_prompt=True,
+                        return_dict=True
+                    ).to('cuda')
+                    
+                    # Get the prompt length to skip it later
+                    prompt_length = inputs['input_ids'].shape[1]
+                    output = model.generate(**inputs, max_new_tokens=response_length)
+                    # Decode only the generated tokens (skip the prompt)
+                    response = tokenizer.decode(output[0][prompt_length:], skip_special_tokens=True)
+                # result = generate(prompt)
+                # print(response)
+                with open(f"{pred_dir}/{f.replace('.json', '')}.txt", 'w') as f2:
+                    f2.write(response)
+            except Exception as e:
+                print(e)
+                print(prompt)
+                print(f)
 
-# pipe = pipeline(task="text-generation", model=model, tokenizer=tokenizer, max_new_tokens=100, do_sample=False)
-
-# test_dataset = load_dataset('text', data_dir=settings.dataset_path, sample_by="document", split='test')
-
-# def generate(user_question):
-#     result = pipe(user_question, return_full_text=False)
-#     return result[0]['generated_text']
-
-
-pred_dir = settings.output_dir.replace('output', 'preds')
-os.makedirs(pred_dir, exist_ok=True)
-
-for root, _, files in os.walk(settings.dataset_path+"/test"):
-    for f in tqdm(files):
-        try:
-            with open(os.path.join(root, f)) as f1, torch.no_grad():
-                sample = json.load(f1)
-                prompt = []
-                for item in sample:
-                    if item['role'] != 'assistant':
-                        prompt.append(item)
-                inputs = tokenizer.apply_chat_template(prompt, return_tensors='pt', tokenize=True, add_generation_prompt=True).to('cuda')
-                output = model.generate(input_ids = inputs, max_new_tokens=5)
-                response = tokenizer.decode(output[0].tolist())
-            # result = generate(prompt)
-            # print(response)
-            with open(f"{pred_dir}/{f.replace('.json', '')}.txt", 'w') as f2:
-                f2.write(response)
-        except Exception as e:
-            print(e)
-            print(prompt)
-            print(f)
+    del model
+    gc.collect()
