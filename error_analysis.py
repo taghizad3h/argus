@@ -43,70 +43,79 @@ print(f"Prediction path: {pred_dir}")
 print()
 
 def decompose(text):
-    """Extract tags from text using regex pattern"""
+    """Extract ADUs (tags) from text using regex pattern"""
     pattern = r'<(\w+)>([^<]+)<\/\w+>'
     matches = re.findall(pattern, text)
     return matches
 
-def calculate_tags(text, tag_matches):
-    """Map extracted tags to token positions"""
-    if not tag_matches:
-        return [(i, 'O') for i in range(len(text.split()))]
+def get_adu_segments(text):
+    """Extract ADU segments with their labels and text"""
+    pattern = r'<(\w+)>([^<]+)<\/\w+>'
+    matches = re.findall(pattern, text)
     
-    tokens = text.split()
-    token_labels = ['O'] * len(tokens)
+    segments = []
+    for label, content in matches:
+        # Normalize the content (strip whitespace)
+        content_normalized = content.strip()
+        segments.append({
+            'label': label,
+            'text': content_normalized,
+            'text_lower': content_normalized.lower()
+        })
     
-    for tag_type, tag_text in tag_matches:
-        try:
-            # Use re.escape to handle special characters in tag_text
-            pattern = re.escape(tag_text)
-            match = re.search(pattern, text)
-            
-            if not match:
-                continue
-            
-            # Find which tokens this tag spans
-            char_pos = match.start()
-            token_pos = 0
-            char_count = 0
-            
-            for i, token in enumerate(tokens):
-                if char_count + len(token) > char_pos:
-                    token_pos = i
-                    break
-                char_count += len(token) + 1  # +1 for space
-            
-            # Mark tokens with this tag
-            tag_word_count = len(tag_text.split())
-            for j in range(token_pos, min(token_pos + tag_word_count, len(tokens))):
-                if j < len(tokens):
-                    token_labels[j] = tag_type
-        except Exception as e:
-            continue
-    
-    return list(enumerate(token_labels))
+    return segments
 
-def extract_tags(gold_sample, pred_sample):
-    """Extract and align tags from gold and prediction"""
-    try:
-        gold_text, gold_content = gold_sample
-        pred_text, pred_content = pred_sample
+def compare_segments(gold_segments, pred_segments):
+    """Compare gold and prediction segments, identify errors"""
+    errors = []
+    matched_pred = set()
+    
+    # Check each gold segment
+    for gold_seg in gold_segments:
+        # Try to find exact match in predictions
+        found = False
+        for i, pred_seg in enumerate(pred_segments):
+            if i not in matched_pred and gold_seg['label'] == pred_seg['label'] and \
+               gold_seg['text_lower'] == pred_seg['text_lower']:
+                found = True
+                matched_pred.add(i)
+                break
         
-        gold_matches = decompose(gold_content)
-        pred_matches = decompose(pred_content)
-        
-        # Get the actual text (without tags) for tokenization
-        gold_text_clean = re.sub(r'<[^>]+>|</[^>]+>', '', gold_content).strip()
-        
-        gold_labels = calculate_tags(gold_text_clean, gold_matches)
-        pred_labels = calculate_tags(gold_text_clean, pred_matches)
-        
-        gold_tags = [label for _, label in gold_labels]
-        pred_tags = [label for _, label in pred_labels]
-        
-        return (gold_tags, pred_tags, gold_text_clean)
-    except Exception as e:
-        return None
+        if not found:
+            # Check if there's a partial match (same text, wrong label or vice versa)
+            partial_match = None
+            for i, pred_seg in enumerate(pred_segments):
+                if i not in matched_pred and gold_seg['text_lower'] == pred_seg['text_lower']:
+                    partial_match = pred_seg
+                    matched_pred.add(i)
+                    break
+            
+            if partial_match:
+                errors.append({
+                    'type': 'Wrong Label',
+                    'gold_label': gold_seg['label'],
+                    'pred_label': partial_match['label'],
+                    'text': gold_seg['text']
+                })
+            else:
+                errors.append({
+                    'type': 'False Negative',
+                    'gold_label': gold_seg['label'],
+                    'pred_label': None,
+                    'text': gold_seg['text']
+                })
+    
+    # Check for false positives (predictions with no gold match)
+    for i, pred_seg in enumerate(pred_segments):
+        if i not in matched_pred:
+            errors.append({
+                'type': 'False Positive',
+                'gold_label': None,
+                'pred_label': pred_seg['label'],
+                'text': pred_seg['text']
+            })
+    
+    return errors
 
 # Load samples
 gold_samples = []
@@ -132,67 +141,59 @@ print()
 
 # Match and analyze errors
 error_stats = defaultdict(int)
-errors = []
+errors_list = []
 
 for gold_sample, pred_sample in tqdm(zip(gold_samples, pred_samples)):
-    result = extract_tags(gold_sample, pred_sample)
-    
-    if result is None:
-        continue
-    
-    gold_tags, pred_tags, text = result
-    tokens = text.split()
-    
-    # Check for mismatches
-    for i, (gold_tag, pred_tag) in enumerate(zip(gold_tags, pred_tags)):
-        if gold_tag != pred_tag:
-            error_type = ""
-            if gold_tag == 'O' and pred_tag != 'O':
-                error_type = "False Positive"
-                error_stats["False Positive"] += 1
-            elif gold_tag != 'O' and pred_tag == 'O':
-                error_type = "False Negative"
-                error_stats["False Negative"] += 1
-            else:
-                error_type = "Wrong Label"
-                error_stats["Wrong Label"] += 1
-            
-            # Store error with context
-            context_start = max(0, i - 2)
-            context_end = min(len(tokens), i + 3)
-            context_tokens = tokens[context_start:context_end]
-            
-            errors.append({
-                'file': gold_sample[0],
-                'token_idx': i,
-                'token': tokens[i],
-                'gold': gold_tag,
-                'pred': pred_tag,
-                'type': error_type,
-                'context': ' '.join(context_tokens),
-                'context_start_idx': context_start
+    try:
+        gold_file, gold_content = gold_sample
+        pred_file, pred_content = pred_sample
+        
+        # Extract segments from both
+        gold_segments = get_adu_segments(gold_content)
+        pred_segments = get_adu_segments(pred_content)
+        
+        # Compare segments
+        segment_errors = compare_segments(gold_segments, pred_segments)
+        
+        # If there are any errors in this sample, store it
+        if segment_errors:
+            errors_list.append({
+                'file': gold_file,
+                'errors': segment_errors,
+                'gold_text': gold_content,
+                'pred_text': pred_content
             })
+            
+            for error in segment_errors:
+                error_stats[error['type']] += 1
+    except Exception as e:
+        continue
 
 # Print statistics
 print("\n" + "="*80)
-print("ERROR ANALYSIS SUMMARY")
+print("ERROR ANALYSIS SUMMARY - ADU Level")
 print("="*80)
+print(f"\nDocuments with errors: {len(errors_list)}")
 print(f"\nError Type Distribution:")
 for error_type, count in sorted(error_stats.items(), key=lambda x: x[1], reverse=True):
     print(f"  {error_type}: {count}")
 
 total_errors = sum(error_stats.values())
-print(f"\nTotal Errors: {total_errors}")
+print(f"\nTotal ADU Errors: {total_errors}")
 
-# Sort errors by type for better visualization
+# Sort errors by type
 errors_by_type = defaultdict(list)
-for error in errors:
-    errors_by_type[error['type']].append(error)
+for error_sample in errors_list:
+    for error in error_sample['errors']:
+        errors_by_type[error['type']].append({
+            'file': error_sample['file'],
+            **error
+        })
 
 # Display sample errors
 for error_type in sorted(error_stats.keys()):
     print(f"\n{'='*80}")
-    print(f"Sample {error_type} Errors (showing up to {args.max_errors}):")
+    print(f"Sample {error_type} Cases (showing up to {args.max_errors}):")
     print("="*80)
     
     displayed = 0
@@ -200,14 +201,18 @@ for error_type in sorted(error_stats.keys()):
         if displayed >= args.max_errors:
             remaining = len(errors_by_type[error_type]) - displayed
             if remaining > 0:
-                print(f"\n... and {remaining} more {error_type} errors")
+                print(f"\n... and {remaining} more {error_type} cases")
             break
         
         print(f"\nFile: {error['file']}")
-        print(f"Token: '{error['token']}'")
-        print(f"Gold: {error['gold']} | Prediction: {error['pred']}")
-        print(f"Context: ...{error['context']}...")
-        print(f"Position in context: token #{error['token_idx'] - error['context_start_idx']}")
+        print(f"Text: \"{error['text']}\"")
+        
+        if error_type == 'False Negative':
+            print(f"Missing in predictions - Should be labeled as: {error['gold_label']}")
+        elif error_type == 'False Positive':
+            print(f"Incorrectly predicted - Labeled as: {error['pred_label']} (should not be present)")
+        elif error_type == 'Wrong Label':
+            print(f"Gold label: {error['gold_label']} | Predicted label: {error['pred_label']}")
         
         displayed += 1
 
