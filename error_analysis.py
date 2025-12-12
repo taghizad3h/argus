@@ -10,6 +10,8 @@ parser.add_argument('--dataset', type=str, help='The dataset root folder', defau
 parser.add_argument('--model_name', type=str, help='LLM Model name or path', default='TinyLlama/TinyLlama-1.1B-Chat-v1.0')
 parser.add_argument('--epochs', type=int, help='number of epochs', default=1)
 parser.add_argument('--batch_size', type=int, help='train batch size', default=8)
+parser.add_argument('--bit4', action='store_true', help='user 4bit quantization', default=False)
+parser.add_argument('--bit8', action='store_true', help='user 8bit quantization', default=False)
 parser.add_argument('--gradient_steps', type=int, help='gradient_accumulation_steps', default=1)
 parser.add_argument('--lora_r', type=int, help='lora rank', default=16)
 parser.add_argument('--max_errors', type=int, help='max errors to display', default=20)
@@ -22,6 +24,8 @@ output_extra_detail = f"lora-r{args.lora_r}-{''.join(['q', 'k', 'v', 'g', 'u', '
 output_extra_detail += f"-bs{args.batch_size}"
 output_extra_detail += f"-ac{args.gradient_steps}"
 output_extra_detail += f"-e{args.epochs}"
+output_extra_detail += "-fp" if (not (args.bit4 and args.bit8)) else ""
+
 
 gold_path = f'datasets/{args.dataset}/test'
 pred_dir = f'preds/{args.model_name.replace("/", "-")}-{output_extra_detail}-{args.dataset}'
