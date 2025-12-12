@@ -246,6 +246,16 @@ print(f"F1-Score: {sf1_score(bio_true, bio_pred, mode='strict', scheme=IOB2):.4f
 print("\nClassification Report:")
 print(sclassification_report(bio_true, bio_pred, mode='strict', scheme=IOB2))
 
+# Confusion matrix for sequence-level BIO labels (flattened across sequences)
+bio_labels_flat_true = [lbl for seq in bio_true for lbl in seq]
+bio_labels_flat_pred = [lbl for seq in bio_pred for lbl in seq]
+bio_label_set = sorted(list(set(bio_labels_flat_true + bio_labels_flat_pred)))
+conf_mat_bio = confusion_matrix(bio_labels_flat_true, bio_labels_flat_pred, labels=bio_label_set)
+print("\nSequence-Level Confusion Matrix (BIO labels, flattened):")
+print(conf_mat_bio)
+print("\nSequence-Level Classification Report (BIO labels, flattened):")
+print(classification_report(bio_labels_flat_true, bio_labels_flat_pred, labels=bio_label_set))
+
 # === Token-Level Evaluation (All Labels) ===
 print("\n### Token-Level Evaluation (All Labels Including 'O') ###")
 score = f1_score(golds_labels, preds_labels, average='macro')
