@@ -42,19 +42,30 @@ print(f"Gold path: {gold_path}")
 print(f"Prediction path: {pred_dir}")
 print()
 
+def preprocess_text(text):
+    """Remove <think> tags and their content from text"""
+    # Remove <think>...</think> blocks (case-insensitive)
+    text = re.sub(r'<think>.*?</think>', '', text, flags=re.DOTALL | re.IGNORECASE)
+    return text
+
 def decompose(text):
     """Extract ADUs (tags) from text using regex pattern"""
+    text = preprocess_text(text)
     pattern = r'<(\w+)>([^<]+)<\/\w+>'
     matches = re.findall(pattern, text)
     return matches
 
 def get_adu_segments(text):
     """Extract ADU segments with their labels and text"""
+    text = preprocess_text(text)
     pattern = r'<(\w+)>([^<]+)<\/\w+>'
     matches = re.findall(pattern, text)
     
     segments = []
     for label, content in matches:
+        # Skip think tags
+        if label.lower() == 'think':
+            continue
         # Normalize the content (strip whitespace)
         content_normalized = content.strip()
         segments.append({
